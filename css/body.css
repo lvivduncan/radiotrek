@@ -1,0 +1,12 @@
+
+/* основна шпальта */
+#body{
+    width: 1065px;
+    margin: auto;
+}
+
+@media(max-width:1100px){
+    #body{
+        width:95%;
+    }
+}

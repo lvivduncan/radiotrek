@@ -1,0 +1,125 @@
+
+/* 1 блок,  складається з 3 частин */
+.top--news{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    height: 330px;
+}
+
+/* новина */
+.top-news-news{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    overflow: hidden;
+}
+
+/* 1 блок зліва */
+.top-news-news > a{
+    height: 100%;
+    width:100%;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+}
+
+.top-news-news span{
+    height: 100%;
+    padding: 30px;
+    display: flex;    
+    justify-content: center;
+    flex-flow: column;
+    color:var(--white);
+    background:var(--cyan);
+    position: relative;
+    overflow: hidden;
+}
+
+/* фіча з кутиком */
+.top-news-news span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    bottom: -50%;
+    right: 20%;
+    z-index: 1;
+    background: var(--cyan-dark);
+    transform: rotate(45deg) translateX(0);
+    transition: .5s;
+}
+
+.top-news-news span:hover::after{
+    transform: rotate(45deg) translateX(-75px);
+}
+
+.top-news-news a{
+    text-decoration: none;
+    color:var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.top-news-news a:hover{
+    text-decoration: underline;
+}
+
+.top-news-news time{
+    font-size: 12px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+}
+
+.top-news-news h2{
+    margin: 20px 0;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+/* додатковий блок справа */
+.top-news-aside{
+    background: var(--black) url('../images/wave-blue-bg.png') bottom right no-repeat;
+    color:var(--gray-light);
+    padding:30px;
+}
+
+.top-news-aside h2{
+    padding: 43px 46px 5px 0;
+    background: url('../images/wave.png') top right no-repeat;
+    color: var(--gold);
+    font-weight: 800;
+    display: inline-block;
+    font-size: 34px;
+    line-height: 0.5;
+}
+
+.top-news-aside p{
+    font-weight: 800;
+}
+
+.top-news-aside h5{
+    color: var(--gold);
+    margin: 15px 0;
+}
+
+.top-news-aside a{
+    text-decoration: none;
+    color:var(--gray-light)
+}
+
+.top-news-aside a:hover{
+    text-decoration: underline;
+}
+
+.top-news-aside h3{
+    color: var(--gray-light);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 10px
+}
+
+.top-news-aside time{
+    color: var(--gray-light)
+}
