@@ -13,17 +13,25 @@ body{
 
 img{
     vertical-align: bottom;
+    max-width:100%!important;
 }
 
 :root{
     --black: #000;
-    --gray-dark: #222;
     --gray-light: #ddd;
+    --gray: #777;
+    --gray-dark: #222;
+    --gold-light: #ffe066;
     --gold: #ffcc00;
+    --gold-dark: #ff9900;
     --blue: #0099ff;
     --cyan: #005baa;
     --cyan-dark: #004888;
     --white: #fff;
+    --red: #cc0001;
+
+    --opacity-3: rgba(255, 255, 255, .3);
+    --transparent-3: rgba(0,0,0, .3);
 }
 
 .container{
@@ -44,4 +52,29 @@ a{
 a:hover{
     text-decoration: underline;
     color: var(--gold);
+}
+
+b,
+strong,
+.strong{
+    font-weight: 700!important;
+}
+
+/* іконки для публікацій */
+.ico-photo{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23005baa'%3E%3Cpath d='M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H48zm0 32h106c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H38c-3.3 0-6-2.7-6-6V80c0-8.8 7.2-16 16-16zm426 96H38c-3.3 0-6-2.7-6-6v-36c0-3.3 2.7-6 6-6h138l30.2-45.3c1.1-1.7 3-2.7 5-2.7H464c8.8 0 16 7.2 16 16v74c0 3.3-2.7 6-6 6zM256 424c-66.2 0-120-53.8-120-120s53.8-120 120-120 120 53.8 120 120-53.8 120-120 120zm0-208c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm-48 104c-8.8 0-16-7.2-16-16 0-35.3 28.7-64 64-64 8.8 0 16 7.2 16 16s-7.2 16-16 16c-17.6 0-32 14.4-32 32 0 8.8-7.2 16-16 16z'/%3E%3C/svg%3E");
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.ico-video{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' fill='%23005baa'%3E%3Cpath d='M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z'/%3E%3C/svg%3E");
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    position: relative;
+    top: 3px;
 }

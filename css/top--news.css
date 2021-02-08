@@ -3,7 +3,7 @@
 .top--news{
     display: grid;
     grid-template-columns: 75% 25%;
-    height: 330px;
+    min-height: 330px;
 }
 
 /* новина */

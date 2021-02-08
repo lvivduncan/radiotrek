@@ -1,0 +1,48 @@
+
+/* усі анонси */
+.articles a{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    text-decoration: none;
+    color: var(--gray-dark);
+    /* margin: 0 0 20px; */
+    transition: .5s;
+}
+
+.articles a:hover{
+    color: var(--cyan)
+}
+
+.articles a time{
+    transition: .5s;
+}
+
+.articles a:hover time{
+    transform: translateX(10px);
+}
+
+.articles a h3{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.articles article{
+    margin: 15px 0;
+}
+
+.articles article.strong{
+    border-top: 1px dotted var(--gray);
+    border-bottom: 1px dotted var(--gray);
+    padding: 10px 0;
+    margin: 5px 0;
+    color: var(--black);
+}
+
+article.strong + article.strong {
+    border-top: none;
+    margin-top: 0;
+}
+
+article.strong h3{
+    font-weight: 700;
+}
