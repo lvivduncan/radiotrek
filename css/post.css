@@ -1,0 +1,62 @@
+
+/* окремий анонс (допис) */
+.post{
+    overflow: hidden;
+}
+
+.post-image{
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+.post-image img{
+    transform: scale(1);
+    transition: .5s;
+}
+
+.post-image:hover img{
+    transform: scale(1.1);
+}
+
+.post time{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
+
+.post a{
+    color: var(--black);
+    text-decoration: none;
+    display: block;
+}
+
+.post a h3{
+    text-decoration: none;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.post a:hover h3{
+    text-decoration: underline;
+}
+
+/* великий допис */
+.post.hot{
+    
+}
+
+.post.hot h3{
+    font-size: 37px;
+    margin: 10px 0 20px;
+}
+
+.post.hot p{
+    font-size: 14px;
+}
+
+/* .post.hot time{
+    margin: 10px 0;
+} */

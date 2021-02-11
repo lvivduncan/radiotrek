@@ -1,0 +1,16 @@
+
+/* оголошення */
+.notice{
+    padding: 10px 0 20px;
+    margin: 10px 0;
+    border-bottom: 1px solid var(--blue);
+}
+
+.notice h5{
+    font-size: 17px;
+    margin: 0 0 10px;
+}
+
+.notice p{
+    font-size: 14px;
+}

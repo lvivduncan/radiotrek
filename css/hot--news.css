@@ -7,10 +7,10 @@
 }
 
 .hot-news-aside{
-
+    /* новини зліва */
 }
 
-/**/
+/* 4 анонси справа */
 .hot-news-content{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -62,10 +62,12 @@
 
 .hot-news-content__1 h2{
     font-size: 33px;
+    line-height: 1;
     width: 60%;
     transition: .5s;
     position: relative;
     z-index: 3;
+    margin: 0 0 5px;
 }
 
 .hot-news-content__1 time{
@@ -136,16 +138,12 @@
 /* 3 елемент (зліва внизу) */
 .hot-news-content__3{
     grid-area: hot-news-content-3;
-
 }
-
 
 /* 4 елемент (справа внизу) */
 .hot-news-content__4{
     grid-area: hot-news-content-4;
-
 }
-
 
 /* золотий фон, картинка, заголовок, мітка */
 .gold-link-block,

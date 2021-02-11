@@ -4,6 +4,9 @@
 
 @import url('./root.css');
 @import url('./header.css');
+@import url('./button.css');
+
+/* загальна обгортка */
 @import url('./body.css');
 
 /* усі анонси */
@@ -14,3 +17,24 @@
 
 @import url('./top--news.css');
 @import url('./hot--news.css');
+
+/* scroll */
+@import url('./simple-scrollbar.css');
+
+/* вставка скрола + лінка */
+@import url('./media--insert.css');
+
+/* решта новин */
+@import url('./outher--news.css');
+
+/* відео-анонси */
+@import url('./videos.css');
+
+/* голосування */
+@import url('./vote.css');
+
+/* окремий допис */
+@import url('./post.css');
+
+/* оголошення */
+@import url('./notice.css');

@@ -2,8 +2,9 @@
 #header{
     height: 70px;
     position: fixed;
+    z-index: 5;
     top:0;
     left:0;
     width:100%;
-    background:url('../images/background.png') repeat;
+    background:url('../images/header.png') repeat;
 }

@@ -1,0 +1,86 @@
+
+/* відео-блоки */
+.video-block{
+    overflow: hidden;
+}
+
+/* верхня частина блоку */
+.video-block-image{
+    position: relative;
+    display: block;
+}
+
+/* смуга */
+.video-block-image::before{
+    content: '';
+    width: 120px;
+    height: 40px;
+    margin-left: -80px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+    margin-top: -20px;
+    background: var(--gold);
+    transition: 0.3s;
+}
+
+/* трикутник */
+.video-block-image::after{
+    content: '';
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--cyan);
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -10px;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.video-block-image:hover::before{
+    margin-left: 0;
+    background: var(--cyan);
+}
+
+.video-block-image:hover::after{
+    margin-left: 80px;
+    border-left-color: var(--gold);
+}
+
+
+.video-block a{
+    position: relative;
+    text-decoration: none;
+}
+
+.video-block a img{
+    transform: scale(1);
+    transition: .5s;
+}
+
+.video-block a:hover img{
+    transform: scale(1.05);
+}
+
+.video-block a h3{
+    padding: 15px 0 10px 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 18px;
+}
+
+.video-block a:hover h3{
+    text-decoration: underline;
+}
+
+.video-block time{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--gray);
+}
