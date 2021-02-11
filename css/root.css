@@ -36,17 +36,6 @@ img{
     --transparent-3: rgba(0,0,0, .3);
 }
 
-.container{
-    width:1280px;
-    margin:auto;
-}
-
-@media(max-width:1300px){
-    .container{
-        width: 95%;
-    }
-}
-
 a{
     color:var(--cyan);
 }

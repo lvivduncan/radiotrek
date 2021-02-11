@@ -1,12 +1,12 @@
 
 /* основна шпальта */
-#body{
+.wrapper{
     width: 1280px;
     margin: auto;
 }
 
 @media(max-width:1300px){
-    #body{
+    .wrapper{
         width:95%;
     }
 }
