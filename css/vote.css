@@ -55,7 +55,6 @@
     text-decoration: underline;
 }
 
-
 #vote input[type="radio"]:hover + label::before{
     border-color: var(--red);
     width: 18px;

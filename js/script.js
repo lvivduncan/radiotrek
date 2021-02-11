@@ -20,3 +20,54 @@ SimpleScrollbar.initAll();
 
     }));
 }
+
+
+// slider 
+{
+    const slider = document.querySelector('.slider ul');
+    const left = document.querySelector('.slider-to-left');
+    const right = document.querySelector('.slider-to-right');
+
+    left.addEventListener('click', () => {
+        const first = slider.firstElementChild;
+        slider.append(first);
+
+        slider.style.transition = 'none';
+        slider.classList.add('to-left');
+        setTimeout(() => {
+            slider.classList.remove('to-left');
+            slider.style.transition = '.5s';
+        }, 50);
+    });
+
+    right.addEventListener('click', () => {
+        const last = slider.lastElementChild;
+        slider.prepend(last);
+
+        slider.style.transition = 'none';
+        slider.classList.add('to-right');
+        setTimeout(() => {
+            slider.classList.remove('to-right');
+            slider.style.transition = '.5s';
+        }, 50);
+    });
+
+    // автоскролл
+    function autoscroll(){
+        const first = slider.firstElementChild;
+        slider.append(first);
+
+        slider.style.transition = 'none';
+        slider.classList.add('to-left');
+
+        setTimeout(() => {    
+            slider.classList.remove('to-left');
+            slider.style.transition = '.5s';
+        }, 0);
+    }
+
+    setInterval(() => {
+        autoscroll();
+    }, 4000);
+    
+}
