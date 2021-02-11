@@ -86,3 +86,28 @@ SimpleScrollbar.initAll();
         offset.className = '';
     });
 }
+
+// live 
+{
+    const live = document.querySelector('#live a');
+
+    // console.log(live)
+
+    // автоскролл
+    function autoscroll(){
+        const first = live.firstElementChild;
+        live.append(first);
+
+        live.style.transition = 'none';
+        live.classList.add('to-up');
+
+        setTimeout(() => {    
+            live.classList.remove('to-up');
+            live.style.transition = '.5s';
+        }, 0);
+    }
+
+    setInterval(() => {
+        autoscroll();
+    }, 3000);
+}
