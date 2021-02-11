@@ -8,3 +8,81 @@
     width:100%;
     background:url('../images/header.png') repeat;
 }
+
+#logo{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -100px;
+    width: 194px;
+    height: 45px;
+}
+
+
+.online {
+    width: 100px;
+    height: 24px;
+    background: var(--gold);
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--black);
+    position: absolute;
+    top: 20px;
+    left: 65%;
+    line-height: 24px;
+    transition: .3s;
+}
+
+.online::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: var(--cyan);
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.online:hover{
+    background: var(--cyan);
+    text-decoration: none;
+}
+
+.online:hover::before{
+    border-left-color: var(--gold);
+}
+
+#header time{
+    position: absolute;
+    top: 23px;
+    right: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+#nav--bar{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+}
+
+#nav--bar span{
+    width: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#nav--bar svg{
+    width: 100%;
+    fill: var(--black);
+    transition: .5s;
+}
+
+#nav--bar :hover svg{
+    fill: var(--gold);
+}

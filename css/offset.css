@@ -1,0 +1,47 @@
+
+#offset{
+    position: fixed;
+    top: 0;
+    left: -320px;
+    z-index: 10;
+    height: 100vh;
+    width: 320px;
+    padding: 20px;
+    background: var(--gray-dark);
+    transform: translateX(0);
+    transition: .5s;
+}
+
+#offset.active{
+    transform: translateX(320px);
+}
+
+/* close button */
+#close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+    cursor: pointer;
+}
+
+#close svg{
+    fill: var(--gray);
+    width: 26px;
+}
+
+#offset-menu{
+    height: 95vh;
+}
+
+#offset-menu ul,
+#offset-menu li{
+    display: block;
+}
+
+#offset-menu a{
+    padding: 10px 0;
+    color: var(--white);
+    display: block;
+    text-decoration: none;
+}

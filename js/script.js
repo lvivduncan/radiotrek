@@ -71,3 +71,18 @@ SimpleScrollbar.initAll();
     }, 4000);
     
 }
+
+// offset menu
+{
+    const menu = document.querySelector('#menu');
+    const offset = document.querySelector('#offset');
+    const close = document.querySelector('#close');
+
+    menu.addEventListener('click', () => {
+        offset.className = 'active';
+    });
+
+    close.addEventListener('click', () => {
+        offset.className = '';
+    });
+}

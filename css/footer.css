@@ -30,6 +30,10 @@
     display: block;
 }
 
+#footer ul{
+    margin: 0 0 20px;
+}
+
 #footer li a{
     font-size: 12px;
     text-decoration: none;
@@ -41,23 +45,4 @@
 
 #footer li a:hover{
     text-decoration: underline;
-}
-
-/* social icons */
-.social{
-    margin: 0 0 30px;
-}
-
-.social a{
-    display: inline-block;
-    margin: 0 5px;
-}
-
-.social a svg{
-    width: 20px;
-    fill: var(--white);
-}
-
-.social a:hover svg{
-    fill: var(--gold);
 }
