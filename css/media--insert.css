@@ -7,9 +7,21 @@
     background: var(--black);
 }
 
+@media(max-width:640px){
+    .media--insert{
+        grid-template-columns: 1fr;
+    }
+}
+
 /* навігаційний скролл */
 .scroll{
     padding:30px 0;
+}
+
+@media(max-width:640px){
+    .scroll{
+        display: none;
+    }
 }
 
 .scroll-title{

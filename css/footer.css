@@ -14,6 +14,18 @@
     grid-gap: 30px;
 }
 
+@media(max-width:540px){
+    #footer .wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:400px){
+    #footer .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
 #footer .title{
     color:var(--white);
     font-size: 17px;
@@ -45,4 +57,10 @@
 
 #footer li a:hover{
     text-decoration: underline;
+}
+
+.footer-2-column{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
 }
