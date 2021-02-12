@@ -1,0 +1,15 @@
+
+.button{
+    color: var(--gold);
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background: var(--cyan);
+    text-align: center;
+    font-weight: bold;
+}
+
+.button:hover{
+    color: var(--cyan);
+    background: var(--gold);
+}
