@@ -4,12 +4,19 @@
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 800;
-
-
-    flex: 0 1 100%;
 }
 
 .title a{
     color: var(--blue);
     text-decoration: none;
+}
+
+.title-big{
+    font-weight: 800;
+    color: var(--gold);
+    font-size: 48px;
+    margin: 40px 0;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
 }

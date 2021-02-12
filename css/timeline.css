@@ -1,0 +1,41 @@
+/* погодинний розклад */
+#timeline{
+    width: 60%;
+    margin: 40px auto;
+}
+
+@media(max-width:776px){
+    #timeline{
+        width: 100%;
+    }
+}
+
+#timeline li{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    text-align: left;
+    padding: 15px 20%;
+    border-bottom: var(--gray-light) solid 1px;
+}
+
+@media(max-width:540px){
+    #timeline li{
+        padding: 15px 10px;
+    }
+}
+
+#timeline li.active{
+    background: var(--gold);
+}
+
+#timeline time{
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#timeline h6{
+    font-weight: normal;
+    font-size: 20px;
+}

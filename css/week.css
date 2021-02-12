@@ -1,0 +1,45 @@
+
+/* тиждень */
+#week{
+    margin: 30px 0;
+    display: block;
+    text-align: center;
+}
+
+#week a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-decoration: none;
+    border-radius: 100px;
+    background: var(--gold);
+    color: var(--cyan);
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    transition: .5s;
+}
+
+#week a.active{
+    color: var(--gold);
+    background: var(--cyan);
+}
+
+#week a:hover,
+#week a.active:hover{
+    transform: scale(1.1);
+    color: var(--gold);
+    background: var(--blue);
+}
+
+#week h5{
+    font-size: 42px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+#week p{
+    font-size: 12px;
+    line-height: 1;
+}

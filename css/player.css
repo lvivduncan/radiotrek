@@ -1,0 +1,128 @@
+
+#player{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+
+@media(max-width:996px){
+    #player{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* блок зліва */
+#player-list{
+    text-align: center;
+    margin: 30px 0;
+}
+
+#player-list ul{
+    display: block;
+}
+
+/* останній */
+#player-list li{
+    position: relative;
+    color: var(--black);
+    display: block;
+    padding: 10px;
+    font-weight: 700;
+}
+
+/* майбутній */
+#player-list li:first-child{
+    color: var(--gray-light);
+}
+
+#player-list li:first-child::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    display: block;
+    height: 1px;
+    background: var(--blue-extralight);
+}
+
+/* активний */
+#player-list li.active{
+    background: var(--cyan);
+    border-radius: 3px;
+    color: var(--white);
+    cursor: pointer;
+    transition: .5s;
+}
+
+#player-list li.active::before{
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' fill='%23ffffff'%3E%3Cpath d='M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z'/%3E%3C/svg%3E");
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 24px;
+}
+
+#player-list li.active:hover{
+    background: var(--blue-light);
+}
+
+#player-list li:last-child::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    display: block;
+    height: 1px;
+    background: var(--blue-extralight);
+}
+
+/* блок справа */
+#sound-format{
+    text-align: center;
+    padding: 30px 0 0
+}
+
+#sound-format p{
+    text-transform: uppercase;
+    color: var(--gray);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#sound-format span{
+    display: block;
+    margin: 0 auto 10px;
+    letter-spacing: 3px;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#sound-format a{
+    display: inline-block;
+    font-size: 42px;
+    color: var(--blue);
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 20px;
+    line-height: 1;
+    transition: .5s;
+}
+
+#sound-format a span{
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 0;
+}
+
+#sound-format a:hover{
+    color: var(--cyan);
+}
+
+#sound-format a:hover span{
+    color: var(--blue);
+}

@@ -13,7 +13,15 @@
 /* offset-nav */
 @import url('./offset.css');
 
+/* кнопки */
 @import url('./button.css');
+
+/* плеєр */
+@import url('./player.css');
+
+/* розклад */
+@import url('./week.css');
+@import url('./timeline.css');
 
 /* загальна обгортка */
 @import url('./wrapper.css');
