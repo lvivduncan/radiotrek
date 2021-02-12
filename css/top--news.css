@@ -3,7 +3,8 @@
 .top--news{
     display: grid;
     grid-template-columns: 75% 25%;
-    min-height: 330px;
+    /* min-height: 330px; */
+    min-height: 255px;
 }
 
 @media(max-width:1020px){
@@ -98,7 +99,8 @@
 .top-news-news h2{
     margin: 20px 0;
     font-weight: 800;
-    font-size: 32px;
+    /* font-size: 32px; */
+    font-size: 24px;
     line-height: 1.1;
 }
 
@@ -106,7 +108,8 @@
 .top-news-aside{
     background: var(--black) url('../images/wave-blue-bg.png') bottom right no-repeat;
     color:var(--gray-light);
-    padding:30px;
+    /* padding:30px; */
+    padding: 10px 30px;
 }
 
 @media(max-width: 1020px){
@@ -121,7 +124,8 @@
     color: var(--gold);
     font-weight: 800;
     display: inline-block;
-    font-size: 34px;
+    /* font-size: 34px; */
+    font-size: 30px;
     line-height: 0.5;
 }
 
@@ -131,7 +135,8 @@
 
 .top-news-aside h5{
     color: var(--gold);
-    margin: 15px 0;
+    /* margin: 15px 0; */
+    margin: 10px 0;
 }
 
 .top-news-aside a{
@@ -145,7 +150,8 @@
 
 .top-news-aside h3{
     color: var(--gray-light);
-    font-size: 28px;
+    /* font-size: 28px; */
+    font-size: 22px;
     font-weight: 600;
     line-height: 1.1;
     margin: 0 0 10px

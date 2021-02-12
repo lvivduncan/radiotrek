@@ -20,9 +20,6 @@
         <time>понедiлок 8 лютого </time>
 
         <nav id="nav--bar">
-            <span id="menu">
-                <svg viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
-            </span>
             <span id="search">
                 <svg viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
             </span>
@@ -37,6 +34,10 @@
                 <span>All We Got - Robin Schulz & Kiddo</span>
             </a>            
         </div>
+
+        <span id="mobile-menu">
+            <svg viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+        </span>
 
     </header>
 
@@ -120,7 +121,40 @@
         <div class="ad">ad</div>
 
         <div class="hot--news">
-            <aside class="hot-news-aside">
+            <aside id="aside-menu">
+                <ul>
+                    <li><h6>НОВИНИ</h6></li> 
+                    <li><a href="https://radiotrek.rv.ua/politics/">Політика</a></li>
+                    <li><a href="https://radiotrek.rv.ua/economics/">Економіка</a></li>
+                    <li><a href="https://radiotrek.rv.ua/society/">Суспільство</a></li>
+                    <li><a href="https://radiotrek.rv.ua/kryminal/">Кримінал </a></li>
+                    <li><a href="https://radiotrek.rv.ua/showbiz/">ШОУ-BIZ</a></li>
+                    <li><a href="https://radiotrek.rv.ua/sport/">Спорт</a></li>
+                    <li><a href="https://radiotrek.rv.ua/zdnrnvya/">Здоров'я</a></li>
+                    <li><a href="https://radiotrek.rv.ua/vnspndarstvn/">Дім і сад</a></li>
+                    <li><a href="https://radiotrek.rv.ua/kslinariya/">Кулінарія</a></li>
+                    <li><a href="https://radiotrek.rv.ua/mnda-i-styl/">Мода і стиль</a></li>
+                    <li><a href="https://radiotrek.rv.ua/tsikave/" class="mr0">Цікаве</a></li>
+                    <li><a href="/news/">Новини</a></li>
+                    <li><a href="https://radiotrek.rv.ua/region/rivne/">Рівне</a></li>
+                    <li><a href="https://radiotrek.rv.ua/region/ukraine/">Україна</a></li>
+                    <li><a href="https://radiotrek.rv.ua/region/world/">Світ</a></li>
+                    <li><a href="https://radiotrek.rv.ua/region/revinny/" class="mr0">Регіони</a></li>
+                    <li><a href="/articles/">Cтатті</a></li>
+                    <li><a href="/medianews/">Фото-відео</a></li>
+                    <li><a href="/announce/">Анонси</a></li>
+                    <li><h6>РАДІО</h6></li>
+                    <li><a href="/radio/projects/">Програми та проекти</a></li>
+                    <li><a href="/radio/presenters/">Ведучі</a></li>
+                    <li><a href="/radio/feedback/">Зворотній звязок</a></li>
+                    <li><a href="/radio/programa/">Слухай онлайн</a></li>
+                    <li><a href="/notices/">Оголошення</a></li>
+                    <li><a href="/poll/">Опитування</a></li>
+                    <li><a href="/about/">Про нас</a></li>
+                    <li><a href="/reklama/">Реклама</a></li>
+                </ul>
+            </aside>
+            <div class="hot-news-aside">
                 <section class="articles">
                     <article class="strong">
                         <a href="">
@@ -170,7 +204,7 @@
                             <h3>Вперше в історії рівненська баскетболістка захищала українську збірну</h3>
                         </a>
                     </article>
-                    <article>
+                    <!-- <article>
                         <a href="">
                             <time>13:25</time>
                             <h3>Представники Рівненщини поїхали на форум «Україна 30. Коронавірус: виклики та відповіді» </h3>
@@ -181,7 +215,7 @@
                             <time>13:35</time>
                             <h3>«Вакцина дефіцитна та дорога, примусово ніхто її використовувати не буде», - Сафонов </h3>
                         </a>
-                    </article>
+                    </article> -->
                     <article class="strong">
                         <a href="">
                             <time>13:40</time>
@@ -189,7 +223,7 @@
                         </a>
                     </article>
                 </section>
-            </aside>
+            </div>
             <div class="hot-news-content">
 
                 <!-- верх зліва -->
@@ -215,7 +249,7 @@
                     </a>
                     
                     <a href="" class="white-link-block">
-                        П’яна сварка українців в Польщі закінчилася убивством
+                        П’яна сварка українців в Польщі
                     </a>
 
                 </article>
@@ -231,7 +265,7 @@
                     </a>
 
                     <a href="" class="white-link-block">
-                        Як 8 лютого виганяли зло з оселі: народні прикмети
+                        Як 8 лютого виганяли зло
                     </a>
 
                 </article>

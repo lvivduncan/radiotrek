@@ -21,7 +21,7 @@
 @media(max-width:420px){
     #logo{
         width: 110px;
-        margin-left: -20px;
+        margin-left: -55px;
         top: 20px;
     }
 }
@@ -55,7 +55,7 @@
         width: 24px;
         border-radius: 24px;
         left: auto;
-        right: 20px;
+        right: 50px;
     }
 }
 
@@ -99,14 +99,14 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100px;
+    width: 80px;
 }
 
 #nav--bar span{
     width: 20px;
     cursor: pointer;
     display: inline-block;
-    margin-left: 10px;
+    margin-right: 5px;
 }
 
 #nav--bar svg{
@@ -117,6 +117,31 @@
 
 #nav--bar :hover svg{
     fill: var(--gold);
+}
+
+/**/
+#mobile-menu{
+    display: none;
+}
+
+#mobile-menu svg{
+    width: 20px;
+    fill: var(--black);
+    transition: .5s;
+}
+
+#mobile-menu:hover svg{
+    fill: var(--gold);
+}
+
+@media(max-width:776px){
+    #mobile-menu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
 }
 
 /* активна стрічка */

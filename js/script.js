@@ -74,7 +74,7 @@ SimpleScrollbar.initAll();
 
 // offset menu
 {
-    const menu = document.querySelector('#menu');
+    const menu = document.querySelector('#mobile-menu');
     const offset = document.querySelector('#offset');
     const close = document.querySelector('#close');
 
