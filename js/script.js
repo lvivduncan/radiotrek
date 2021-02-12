@@ -28,7 +28,7 @@ SimpleScrollbar.initAll();
     const left = document.querySelector('.slider-to-left');
     const right = document.querySelector('.slider-to-right');
 
-    left.addEventListener('click', () => {
+    left && left.addEventListener('click', () => {
         const first = slider.firstElementChild;
         slider.append(first);
 
@@ -40,7 +40,7 @@ SimpleScrollbar.initAll();
         }, 50);
     });
 
-    right.addEventListener('click', () => {
+    right && right.addEventListener('click', () => {
         const last = slider.lastElementChild;
         slider.prepend(last);
 
@@ -54,16 +54,18 @@ SimpleScrollbar.initAll();
 
     // автоскролл
     function autoscroll(){
-        const first = slider.firstElementChild;
-        slider.append(first);
+        if(slider){
+            const first = slider.firstElementChild;
+            slider.append(first);
+        
+            slider.style.transition = 'none';
+            slider.classList.add('to-left');
 
-        slider.style.transition = 'none';
-        slider.classList.add('to-left');
-
-        setTimeout(() => {    
-            slider.classList.remove('to-left');
-            slider.style.transition = '.5s';
-        }, 0);
+            setTimeout(() => {    
+                slider.classList.remove('to-left');
+                slider.style.transition = '.5s';
+            }, 0);
+        }
     }
 
     setInterval(() => {
