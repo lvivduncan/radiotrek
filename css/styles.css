@@ -16,6 +16,9 @@
 /* кнопки */
 @import url('./button.css');
 
+/* загальна обгортка */
+@import url('./wrapper.css');
+
 /* плеєр */
 @import url('./player.css');
 
@@ -26,8 +29,14 @@
 /* пошук */
 @import url('./search.css');
 
-/* загальна обгортка */
-@import url('./wrapper.css');
+/* окрема сторінка */
+@import url('./page.css');
+
+/* вкладки */
+@import url('./post-tabs.css');
+
+/* кнопки шарингу */
+@import url('./like.css');
 
 /* усі анонси */
 @import url('./articles.css');

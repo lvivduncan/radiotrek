@@ -1,0 +1,18 @@
+
+.like{
+    max-width: 80px;
+}
+
+.like a,
+.like p{
+    cursor: pointer;
+}
+
+.like svg{
+    width:30px;
+    fill: var(--gold);
+}
+
+.like svg:hover{
+    fill: var(--cyan);
+}
