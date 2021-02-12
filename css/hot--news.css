@@ -26,7 +26,7 @@
 }
 
 /* вліплене меню збоку */
-#aside-menu,
+/* #aside-menu,
 #aside-menu li,
 #aside-menu a{
     display: block;
@@ -63,14 +63,12 @@
 }
 
 #aside-menu li a:hover{
-    /* color:var(--cyan); */
-    /* text-decoration: none; */
     transform:translateX(5px)
 }
 
 #aside-menu li a:hover::before{
     border-left-color: var(--gold);
-}
+} */
 
 
 .hot-news-aside{
