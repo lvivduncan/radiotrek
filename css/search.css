@@ -1,0 +1,76 @@
+
+/* результати пошуку */
+#search-result{}
+
+#search-query{
+    font-size: 32px;
+    border-bottom: 2px solid var(--gold);
+    padding-left: 215px;
+    font-weight: 800;
+}
+
+@media(max-width:540px){
+    #search-query{
+        padding-left: 0;
+    }
+}
+
+#search-quantity{
+    margin: 0 0 30px;
+    padding-left: 215px;
+    font-size: 15px;
+}
+
+@media(max-width:540px){
+    #search-quantity{
+        padding: 0;
+    }
+}
+
+#search-result ul{
+    display: block;
+    padding: 0 30px;
+}
+
+@media(max-width:540px){
+    #search-result ul{
+        padding: 0;
+    }
+}
+
+#search-result li{
+    display: grid;
+    grid-template-columns: 185px 1fr;
+    margin-bottom: 30px;
+}
+
+@media(max-width: 540px){
+    #search-result li{
+        grid-template-columns: 1fr;
+    }
+}
+
+#search-result li a{
+    display: block;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color:var(--black);
+    line-height: 1.1;
+}
+
+#search-result li a:hover{
+    text-decoration: underline;
+}
+
+#search-result li time{
+    display: block;
+    font-size: 14px;
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+#search-result li p{
+    font-size: 14px;
+}
