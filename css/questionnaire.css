@@ -35,6 +35,19 @@
     background: var(--cyan);
 }
 
+@media(max-width:996px){
+
+    .questionnaire::before{
+        top: -60%;
+        left: -75%;
+    }
+    
+    .questionnaire:hover::before{
+        top: -50%;
+        left: -120%;
+    }
+}
+
 .questionnaire p{
     position: relative;
     z-index: 2;
