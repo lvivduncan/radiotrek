@@ -1,0 +1,60 @@
+
+/* блок для постів на сторінці новин */
+.news{
+    display: grid;
+    grid-template-columns: 1fr 302px;
+    grid-gap: 30px;
+    margin: 20px 0;
+}
+
+@media(max-width:776px){
+    .news{
+        grid-template-columns: 1fr;
+    }
+}
+
+.news section > time{
+    padding: 0 0 0 220px;
+    color: var(--blue);
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+@media(max-width:996px){
+    .news section > time{
+        padding: 0 0 0 140px;
+    }
+}
+
+.news article{
+    display: grid;
+    grid-template-columns: 60px 160px 1fr;
+    margin: 20px 0;
+}
+
+@media(max-width:996px){
+    .news article{
+        grid-template-columns: 60px 80px 1fr;
+    }    
+}
+
+/* мікро картинка зліва */
+.news article img{}
+
+/* час */
+.news article time{
+    text-align: center;
+    font-weight: 700;
+}
+
+/* лінк */
+.news article a{
+    color: var(--black);
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.news article a:hover{
+    text-decoration: underline;
+}

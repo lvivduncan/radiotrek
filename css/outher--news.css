@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 302px;
     grid-gap: 30px;
-    margin-top: 30px;
+    margin: 20px 0;
 }
 
 @media(max-width:776px){
