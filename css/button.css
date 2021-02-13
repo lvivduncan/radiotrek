@@ -1,4 +1,5 @@
 
+/* жовта на всю ширину */
 .button{
     color: var(--gold);
     display: block;
@@ -7,9 +8,145 @@
     background: var(--cyan);
     text-align: center;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition:.5s;
 }
 
 .button:hover{
     color: var(--cyan);
     background: var(--gold);
+    text-decoration: none;
+}
+
+/* скруглена жовта кнопка */
+.button-yellow{
+    display: inline-block;
+    line-height: 50px;
+    height: 50px;
+    white-space: nowrap;
+    color: var(--cyan);
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0 40px;
+    background: var(--gold);
+    border: 0;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button-yellow:hover{
+    color: var(--gold);
+    background: var(--blue);
+    text-decoration: none;
+}
+
+/* всі новини (на всю ширину) */
+.button-news{
+    border-radius: 10px;    
+    display: block;
+    border: var(--blue) solid 2px;
+    color: var(--blue);
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button-news:hover{
+    background: var(--blue);
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+/* заповнити анкету */
+.button-sheet{
+    border: 3px solid var(--gold);
+    background: var(--yellow);
+    padding: 40px 40px 0px 40px;
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    font-weight: 800;
+
+    transition:.5s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.button-sheet::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    bottom: 0;
+    left: -50%;
+    z-index: 2;
+
+    background: var(--gold-light);
+    transform: rotate(140deg);
+    transition: .25s;
+}
+
+.button-sheet:hover::before{
+    top: -65%;
+    left: -20%;
+    background: var(--cyan);
+}
+
+@media(max-width:996px){
+
+    .button-sheet::before{
+        top: -60%;
+        left: -75%;
+    }
+    
+    .button-sheet:hover::before{
+        top: -50%;
+        left: -120%;
+    }
+}
+
+.button-sheet p{
+    position: relative;
+    z-index: 2;
+    
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--cyan);
+}
+
+.button-sheet span{
+    background: var(--gold);
+    line-height: 50px;
+    height: 50px;
+    padding: 0;
+    margin-top: 40px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.button-sheet:hover {
+    background-color: var(--blue-light);
+    border-color: var(--blue);
+    text-decoration: none;
+}
+
+.button-sheet:hover p{
+    color: var(--gold-light);
+}
+
+.button-sheet:hover span {
+      background-color: var(--blue);
+      color: var(--white);
 }
