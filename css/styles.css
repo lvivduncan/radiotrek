@@ -74,4 +74,7 @@
 /* slider */
 @import url('./slider.css');
 
+/* посторінкова навігація */
+@import url('./pagination.css');
+
 @import url('./footer.css');
