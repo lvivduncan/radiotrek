@@ -46,7 +46,7 @@
     margin-top: 30px;
 }
 
-@media(max-width:776px){
+@media(max-width:996px){
     .general-news{
         grid-gap: 10px;
     }

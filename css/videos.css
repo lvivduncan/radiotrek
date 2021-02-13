@@ -74,6 +74,12 @@
     font-size: 18px;
 }
 
+@media(max-width:996px){
+    .video-block a h3{
+        font-size: 14px;
+    }
+}
+
 .video-block a:hover h3{
     text-decoration: underline;
 }
