@@ -68,3 +68,24 @@
     }
 }
 
+/* заголовок редакції */
+.title-office{
+    text-align: center;
+    font-size: 114px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 800;
+    line-height: .9;
+}
+
+@media(max-width: 996px){
+    .title-office{
+        font-size: 80px
+    }
+}
+
+@media(max-width: 420px){
+    .title-office{
+        font-size: 40px
+    }
+}
