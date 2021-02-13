@@ -1,0 +1,158 @@
+
+/* сторінка контактів */
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 302px;
+    grid-gap: 30px;
+    margin: 20px 0;
+}
+
+@media(max-width:776px){
+    .contact{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* блок зліва */
+.contact-form{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: 
+        'contact-form-image contact-form-content' 
+        'contact-form-form contact-form-form';
+}
+
+@media(max-width:996px){
+    .contact-form{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'contact-form-content' 
+        'contact-form-form';
+    }
+}
+
+.contact-form svg{
+    fill: var(--cyan);
+    grid-area: contact-form-image;
+}
+
+@media(max-width:996px){
+    .contact-form svg{
+        display: none;
+    }
+}
+
+.contact-form header{
+    padding: 0 100px;
+    grid-area: contact-form-content;
+}
+
+@media(max-width:996px){
+    .contact-form header{
+        padding: 0;
+    }
+}
+
+.contact-form header h2{
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.contact-form form{
+    grid-area: contact-form-form;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+    grid-template-areas: 
+        'contact-form-name contact-form-mail' 
+        'contact-form-project contact-form-project' 
+        'contact-form-message contact-form-message' 
+        'contact-form-send contact-form-send';
+    margin: 20px 0;
+}
+
+.contact-form .name{
+    grid-area: contact-form-name;
+}
+
+.contact-form .mail{
+    grid-area: contact-form-mail;
+}
+
+.contact-form .project{
+    grid-area: contact-form-project;
+}
+
+.contact-form .message{
+    grid-area: contact-form-message;
+}
+
+.contact-form .send{
+    grid-area: contact-form-send;
+}
+
+.contact-form label{
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contact-form label::before{
+    content: '';
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    background: var(--red);
+    margin-right: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea,
+.contact-form select{
+    width: 100%;
+    padding: 15px;
+    border: var(--gray) solid 1px;
+    outline: none;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.contact-form textarea{
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{
+    border-color: var(--gold);
+}
+
+/* адреса у сайдбарі */
+.address{
+    padding: 20px 40px;
+    background: var(--gold);
+    color: var(--black);
+}
+
+@media(max-width:776px){
+    .address{
+        display: none;
+    }
+}
+
+.address h2{
+    margin: 0 0 30px;
+    text-transform: uppercase;
+}
+
+.address p{
+    margin: 0 0 20px;
+}
