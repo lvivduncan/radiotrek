@@ -98,7 +98,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 30px;
-    margin: 0 0 20px;
+    /* margin: 0 0 20px; */
 }
 
 @media(max-width:996px){

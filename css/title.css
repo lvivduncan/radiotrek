@@ -20,3 +20,29 @@
     text-align: center;
     text-transform: uppercase;
 }
+
+/* великий хедер */
+.title-header{
+    height: 150px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(120deg, var(--gold) 0%, var(--gold) 75%, var(--yellow) 75%, var(--yellow) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 50%, 46% 100%, 46% 50%, 0 50%);
+    padding: 10px 0 0;
+    color: var(--blue);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+@media(max-width: 776px){
+    .title-header{
+        height: auto;
+        font-size: 36px;
+        background: var(--gold);
+        clip-path: none;
+        padding: 10px;
+        margin: 0 0 30px;
+    }
+}

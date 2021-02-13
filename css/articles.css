@@ -46,3 +46,17 @@ article.strong + article.strong {
 article.strong h3{
     font-weight: 700;
 }
+
+/* дата блоку новин */
+.articles > time{
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    border-bottom: var(--blue-extralight) solid 2px;
+}
+
+.articles article + time{
+    margin: 20px 0 0;
+}

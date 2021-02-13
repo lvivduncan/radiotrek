@@ -1,0 +1,57 @@
+
+/* сторінка категорій, 3 колонки */
+.category--news{
+    display: grid;
+    grid-template-columns: repeat(2,1fr) 302px;
+    grid-gap: 30px;
+}
+
+@media(max-width: 996px){
+    .category--news{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 640px){
+    .category--news{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 1новина зліва */
+.category-news-hot{
+    margin: 0 0 20px;
+}
+
+.category-news-hot img{
+    width: 100%!important;
+}
+
+.category-news-hot a{
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.category-news-hot div{
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan) 25%, var(--cyan-dark) 25%, var(--cyan-dark) 100%);
+
+    color: var(--white);
+    padding: 20px 40px;
+}
+
+.category-news-hot a h2{
+    text-decoration: none;
+    padding: 20px 0;
+}
+
+.category-news-hot a:hover h2{
+    text-decoration: underline;
+}
+
+/* правий блок, що ховається на 996 */
+@media(max-width:996px){
+    .category-news-hide{
+        display: none;
+    }
+}

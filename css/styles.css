@@ -47,6 +47,9 @@
 @import url('./top--news.css');
 @import url('./hot--news.css');
 
+@import url('./category--news.css');
+@import url('./category--hot.css');
+
 /* scroll */
 @import url('./simple-scrollbar.css');
 
