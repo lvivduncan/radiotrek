@@ -1,9 +1,9 @@
 
 .like{
-    max-width: 80px;
+    max-width: 40px;
 }
 
-.like a,
+.like span,
 .like p{
     cursor: pointer;
 }

@@ -44,6 +44,14 @@
     padding: 20px 0;
 }
 
+.post-tabs-content ul{
+    display: none;
+}
+
+.post-tabs-content ul.active{
+    display: block;
+}
+
 .post-tabs-content li{
     display: block;
     margin: 0 0 10px;

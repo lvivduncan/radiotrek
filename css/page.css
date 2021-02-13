@@ -2,13 +2,8 @@
 /* окрема сторінка */
 #page{
     display: grid;
-    grid-template-columns: 65px 1fr 300px;
-    grid-gap: 30px;
-}
-
-/* блок з кнопками лайків */
-.like{
-
+    grid-template-columns: 40px 1fr 300px;
+    grid-gap: 20px;
 }
 
 /* основна шпальта */
