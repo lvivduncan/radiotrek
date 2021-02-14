@@ -1,0 +1,21 @@
+
+.blank{
+    width: 720px;
+    margin: 30px auto;
+}
+
+@media(max-width:740px){
+    .blank{
+        width: 95%;
+    }
+}
+
+.blank h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 60px;
+}
+
+.blank p{
+    margin: 0 0 30px;
+}
