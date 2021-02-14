@@ -19,3 +19,7 @@
 .blank p{
     margin: 0 0 30px;
 }
+
+.blank iframe{
+    width: 100%!important;
+}

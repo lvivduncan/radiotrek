@@ -1,0 +1,41 @@
+
+/* сторінка старих голосувань */
+.votes--old{
+    display: grid;
+    grid-template-columns: 1fr 302px;
+    grid-gap: 30px;
+}
+
+@media(max-width:776px){
+    .votes--old{
+        grid-template-columns: 1fr;
+    }
+    .votes--old aside{
+        display: none;
+    }
+}
+
+.votes-old-list h1{
+    color: var(--blue-extralight);
+}
+
+.votes-old-list ul,
+.votes-old-list li{
+    display: block;
+    margin: 0 0 10px;
+}
+
+.votes-old-list a{
+    font-size: 18px;
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.votes-old-list a:hover{
+    text-decoration: underline;
+}
+
+.votes-old-list time{
+    color: var(--blue);
+}
