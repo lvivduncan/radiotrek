@@ -13,7 +13,7 @@
     }
 }
 
-.news section > time{
+.news header time{
     padding: 0 0 0 220px;
     color: var(--blue);
     font-size: 18px;
@@ -22,7 +22,7 @@
 }
 
 @media(max-width:996px){
-    .news section > time{
+    .news header time{
         padding: 0 0 0 140px;
     }
 }
