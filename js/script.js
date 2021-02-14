@@ -196,5 +196,57 @@ SimpleScrollbar.initAll();
     }));
 
   });
+}
 
+
+// big top slider 
+{
+  const slider = document.querySelector('#project-slider ul');
+  const left = document.querySelector('#project-to-left');
+  const right = document.querySelector('#project-to-right');
+
+  left && left.addEventListener('click', () => {
+      const first = slider.firstElementChild;
+      slider.append(first);
+
+      slider.style.transition = 'none';
+      slider.classList.add('to-left');
+      setTimeout(() => {
+          slider.classList.remove('to-left');
+          slider.style.transition = '.75s';
+      }, 50);
+  });
+
+  right && right.addEventListener('click', () => {
+      const last = slider.lastElementChild;
+      slider.prepend(last);
+
+      slider.style.transition = 'none';
+      slider.classList.add('to-right');
+      setTimeout(() => {
+          slider.classList.remove('to-right');
+          slider.style.transition = '.75s';
+      }, 50);
+  });
+
+  // автоскролл
+  function autoscroll(){
+      if(slider){
+          const first = slider.firstElementChild;
+          slider.append(first);
+      
+          slider.style.transition = 'none';
+          slider.classList.add('to-left');
+
+          setTimeout(() => {    
+              slider.classList.remove('to-left');
+              slider.style.transition = '.75s';
+          }, 0);
+      }
+  }
+
+  setInterval(() => {
+      autoscroll();
+  }, 4000);
+  
 }

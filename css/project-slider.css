@@ -1,0 +1,109 @@
+
+/* 1280*560 */
+#project-slider{
+    position: relative;
+    /* height: 560px; */
+}
+
+#project-slider-wrapper{
+    overflow: hidden;
+}
+
+#project-logo{
+    position: absolute;
+    top: 50%;
+    right: 200px;
+    z-index: 4;
+    margin-top: -115px
+}
+
+@media(max-width:776px){
+    #project-logo{
+        display: none;
+    }
+}
+
+#project-slider ul{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10,100%);
+    left: -100%;
+}
+
+#project-slider li{
+    display: block;
+}
+
+#project-slider img{
+    width: 100%!important;
+}
+
+/* навігація */
+#project-to-left,
+#project-to-right{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -20px;
+    background: var(--gold);
+    cursor: pointer;
+}
+
+#project-to-left{
+    left: 0;
+}
+
+#project-to-left::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--cyan);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-135deg);
+    transition: .3s;
+}
+
+#project-to-left:hover::before{
+    border-width: 3px;
+    top: 8px;
+}
+
+#project-to-right{
+    right: 0;
+}
+
+#project-to-right::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--cyan);
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transition: .3s;
+    transform: rotate(45deg);
+}
+
+#project-to-right:hover::before{
+    border-width: 3px;
+    top: 8px;
+}
+
+/* класи для анімації та руху */
+.to-left {
+    transform: translateX(100%);
+}
+
+.to-right {
+    transform: translateX(-100%);
+}
+
+/* todo: додати прозорий золотий блок з описом */

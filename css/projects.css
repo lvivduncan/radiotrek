@@ -1,0 +1,95 @@
+
+#project-description{
+    padding: 40px 200px;
+    background: var(--gray-dark);
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+@media(max-width:776px){
+    #project-description{
+        padding: 20px;
+    }
+}
+
+/* проєкти */
+.projects{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 30px;
+    margin: 20px 0;
+}
+
+@media(max-width:996px){
+    .projects{
+        grid-template-columns: repeat(2,1fr);
+        grid-row-gap: 10px;
+    }
+}
+
+@media(max-width:776px){
+    .projects{
+        grid-template-columns: 1fr;
+    }
+}
+
+.projects a{
+    display: block;
+    text-decoration: none;
+}
+
+.projects a img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.projects a div{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--blue);
+    overflow: hidden;
+}
+
+.projects a div::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 220px;
+    z-index: 1;
+    display: inline-block;
+    width: 335px;
+    height: 200px;
+    background: var(--blue-light);
+    transform: rotate(-45deg);
+    transition: .5s;
+}
+
+.projects a:hover div::before{
+    left: 350px;
+}
+
+@media(max-width:776px){
+    .projects a div::before{
+        left: 475px;
+    }
+
+    .projects a:hover div::before{
+        left: 645px;
+    }
+}
+
+.projects a div h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
