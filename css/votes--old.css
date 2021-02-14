@@ -17,6 +17,7 @@
 
 .votes-old-list h1{
     color: var(--blue-extralight);
+    font-size: 42px;
 }
 
 .votes-old-list ul,
@@ -38,4 +39,40 @@
 
 .votes-old-list time{
     color: var(--blue);
+}
+
+/* результат якогось голосування */
+.votes-old-result{
+    margin: 0 0 20px;
+}
+
+.votes-old-result h1{
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--black);
+    margin: 0 0 10px;
+}
+
+.votes-old-result time{
+    display: block;
+    color: var(--blue);
+    font-size: 12px;
+    margin: 0 0 5px;
+}
+
+.votes-old-result .poll{
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.votes-old-result .poll strong{
+    color: var(--gold);
+}
+
+.votes-old-result .poll > div{
+    height: 5px;
+    background: var(--gold);
+    margin: 5px 0 20px;
 }
