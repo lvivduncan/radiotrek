@@ -48,15 +48,58 @@
 
 @media(max-width:776px){
     .region{
-
+        grid-template-columns: 1fr;
     }
 }
 
 .region article{
     display: grid;
     grid-template-columns: 180px 1fr;
+    margin: 0 0 30px;
 }
 
 .region article img{
     width: 160px;
+}
+
+.region article h3{
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.region article h3 a{
+    text-decoration: none;
+    color: var(--black)
+}
+
+.region article h3 a:hover{
+    text-decoration: underline;
+}
+
+.region article time{
+    display: block;
+    color: var(--blue);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.region article time span{
+    font-weight: 700;
+}
+
+/* лінк на категорію */
+.region article .cat{
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* короткий анонс */
+.region article p a{
+    font-size: 14px;
+    color: var(--black);
+    text-decoration: none;
 }
