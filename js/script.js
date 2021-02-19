@@ -74,17 +74,17 @@ SimpleScrollbar.initAll();
     
 }
 
-// offset menu
+// offset menu 
 {
     const menu = document.querySelector('#mobile-menu');
     const offset = document.querySelector('#offset');
     const close = document.querySelector('#close');
 
-    menu.addEventListener('click', () => {
+    menu && menu.addEventListener('click', () => {
         offset.className = 'active';
     });
 
-    close.addEventListener('click', () => {
+    close && close.addEventListener('click', () => {
         offset.className = '';
     });
 }
@@ -92,8 +92,6 @@ SimpleScrollbar.initAll();
 // live 
 {
     const live = document.querySelector('#live a');
-
-    // console.log(live)
 
     // автоскролл
     function autoscroll(){

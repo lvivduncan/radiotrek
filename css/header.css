@@ -1,28 +1,44 @@
 /* фіксований хедер */
 #header{
     height: 70px;
+    padding: 12px 0 0;
     position: fixed;
     z-index: 5;
-    top:0;
-    left:0;
-    width:100%;
-    background:url('../images/header.png') repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url('../images/header.png') repeat;
+}
+
+/* 19-02-2021 */
+#header .wrapper{
+    display: grid;
+    grid-template-columns: 200px 1fr 320px 100px;
+}
+
+@media(max-width: 1100px){
+    #header .wrapper{
+        grid-template-columns: 200px 1fr 100px;
+    }
+}
+
+@media(max-width: 420px){
+    #header .wrapper{
+        grid-template-columns: auto 1fr 100px;
+    }
 }
 
 #logo{
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    margin-left: -100px;
     width: 194px;
     height: 45px;
+    display: block;
 }
 
 @media(max-width:420px){
     #logo{
         width: 110px;
-        margin-left: -55px;
-        top: 20px;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -30,36 +46,49 @@
     width: 100%!important;
 }
 
-/* кнопка радіо */
-.online {
-    width: 100px;
-    height: 24px;
+
+
+/* кнопка + трек */
+#radio{
+    position: relative;
+    text-align: center;
+}
+
+@media(max-width:776px){
+    #radio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+#online {
+    padding: 3px 20px 3px 26px;
     background: var(--gold);
     text-align: center;
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
     color: var(--black);
-    position: absolute;
-    top: 20px;
-    left: 65%;
     line-height: 24px;
+    position: relative;
     transition: .3s;
 }
 
 @media(max-width:776px){
-    .online span{
+    #online span{
         display: none;
     }
-    .online{
+    #online{
         width: 24px;
+        height: 24px;
         border-radius: 24px;
-        left: auto;
-        right: 50px;
+        padding: 5px;
     }
 }
 
-.online::before{
+#online::before{
     content: '';
     width: 0;
     height: 0;
@@ -70,89 +99,20 @@
     top: 5px;
 }
 
-.online:hover{
+#online:hover{
     background: var(--cyan);
     text-decoration: none;
 }
 
-.online:hover::before{
+#online:hover::before{
     border-left-color: var(--gold);
 }
 
-/* дата справа */
-#header time{
-    position: absolute;
-    top: 23px;
-    right: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-}
-
-@media(max-width:776px){
-    #header time{
-        display: none;
-    }
-}
-
-/* навігація зліва */
-#nav--bar{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 80px;
-}
-
-#nav--bar span{
-    width: 20px;
-    cursor: pointer;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-#nav--bar svg{
-    width: 100%;
-    fill: var(--black);
-    transition: .5s;
-}
-
-#nav--bar :hover svg{
-    fill: var(--gold);
-}
-
-/**/
-#mobile-menu{
-    display: none;
-}
-
-#mobile-menu svg{
-    width: 20px;
-    fill: var(--black);
-    transition: .5s;
-}
-
-#mobile-menu:hover svg{
-    fill: var(--gold);
-}
-
-@media(max-width:776px){
-    #mobile-menu{
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-}
-
-/* активна стрічка */
 #live{
-    position: absolute;
     width: 320px;
     height: 14px;
-    left: 50%;
-    bottom: 2px;
-    margin-left: -160px;
     overflow: hidden;
+    margin: auto;
 }
 
 @media(max-width:776px){
@@ -194,7 +154,42 @@
     border-color: transparent transparent transparent var(--cyan);
 }
 
-/* рух елемента */
 .to-up{
     transform: translateY(-14px);
+}
+
+
+/* іконки */
+#nav--bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav--bar span{
+    width: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#nav--bar svg{
+    width: 100%;
+    fill: var(--black);
+    transition: .5s;
+}
+
+#nav--bar :hover svg{
+    fill: var(--gold);
+}
+
+/* іконка меню тільки на мобільному */
+#nav--bar #mobile-menu{
+    display: none;
+}
+
+@media(max-width: 1100px){
+    #nav--bar #mobile-menu {
+        display: block;
+    }
 }

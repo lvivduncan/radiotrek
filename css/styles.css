@@ -6,12 +6,13 @@
 @import url('./header.css');
 
 /* горизонтальне меню */
-@import url('./menu.css');
+/* @import url('./menu.css'); */
+@import url('./nav.css');
 
 @import url('./social.css');
 
 /* offset-nav */
-@import url('./offset.css');
+/* @import url('./offset.css'); */
 
 /* кнопки */
 @import url('./button.css');
