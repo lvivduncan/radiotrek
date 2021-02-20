@@ -41,6 +41,7 @@
     position: absolute;
     left: 20px;
     padding-top: 10px;
+    margin-top: 10px;
 }
 
 #nav ul li div::before{
@@ -56,17 +57,21 @@
 /* вкладений блок */
 #nav ul li:hover div{
     display: block;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%);
 }
 
 #nav ul li div ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    padding: 30px 20px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%);
+    border-top: 1px solid var(--gray);
 }
 
 #nav ul li div li{
-    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    position: relative;
+    top: 5px;
+	padding-bottom: 13px;
 }
 
 #nav ul li div a,
