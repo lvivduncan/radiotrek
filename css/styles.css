@@ -5,14 +5,10 @@
 @import url('./root.css');
 @import url('./header.css');
 
-/* горизонтальне меню */
-/* @import url('./menu.css'); */
+/* меню */
 @import url('./nav.css');
 
 @import url('./social.css');
-
-/* offset-nav */
-/* @import url('./offset.css'); */
 
 /* кнопки */
 @import url('./button.css');
