@@ -32,6 +32,7 @@ img{
     --cyan-dark: #004888;
     --white: #fff;
     --red: #cc0001;
+    --green: rgb(7, 167, 68);
 
     --opacity-3: rgba(255, 255, 255, .3);
     --transparent-3: rgba(0,0,0, .3);

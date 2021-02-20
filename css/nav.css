@@ -31,6 +31,10 @@
     color: var(--cyan);
 }
 
+#nav a.green{
+    color: var(--green);
+}
+
 /* випадачка */
 #nav ul li div{
     display: none;
