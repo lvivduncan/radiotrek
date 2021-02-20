@@ -46,7 +46,7 @@
     bottom: 25px;
     left: 20px;
     right: 20px;
-    border-bottom: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--gray);
 }
 
 /* вкладений блок */
@@ -62,7 +62,7 @@
 }
 
 #nav ul li div li{
-    border-top: 1px solid var(--blue-extralight);
+    border-top: 1px solid var(--gray);
 }
 
 #nav ul li div a,
