@@ -21,7 +21,7 @@ SimpleScrollbar.initAll();
     }));
 }
 
-
+/* 
 // slider 
 {
     const slider = document.querySelector('.slider ul');
@@ -73,7 +73,7 @@ SimpleScrollbar.initAll();
     }, 4000);
     
 }
-
+ */
 // offset menu 
 {
     const menu = document.querySelector('#mobile-menu');
