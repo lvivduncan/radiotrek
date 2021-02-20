@@ -77,3 +77,15 @@ hr{
     position: relative;
     top: 3px;
 }
+
+.ico-lite{
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--green);
+    padding: 0 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.ico-lite::before{
+    content: 'Lite';
+}
