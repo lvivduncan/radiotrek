@@ -88,7 +88,6 @@ SimpleScrollbar.initAll();
     close && close.addEventListener('click', () => {
         nav.className = '';
     });
-
 }
 
 // live 

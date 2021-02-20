@@ -108,6 +108,10 @@
     border-left-color: var(--gold);
 }
 
+#online:hover span{
+    color: var(--gold);
+}
+
 #live{
     width: 320px;
     height: 14px;
