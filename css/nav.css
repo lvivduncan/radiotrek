@@ -10,12 +10,12 @@
     height: 100%;
 }
 
-#nav li{
+#nav ul li{
     display: inline-block;
     padding: 10px;
 }
 
-#nav li a{
+#nav ul li a{
     text-decoration: none;
     text-transform: uppercase;
     color: var(--black);
@@ -23,23 +23,23 @@
     font-size: 14px;
 }
 
-#nav li:hover{
+#nav ul li:hover{
     background: var(--gold);
 }
 
-#nav li:hover a{
+#nav ul li:hover a{
     color: var(--cyan);
 }
 
 /* випадачка */
-#nav li div{
+#nav ul li div{
     display: none;
     position: absolute;
     left: 20px;
     padding-top: 10px;
 }
 
-#nav li div::before{
+#nav ul li div::before{
     content: '';
     display: inline-block;
     position: absolute;
@@ -50,37 +50,50 @@
 }
 
 /* вкладений блок */
-#nav li:hover div{
+#nav ul li:hover div{
     display: block;
 }
 
-#nav li div ul{
+#nav ul li div ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     padding: 30px 20px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%);
 }
 
-#nav li div li{
+#nav ul li div li{
     border-top: 1px solid var(--blue-extralight);
 }
 
-#nav li div a,
-#nav li:hover div a{
+#nav ul li div a,
+#nav ul li:hover div a{
     color: var(--gray);
     font-weight: 700;
     white-space: nowrap;
 }
 
-#nav li div li:hover{
+#nav ul li div li:hover{
     background: transparent;
 }
 
-#nav li div a:hover{
+#nav ul li div a:hover{
     color: var(--cyan);
 }
 
+/* соціальні кнопки*/
+#nav .social{
+    display: none;
+}
 
+/* кнопка закриття*/
+#close{
+    display: none;
+}
+
+#close svg{
+    fill: var(--gray);
+    width: 26px;
+}
 
 /* nav mobile */
 @media(max-width: 1100px){
@@ -91,7 +104,7 @@
         z-index: 10;
         height: 100vh;
         width: 320px;
-        padding: 20px;
+        padding: 50px 20px 20px;
         background: var(--gray-dark);
         transform: translateX(0);
         transition: .5s;
@@ -107,46 +120,46 @@
         overflow-y: scroll;
     }
 
-    #nav li{
+    #nav ul li{
         display: block;
         padding: 0;
     }
 
-    #nav li div{
+    #nav ul li div{
         display: block;
         position: static;
         padding: 0;
     }
 
-    #nav li:hover{
+    #nav ul li:hover{
         background: transparent;
     }
 
-    #nav li div::before{
+    #nav ul li div::before{
         display: none;
     }
 
-    #nav li div ul{
+    #nav ul li div ul{
         display: block;
         background: transparent;
         padding: 0;
     }
 
-    #nav li div li{
+    #nav ul li div li{
         border-top: none;
     }
 
     /* перший рівень */
-    #nav li,
-    #nav li:hover,
-    #nav li a,
-    #nav li a:hover{
+    #nav ul li,
+    #nav ul li:hover,
+    #nav ul li a,
+    #nav ul li a:hover{
         font-size: 22px;
         font-weight: 400;
     }
     
-    #nav li a,
-    #nav li a:hover{
+    #nav ul li a,
+    #nav ul li a:hover{
         padding: 10px;
         text-transform: uppercase;
         color: var(--gray-light)!important;
@@ -154,7 +167,7 @@
     }
 
     /* вкладення */
-    #nav div a{
+    #nav ul div a{
         font-size: 14px;
         color: var(--gold)!important;
         font-weight: 400!important;
@@ -162,9 +175,25 @@
         transition: .5s;
     }
     
-    #nav div a:hover{
+    #nav ul div a:hover{
         background: var(--blue);
         padding: 10px;
         font-size: 14px;
     }
+
+    /* соцкнопки */
+    #nav .social{
+        display: block;
+    }
+
+    /* закриття */
+    #close{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+        cursor: pointer;
+    }
+
 }

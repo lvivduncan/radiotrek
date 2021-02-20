@@ -79,21 +79,16 @@ SimpleScrollbar.initAll();
     const menu = document.querySelector('#mobile-menu');
     const nav = document.querySelector('#nav');
     const ul = document.querySelector('#nav ul');
-    // const close = document.querySelector('#close');
+    const close = document.querySelector('#close');
 
     menu && menu.addEventListener('click', () => {
         nav.className = 'active';
-        // ul.setAttribute('data-ss-container', '');
-        // ul.className = 'ss-container';
     });
 
     close && close.addEventListener('click', () => {
         nav.className = '';
-        // ul.removeAttribute('data-ss-container');
-        // ul.className = '';
     });
 
-    // todo: clost button
 }
 
 // live 
