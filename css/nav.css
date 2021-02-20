@@ -36,56 +36,129 @@
 }
 
 /* випадачка */
-#nav ul li div{
+#nav .nav-wrap{
     display: none;
     position: absolute;
     left: 20px;
     padding-top: 10px;
     margin-top: 10px;
+
+    /* tmp */
+/*     display: block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%); */
 }
 
-#nav ul li div::before{
+#nav .nav-wrap::before{
     content: '';
-    display: inline-block;
+    display: block;
     position: absolute;
-    bottom: 25px;
+    bottom: 20px;
     left: 20px;
     right: 20px;
-    border-bottom: 1px solid var(--gray);
+    height: 1px;
+    background: var(--gray);
+}
+
+#nav .nav-wrap::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--gray);
 }
 
 /* вкладений блок */
-#nav ul li:hover div{
+#nav ul li:hover .nav-wrap{
     display: block;
     padding: 30px 20px;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%);
 }
 
-#nav ul li div ul{
+#nav .nav-wrap ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    border-top: 1px solid var(--gray);
+    grid-template-areas: 
+        'nav-1 nav-4 nav-7'
+        'nav-2 nav-5 nav-8'
+        'nav-3 nav-6 nav-9';
+    position: relative;
 }
 
-#nav ul li div li{
-    border-bottom: 1px solid var(--gray);
+/* border */
+#nav .nav-wrap ul::before{
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gray);
+    display: block;
+}
+
+#nav .nav-wrap ul::after{
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gray);
+    display: block;
+}
+
+#nav .nav-wrap li{
     position: relative;
     top: 5px;
-	padding-bottom: 13px;
+	/* padding-bottom: 13px; */
 }
 
-#nav ul li div a,
-#nav ul li:hover div a{
+#nav .nav-wrap li:nth-child(1){
+    grid-area: nav-1;
+}
+#nav .nav-wrap li:nth-child(2){
+    grid-area: nav-2;
+}
+#nav .nav-wrap li:nth-child(3){
+    grid-area: nav-3;
+}
+#nav .nav-wrap li:nth-child(4){
+    grid-area: nav-4;
+}
+#nav .nav-wrap li:nth-child(5){
+    grid-area: nav-5;
+}
+#nav .nav-wrap li:nth-child(6){
+    grid-area: nav-6;
+}
+#nav .nav-wrap li:nth-child(7){
+    grid-area: nav-7;
+}
+#nav .nav-wrap li:nth-child(8){
+    grid-area: nav-8;
+}
+#nav .nav-wrap li:nth-child(9){
+    grid-area: nav-9;
+}
+
+
+
+
+#nav li .nav-wrap a,
+#nav li:hover .nav-wrap a{
     color: var(--gray);
     font-weight: 700;
     white-space: nowrap;
 }
 
-#nav ul li div li:hover{
+#nav .nav-wrap li:hover{
     background: transparent;
 }
 
-#nav ul li div a:hover{
+#nav li .nav-wrap a:hover{
     color: var(--cyan);
 }
 
@@ -113,7 +186,7 @@
         z-index: 10;
         height: 100vh;
         width: 320px;
-        padding: 50px 20px 20px;
+        padding: 20px;
         background: var(--gray-dark);
         transform: translateX(0);
         transition: .5s;
@@ -125,7 +198,7 @@
 
     #nav > ul{
         display: block;
-        height: 100vh;
+        height: 90%;
         overflow-y: scroll;
     }
 
@@ -134,27 +207,29 @@
         padding: 0;
     }
 
-    #nav ul li div{
+    #nav ul li .nav-wrap{
         display: block;
         position: static;
         padding: 0;
     }
 
-    #nav ul li:hover{
+    #nav ul li:hover,
+    #nav ul li:hover .nav-wrap{
         background: transparent;
+        padding: 0;
     }
 
-    #nav ul li div::before{
+    #nav ul li .nav-wrap::before{
         display: none;
     }
 
-    #nav ul li div ul{
+    #nav ul li .nav-wrap ul{
         display: block;
         background: transparent;
         padding: 0;
     }
 
-    #nav ul li div li{
+    #nav ul li .nav-wrap li{
         border-top: none;
     }
 
@@ -176,7 +251,7 @@
     }
 
     /* вкладення */
-    #nav ul div a{
+    #nav ul .nav-wrap a{
         font-size: 14px;
         color: var(--gold)!important;
         font-weight: 400!important;
@@ -184,7 +259,7 @@
         transition: .5s;
     }
     
-    #nav ul div a:hover{
+    #nav ul .nav-wrap a:hover{
         background: var(--blue);
         padding: 10px;
         font-size: 14px;
@@ -203,6 +278,13 @@
         right: 20px;
         z-index: 11;
         cursor: pointer;
+    }
+
+    #nav .nav-wrap::before,
+    #nav .nav-wrap::after,
+    #nav .nav-wrap ul::before,
+    #nav .nav-wrap ul::after{
+        display: none;
     }
 
 }
