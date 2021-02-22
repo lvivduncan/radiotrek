@@ -42,10 +42,17 @@
     left: 20px;
     padding-top: 10px;
     margin-top: 10px;
+}
 
-    /* tmp */
-/*     display: block;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 65%, var(--yellow) 65%, var(--yellow) 100%); */
+/* ширина залежно від кількості елементів */
+/* 3 елементи */
+.column-one{
+    width: 200px;
+}
+
+/* 6 елементів */
+.column-two{
+    width: 400px;
 }
 
 #nav .nav-wrap::before{
@@ -263,6 +270,12 @@
         background: var(--blue);
         padding: 10px;
         font-size: 14px;
+    }
+
+    /* ширина залежно від кількості елементів */
+    .column-one,
+    .column-two{
+        width: auto;
     }
 
     /* соцкнопки */
