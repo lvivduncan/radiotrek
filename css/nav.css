@@ -55,6 +55,11 @@
     width: 400px;
 }
 
+/* 6 елементів (лайт) */
+.column-two-lite{
+    width: 300px;
+}
+
 #nav .nav-wrap::before{
     content: '';
     display: block;
@@ -274,7 +279,8 @@
 
     /* ширина залежно від кількості елементів */
     .column-one,
-    .column-two{
+    .column-two,
+    .column-two-lite{
         width: auto;
     }
 
