@@ -19,15 +19,6 @@
     }
 }
 
-/* якщо блок .outher-news-videos вставлений вгорі */
-@media(max-width:776px){
-    .hot--news .outher-news-videos{
-        grid-template-columns: repeat(2,1fr);
-    }
-    .hot--news .outher-news-videos .video-block:first-child{
-        display: none;
-    }
-}
 
 .hot-news-articles{
     /* новини зліва */
@@ -364,4 +355,74 @@
 
 .white-link-block:hover::before{
     border-width:3px;
+}
+
+
+
+/* замість 3 відео -- 3 новини */
+
+
+/* якщо блок .outher-news-videos вставлений вгорі */
+/* @media(max-width:776px){
+    .hot--news .outher-news-videos{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hot--news .outher-news-videos .block-3:first-child{
+        display: none;
+    }
+} */
+
+
+.block-3-wrapper {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+
+.block-3{
+    overflow: hidden;
+}
+
+.block-3-image{
+    position: relative;
+    display: block;
+}
+
+.block-3 a{
+    position: relative;
+    text-decoration: none;
+}
+
+.block-3 a img{
+    transform: scale(1);
+    transition: .5s;
+}
+
+.block-3 a:hover img{
+    transform: scale(1.05);
+}
+
+.block-3 a h3{
+    padding: 15px 0 10px 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 18px;
+}
+
+@media(max-width:996px){
+    .block-3 a h3{
+        font-size: 14px;
+    }
+}
+
+.block-3 a:hover h3{
+    text-decoration: underline;
+}
+
+.block-3 time{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--gray);
 }

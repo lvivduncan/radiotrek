@@ -55,12 +55,6 @@
 @import url('./blank.css');
 @import url('./votes--old.css');
 
-/* scroll */
-@import url('./simple-scrollbar.css');
-
-/* вставка скрола + лінка */
-@import url('./media--insert.css');
-
 /* решта новин */
 @import url('./outher--news.css');
 
@@ -75,9 +69,6 @@
 
 /* оголошення */
 @import url('./notice.css');
-
-/* slider */
-/* @import url('./slider.css'); */
 
 /* посторінкова навігація */
 @import url('./pagination.css');
