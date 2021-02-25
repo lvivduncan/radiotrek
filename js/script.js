@@ -1,4 +1,4 @@
-
+/* 
 // simple-srollbar init
 SimpleScrollbar.initAll();
 
@@ -19,7 +19,7 @@ SimpleScrollbar.initAll();
         this.className = 'active';
 
     }));
-}
+} */
 
 /* 
 // slider 

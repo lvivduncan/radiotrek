@@ -1,3 +1,7 @@
+
+// не актуально. медіа-інсерт видалити
+
+
 ;(function(win) {
   var doc = win.document,
       docElm = doc.documentElement,
