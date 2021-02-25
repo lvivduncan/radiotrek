@@ -89,3 +89,15 @@ hr{
 .ico-lite::before{
     content: 'Lite';
 }
+
+.ico-np{
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--red);
+    padding: 0 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+.ico-np::before{
+    content: 'НП';
+}

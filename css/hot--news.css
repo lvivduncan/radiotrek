@@ -7,12 +7,6 @@
     margin: 20px 0;
 }
 
-/* @media(max-width:1100px){
-    .hot--news{
-        grid-template-columns: 180px 220px 1fr;
-    }
-} */
-
 @media(max-width:776px){
     .hot--news{
         grid-template-columns: repeat(2,1fr);
@@ -25,75 +19,57 @@
     }
 }
 
-/* вліплене меню збоку */
-/* #aside-menu,
-#aside-menu li,
-#aside-menu a{
-    display: block;
-}
-
+/* якщо блок .outher-news-videos вставлений вгорі */
 @media(max-width:776px){
-    #aside-menu{
+    .hot--news .outher-news-videos{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .hot--news .outher-news-videos .video-block:first-child{
         display: none;
     }
 }
-
-#aside-menu h6{
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-#aside-menu li a{
-    position: relative;
-    padding: 5px 0 5px 15px;
-    transition: .5s;
-}
-
-#aside-menu li a::before{
-    content: '';
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-left-color: var(--cyan);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin-top: -6px;
-}
-
-#aside-menu li a:hover{
-    transform:translateX(5px)
-}
-
-#aside-menu li a:hover::before{
-    border-left-color: var(--gold);
-} */
-
 
 .hot-news-articles{
     /* новини зліва */
 }
 
-/* 4 анонси справа */
+/* 2 анонси + 3 анонси + 2 анонси */
 .hot-news-content{
+    /* анонси справа */
+}
+
+/* перші 2 анонси */
+.hot-news-first{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-areas: 
-        'hot-news-content-1 hot-news-content-2' 
-        'hot-news-content-3 hot-news-content-4';
-    grid-template-rows: min-content;
+        'hot-news-content-1 hot-news-content-2';
     grid-gap: 30px;
 }
 
-@media(max-width:996px){
-    .hot-news-content{
+@media(max-width: 996px){
+    .hot-news-first{
         grid-template-columns: 1fr;
         grid-template-areas: 
             'hot-news-content-1'
-            'hot-news-content-2' 
-            'hot-news-content-3'
-            'hot-news-content-4';
+            'hot-news-content-2';
+    }
+}
+
+/* 2 анонси нижче */
+.hot-news-second{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+        'hot-news-content-3 hot-news-content-4';
+    grid-gap: 30px;
+}
+
+@media(max-width: 996px){
+    .hot-news-second{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'hot-news-content-3';
     }
 }
 
@@ -255,6 +231,11 @@
 .hot-news-content__2:hover::before{
     transform: rotate(-35deg) translateX(-100%);
 }
+
+
+
+
+
 
 
 /* 3 елемент (зліва внизу) */
