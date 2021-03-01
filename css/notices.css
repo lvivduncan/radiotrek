@@ -1,0 +1,96 @@
+/* 1-03-2021 */
+
+.notices{
+    display: grid;
+    grid-template-columns: 1fr 302px;
+    grid-gap: 30px;
+    margin: 20px 0;
+}
+
+@media(max-width:776px){
+    .notices{
+        grid-template-columns: 1fr;
+    }
+}
+
+.notices article{
+    margin: 20px 0;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--yellow);
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+@media(max-width:776px){
+    .notices article{
+        grid-template-columns: 1fr;
+    }
+}
+
+.notices article h3{
+    font-size: 20px;
+}
+
+/* іконки */
+.notices svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--blue);
+}
+
+/* id + date */
+.notices .id{
+    font-size: 13px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* час */
+.notices time{
+    text-align: right;
+}
+
+/* текст оголошення */
+.notices .note {
+    margin: 0 0 30px;
+    position: relative;
+}
+
+.notices .note p{
+    padding: 0 0 0 30px;
+}
+
+.notices .note svg{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -11px;
+}
+
+/* телефон */
+.notices address {
+    color: var(--cyan);
+    margin-top: 20px;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+}
+
+.notices address svg{
+    margin: 0 10px 0 0;
+}
+
+/* вкладення */
+@media(max-width:776px){
+    .notices .notice-image{
+        margin: 20px 0;
+    }
+}
+
+.notices .notice-image img{
+    max-width: 300px!important;
+}

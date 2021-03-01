@@ -32,3 +32,17 @@
 .pagination li a:hover svg{
     fill: var(--gold);
 }
+
+/* 1-03-2021 */
+.pagination li.active a {
+    background-color: var(--cyan);
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.pagination li.disabled a {
+    background-color: var(--gold-light);
+    color: var(--cyan);
+    font-weight: bold;
+    pointer-events: none;
+}
