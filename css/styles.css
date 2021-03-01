@@ -53,7 +53,9 @@
 @import url('./project-slider.css');
 @import url('./projects.css');
 @import url('./blank.css');
-@import url('./votes--old.css');
+
+/* не актуально */
+/* @import url('./votes--old.css'); */
 
 /* решта новин */
 @import url('./outher--news.css');
@@ -61,8 +63,8 @@
 /* відео-анонси */
 @import url('./videos.css');
 
-/* голосування */
-@import url('./vote.css');
+/* голосування */ /* не актуально */
+/* @import url('./vote.css'); */
 
 /* окремий допис */
 @import url('./post.css');
