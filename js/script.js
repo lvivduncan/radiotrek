@@ -33,9 +33,9 @@
         }, 0);
     }
 
-    setInterval(() => {
-        autoscroll();
-    }, 3000);
+    autoscroll();
+    // setInterval(() => {
+    // }, 3000);
 }
 
 // соціальні кнопки
