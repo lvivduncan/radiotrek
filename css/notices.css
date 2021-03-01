@@ -1,6 +1,6 @@
 /* 1-03-2021 */
 
-.notices{
+#notices{
     display: grid;
     grid-template-columns: 1fr 302px;
     grid-gap: 30px;
@@ -8,12 +8,12 @@
 }
 
 @media(max-width:776px){
-    .notices{
+    #notices{
         grid-template-columns: 1fr;
     }
 }
 
-.notices article{
+#notices article{
     margin: 20px 0;
     padding: 0 0 20px;
     border-bottom: 1px solid var(--yellow);
@@ -22,24 +22,24 @@
 }
 
 @media(max-width:776px){
-    .notices article{
+    #notices article{
         grid-template-columns: 1fr;
     }
 }
 
-.notices article h3{
+#notices article h3{
     font-size: 20px;
 }
 
 /* іконки */
-.notices svg{
+#notices svg{
     width: 22px;
     height: 22px;
     fill: var(--blue);
 }
 
 /* id + date */
-.notices .id{
+#notices .id{
     font-size: 13px;
     color: var(--gray);
     text-transform: uppercase;
@@ -50,21 +50,21 @@
 }
 
 /* час */
-.notices time{
+#notices time{
     text-align: right;
 }
 
 /* текст оголошення */
-.notices .note {
+#notices .note {
     margin: 0 0 30px;
     position: relative;
 }
 
-.notices .note p{
+#notices .note p{
     padding: 0 0 0 30px;
 }
 
-.notices .note svg{
+#notices .note svg{
     position: absolute;
     top: 50%;
     left: 0;
@@ -72,7 +72,7 @@
 }
 
 /* телефон */
-.notices address {
+#notices address {
     color: var(--cyan);
     margin-top: 20px;
     font-style: normal;
@@ -80,17 +80,17 @@
     align-items: center;
 }
 
-.notices address svg{
+#notices address svg{
     margin: 0 10px 0 0;
 }
 
 /* вкладення */
 @media(max-width:776px){
-    .notices .notice-image{
+    #notices .notice-image{
         margin: 20px 0;
     }
 }
 
-.notices .notice-image img{
+#notices .notice-image img{
     max-width: 300px!important;
 }
