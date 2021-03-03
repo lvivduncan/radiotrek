@@ -32,23 +32,6 @@
 }
 
 /* 3-03-2021 */
-#loader::before, 
-.loader, 
-.loader-gold{
-    content: '';
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    vertical-align: text-bottom;
-    border: .25em solid var(--white);
-    border-right-color: transparent;
-    border-radius: 50%;
-    animation: spinner-border .75s linear infinite;
-}
-
-.loader-gold {
-	border-color: var(--gold)
-}
 
 .loader-gold::before {
     content: '';
