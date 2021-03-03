@@ -49,3 +49,15 @@
 .loader-gold {
 	border-color: var(--gold)
 }
+
+.loader-gold::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    border: .25em solid var(--gold);
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
