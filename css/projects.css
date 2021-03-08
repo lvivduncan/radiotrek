@@ -1,5 +1,6 @@
 
-#project-description{
+/* опис на загальній сторінці проєктів */
+#projects-description{
     padding: 40px 200px;
     background: var(--gray-dark);
     color: var(--white);
@@ -7,7 +8,7 @@
 }
 
 @media(max-width:776px){
-    #project-description{
+    #projects-description{
         padding: 20px;
     }
 }
@@ -92,4 +93,241 @@
     text-align: center;
     position: relative;
     z-index: 2;
+}
+
+
+
+/* опис на окремій сторінці проєкту */
+#project-description{
+    padding: 40px 200px;
+    background: var(--gold);
+    color: var(--black);
+    position: relative;
+    z-index: 1;
+}
+
+@media(max-width:776px){
+    #project-description{
+        padding: 20px;
+    }
+}
+
+/* підкладка під описом */
+#project-description::before{
+    content: '';
+    display: block;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(15deg, var(--gold) 0%, var(--gold) 50%, var(--cyan) 50%, var(--cyan) 100%);
+    transform: rotate(150deg);
+    position: absolute;
+    top: 0;
+    right: 30%;
+    z-index: -1;
+}
+
+@media(max-width:776px){
+    #project-description::before{
+        display: none;
+    }
+}
+
+#project-description::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#project-description p{
+    position: relative;
+    z-index: 2;
+}
+
+/* автори програм на сторінці проєкт */
+.project-autors{
+    display: grid;
+    grid-template-columns: 1fr 302px;
+    grid-gap: 30px;
+}
+
+@media(max-width: 996px){
+    .project-autors {
+        grid-template-columns: 1fr;
+    }
+    .project-autors aside{
+        display: none;
+    }
+}
+
+/* наші програми */
+.project-autors aside h2{
+    font-size: 20px;
+    font-weight: 800;
+    margin: 60px 0 30px;
+    text-transform: uppercase;
+}
+
+.project-autors aside ul,
+    .project-autors aside li{
+    display: block;
+}
+
+.project-autors aside li a{
+    display: block;
+    padding: 6px 10px;
+    color: var(--cyan);
+    font-size: 14px;
+    border-bottom: var(--blue-extralight) solid 1px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.project-autors aside li a:hover{
+    background: var(--cyan);
+    color: var(--white);
+}
+
+
+
+/* блок з ведучим програми (фото зліва, опис справа) */
+.autor{
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-gap: 20px;
+}
+
+@media(max-width:996px){
+    .autor{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:540px){
+    .autor{
+        display: block;
+        text-align: center;
+    }
+}
+
+/* парний блок має фон */
+.autor:nth-child(even){
+    background: var(--gold);
+    border-radius: 50% 0 0 0;
+}
+
+@media(max-width: 540px){
+    .autor:nth-child(even){
+        border-radius: 0;
+        padding: 20px 0;
+    }
+}
+
+.autor figure img{
+    border-radius: 50%;
+}
+
+.autor figure{
+    margin: 30px;
+}
+/* @media(max-width: 540px){
+
+} */
+
+.autor figcaption{
+    margin: 30px 0 0;
+    padding: 0 0 0 30px;
+}
+
+@media(max-width: 540px){
+    .autor figcaption{
+        padding: 0;
+    }
+}
+
+/* правий блок */
+.autor-desc{
+    position: relative;
+}
+
+.autor-desc h6{
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+.autor-desc ul{
+    margin: 0 0 20px;
+}
+
+.autor-desc li{
+    display: block;
+}
+
+.autor-desc li a{
+    color: var(--cyan);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.autor-desc li a:hover{
+    text-decoration: underline;
+}
+
+/* ПІП */
+.autor-desc h3{
+    font-size: 46px;
+    color: var(--cyan);
+    font-weight: 800;
+    line-height: 0.9;
+    padding: 260px 0 0;
+    margin: 0 0 30px;
+}
+
+@media(max-width: 540px){
+    .autor-desc h3{
+        padding: 10px 0 0;
+    }
+}
+
+.autor-desc h3 span{
+    display: block;
+}
+
+@media(max-width: 540px){
+    .autor-desc h3 span{
+        display: inline-block;
+    }
+}
+
+/* кутик */
+.autor-desc::before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 200px solid var(--gold);
+    border-right: 200px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* парний блок має фон */
+.autor:nth-child(even) .autor-desc::before{
+    border-top-color: var(--white);
+}
+
+@media(max-width: 540px){
+    .autor-desc::before{
+        display: none;
+    }
 }

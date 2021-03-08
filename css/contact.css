@@ -13,6 +13,7 @@
     }
 }
 
+
 /* блок зліва */
 .contact-form{
     display: grid;
@@ -29,6 +30,11 @@
         'contact-form-content' 
         'contact-form-form';
     }
+}
+
+/* якщо форма на сторінці проєктів */
+.autors .contact-form{
+    margin-top: 50px;
 }
 
 .contact-form svg{

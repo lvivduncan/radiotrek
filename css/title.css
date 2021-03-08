@@ -96,3 +96,43 @@
     font-size: 30px;
     font-weight: bold
 }
+
+
+/* заголовок окремого проєкту */
+.title-project{
+    height: 540px;
+    position: relative;
+    background-size: cover!important;
+}
+
+@media(max-width: 776px){
+    .title-project{
+        height: 340px
+    }
+}
+
+.title-project h1{
+    padding: 0 60px;
+    font-size: 98px;
+    color: var(--white);
+    font-weight: 800;
+    position: absolute;
+    left: 0px;
+    bottom: 60px;
+    z-index: 2;
+    line-height: 0.8;
+    text-shadow: var(--black) 0 0 5px;
+}
+
+@media(max-width: 776px){
+    .title-project h1{
+        font-size: 40px;
+        line-height: 1.2;
+    }
+}
+
+@media(max-width: 540px){
+    .title-project h1{
+        padding: 0 10px
+    }
+}
