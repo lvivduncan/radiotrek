@@ -75,6 +75,9 @@
 /* сторінка з оголошеннями */
 @import url('./notices.css');
 
+/* календар */
+@import url('./calendar.css');
+
 /* посторінкова навігація */
 @import url('./pagination.css');
 

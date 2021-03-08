@@ -1,0 +1,78 @@
+/* календар */
+.calendar a{
+    text-decoration: none;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    padding: 0 0 20px;
+}
+
+@media(max-width: 996px){
+    .calendar{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media(max-width: 776px){
+    .calendar{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width: 540px){
+    .calendar{
+        grid-template-columns: 1fr;
+    }
+}
+
+.calendar .weeks span, 
+.calendar .days a {
+    padding: 2px;
+}
+
+.calendar .month {
+    text-align: center;
+    margin: 0 0 5px;
+}
+
+.calendar .month a, 
+.days a:hover {
+    background: var(--cyan);
+    color: var(--white);
+}
+
+.calendar .month a {
+    display: block;
+    padding: 3px;
+    font-size: 15px;
+}
+
+.calendar .weeks {
+    color: var(--light-gray);
+    text-transform: uppercase;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+    text-align: center;
+}
+
+.calendar .days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 1px;
+    text-align: center;
+}
+
+.calendar .days a{
+    background: var(--gold);
+    transition: .5s;
+}
+
+.calendar .days a:hover{
+    color: var(--gold);
+    background: var(--cyan);
+}
