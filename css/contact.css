@@ -119,6 +119,7 @@
     margin-right: 10px;
 }
 
+.contact-form input[type="email"],
 .contact-form input[type="text"],
 .contact-form textarea,
 .contact-form select{
@@ -135,6 +136,7 @@
     height: 120px;
 }
 
+.contact-form input[type="email"]:focus,
 .contact-form input[type="text"]:focus,
 .contact-form textarea:focus,
 .contact-form select:focus{
