@@ -10,20 +10,16 @@
 #smile a{
     text-decoration: none;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 5px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--gray-light);
     border-radius: 5px;
     margin: 0 5px;
-    color: var(--gold);
+    color: var(--gray);
     transition: .5s;
 }
 
-#smile a:hover{
-    border-color: var(--blue);
-    color: var(--blue)
-}
-
 #smile span{
-    font-weight: 800;
+    padding: 0 10px;
+    min-width: 60px;
 }
