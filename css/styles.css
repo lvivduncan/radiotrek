@@ -85,3 +85,6 @@
 
 /* лоадер */
 @import url('./loader.css');
+
+/* смайлики */
+@import url('./smile.css');

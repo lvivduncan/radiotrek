@@ -1,0 +1,29 @@
+
+#smile{
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#smile a{
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    padding: 5px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    margin: 0 5px;
+    color: var(--gold);
+    transition: .5s;
+}
+
+#smile a:hover{
+    border-color: var(--blue);
+    color: var(--blue)
+}
+
+#smile span{
+    font-weight: 800;
+}
