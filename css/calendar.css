@@ -1,3 +1,30 @@
+/* заголовок календаря */
+.calendar-years{
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.calendar-years nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-years a{
+    line-height: 0.5;
+}
+
+.calendar-years svg{
+    width: 22px;
+    height: 22px;
+    fill: var(--cyan);
+}
+
+.calendar-years span{
+    color: var(--cyan);
+    font-weight: 800;
+}
+
 /* календар */
 .calendar a{
     text-decoration: none;
