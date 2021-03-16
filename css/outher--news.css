@@ -82,9 +82,6 @@
 
 /* подвійний блок -- великий справа, 6 малих зліва */
 .global-news{
-    /* display: grid; */
-    /* grid-template-columns: repeat(2,1fr); */
-    /* grid-gap: 30px; */
     margin-top: 30px;
 }
 
@@ -112,6 +109,23 @@
         grid-template-columns: repeat(2,1fr);
     }
 }
+
+/* для внутрішніх сторінок, 2 плашки */
+.global-news-content-2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+
+@media(max-width:996px){
+    .global-news-content-2{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
 
 /* банер */
 .kts{
