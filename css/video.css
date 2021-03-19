@@ -1,23 +1,30 @@
 /* відеоролики */
-.video{
+.videos{
     display: grid;
-    grid-template-columns: 1fr 302px;
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 30px;
     margin: 20px 0;
 }
 
-@media(max-width:776px){
-    .video{
-        grid-template-columns: 1fr;
-    }
-    .video aside{
-        display: none;
+@media(max-width:996px){
+    .videos{
+        grid-template-columns: repeat(3,1fr);
     }
 }
 
-.videos article{
-    margin: 20px 0 30px;
+@media(max-width:776px){
+    .videos{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
+
+@media(max-width:540px){
+    .videos{
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 /* блок з фоновою картинкою */
 .video-link{
@@ -38,15 +45,15 @@
 }
 
 
-.video h3{
+.videos h3{
     margin: 10px 0;
 }
 
-.video h3 a{
+.videos h3 a{
     color: var(--black);
 }
 
-.video h3 a:hover{
+.videos h3 a:hover{
     text-decoration: none;
 }
 
