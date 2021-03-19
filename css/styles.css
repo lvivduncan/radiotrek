@@ -81,6 +81,9 @@
 /* календар */
 @import url('./calendar.css');
 
+/* відеоролики */
+@import url('./video.css');
+
 /* посторінкова навігація */
 @import url('./pagination.css');
 
