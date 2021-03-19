@@ -24,14 +24,18 @@
     }
 }
 
-
-
 /* блок з фоновою картинкою */
 .video-link{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media(max-width:540px){
+    .video-link img{
+        width: 100%!important;
+    }
 }
 
 .video-link::before{
@@ -54,7 +58,6 @@
     position: absolute;
     z-index: 1;
 }
-
 
 .videos h3{
     margin: 10px 0;
