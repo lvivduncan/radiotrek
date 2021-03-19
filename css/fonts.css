@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'radiotrek';
+    src: url('../fonts/radiotrek-light-webfont.eot');
+    src: url('../fonts/radiotrek-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/radiotrek-light-webfont.woff2') format('woff2'),
+         url('../fonts/radiotrek-light-webfont.woff') format('woff'),
+         url('../fonts/radiotrek-light-webfont.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'radiotrek';
+    src: url('../fonts/radiotrek-reg-webfont.eot');
+    src: url('../fonts/radiotrek-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/radiotrek-reg-webfont.woff2') format('woff2'),
+         url('../fonts/radiotrek-reg-webfont.woff') format('woff'),
+         url('../fonts/radiotrek-reg-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'radiotrek';
+    src: url('../fonts/radiotrek-xbold-webfont.eot');
+    src: url('../fonts/radiotrek-xbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/radiotrek-xbold-webfont.woff2') format('woff2'),
+         url('../fonts/radiotrek-xbold-webfont.woff') format('woff'),
+         url('../fonts/radiotrek-xbold-webfont.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'radiotrek';
+    src: url('../fonts/radiotrek-bold-webfont.eot');
+    src: url('../fonts/radiotrek-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/radiotrek-bold-webfont.woff2') format('woff2'),
+         url('../fonts/radiotrek-bold-webfont.woff') format('woff'),
+         url('../fonts/radiotrek-bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
