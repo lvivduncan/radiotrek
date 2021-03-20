@@ -13,10 +13,17 @@
 }
 
 /* основна шпальта */
-#page-main{
-    /* стилів немає */
+/* #page-main{} */
+
+/* картинки примусово на всю ширину */
+#page-main img{
+    width: 100%!important;
 }
 
+/* якщо адмін забув зробити абзацний відступ */
+#page-main img + img{
+    margin-top: 30px;
+}
 
 #page-main h1{
     font-weight: 800;

@@ -15,25 +15,44 @@ img{
 }
 
 /*
-Pantone 
-2955C
-137С
+#F7A707
+#FFCC00
+#FFE066
+#183F66
+#004888
+#005BAA
 */
 
 :root{
+    
+    /* --a: #f7a707; */
+    /* --b: #ffcc00; */
+    /* --c: #ffe066; */
+    --d: #183f66;
+    /* --e: #004888; */
+    /* --f: #005baa; */
+
+    --gold-light: #ffe066;
+    --gold: #ffcc00;
+    --gold-dark: #f7a707;
+
+    --blue: #0099ff;
+    --cyan: #005baa;
+    --cyan-dark: #004888;
+
     --black: #000;
     --gray-light: #ddd;
     --gray: #777;
     --gray-dark: #222;
     --yellow: #ffe890;
-    --gold-light: #ffe066;
+/*     --gold-light: #ffe066;
     --gold: #ffcc00;
-    --gold-dark: #ff9900;
+    --gold-dark: #ff9900; */
     --blue-extralight: #c1dae6;
     --blue-light: #669ccc;
-    --blue: #0099ff;
+    /* --blue: #0099ff;
     --cyan: #005baa;
-    --cyan-dark: #004888;
+    --cyan-dark: #004888; */
     --white: #fff;
     --red: #cc0001;
     --green: rgb(7, 167, 68);

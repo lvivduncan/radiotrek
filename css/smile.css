@@ -1,10 +1,12 @@
 
+/* 5 smiles */
 #smile{
     text-align: center;
     margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #smile a{
@@ -14,9 +16,13 @@
     padding: 5px;
     border: 1px solid var(--gray-light);
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 5px;
     color: var(--gray);
     transition: .5s;
+}
+
+#smile a img{
+    width: 32px!important;
 }
 
 #smile a.selected {
