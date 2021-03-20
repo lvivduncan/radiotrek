@@ -67,7 +67,7 @@
     width: 335px;
     height: 200px;
     /* background: var(--blue-light); */
-    background: var(--cyan-dark);
+    background: var(--cyan-light);
     transform: rotate(-45deg);
     transition: .5s;
 }

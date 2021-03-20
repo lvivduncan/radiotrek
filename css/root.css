@@ -39,6 +39,8 @@ img{
     --blue: #0099ff;
     --cyan: #005baa;
     --cyan-dark: #004888;
+    /* для проєктів */
+    --cyan-light: #0080dd;
 
     --black: #000;
     --gray-light: #ddd;
