@@ -15,6 +15,10 @@
     width: 100%!important;
     transform: scale(1);
     transition: .5s;
+
+    /* форматуємо картинку */
+    min-height: 140px;
+    object-fit: cover;
 }
 
 .post-image:hover img{

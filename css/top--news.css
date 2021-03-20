@@ -54,7 +54,8 @@
     justify-content: center;
     flex-flow: column;
     color:var(--white);
-    background:var(--cyan);
+    /* background:var(--cyan); */
+    background:var(--cyan-dark);
     position: relative;
     overflow: hidden;
 }
@@ -69,7 +70,8 @@
     bottom: -50%;
     right: 20%;
     z-index: 1;
-    background: var(--cyan-dark);
+    /* background: var(--cyan-dark); */
+    background: var(--cyan);
     transform: rotate(45deg) translateX(0);
     transition: .5s;
 }

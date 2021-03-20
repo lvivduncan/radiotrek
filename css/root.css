@@ -44,7 +44,9 @@ img{
     --gray-light: #ddd;
     --gray: #777;
     --gray-dark: #222;
-    --yellow: #ffe890;
+    /* --yellow: #ffe890; */
+    --yellow: #ffe066;
+
 /*     --gold-light: #ffe066;
     --gold: #ffcc00;
     --gold-dark: #ff9900; */
