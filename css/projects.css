@@ -66,7 +66,8 @@
     display: inline-block;
     width: 335px;
     height: 200px;
-    background: var(--blue-light);
+    /* background: var(--blue-light); */
+    background: var(--cyan-dark);
     transform: rotate(-45deg);
     transition: .5s;
 }

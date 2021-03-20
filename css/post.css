@@ -17,7 +17,7 @@
     transition: .5s;
 
     /* форматуємо картинку */
-    min-height: 140px;
+    height: 140px;
     object-fit: cover;
 }
 
