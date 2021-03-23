@@ -45,6 +45,11 @@
 @import url('./title.css');
 
 @import url('./top--news.css');
+
+/* rebase hot--news.css */
+@import url('./hot.css');
+
+/* delete: */
 @import url('./hot--news.css');
 
 @import url('./category--news.css');

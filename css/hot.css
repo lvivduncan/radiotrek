@@ -1,5 +1,6 @@
+/* aside left + main right */
 
-.hot--news{
+.hot{
     display: grid;
     grid-template-columns: 360px 1fr;
     grid-gap: 30px;
@@ -7,55 +8,41 @@
 }
 
 @media(max-width:776px){
-    .hot--news{
+    .hot{
         grid-template-columns: repeat(2,1fr);
     }
 }
 
 @media(max-width:540px){
-    .hot--news{
+    .hot{
         grid-template-columns: 1fr;
     }
 }
 
-/* перші 2 анонси */
-.hot-news-first{
+/* кладемо 7 блоків в однин враппер */
+.hot-main{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas: 
-        'hot-news-content-1 hot-news-content-2';
+    grid-template-columns: repeat(6,1fr);
     grid-gap: 30px;
+    grid-template-areas: 
+        'hot-1 hot-1 hot-1 hot-2 hot-2 hot-2'
+        'hot-3 hot-3 hot-4 hot-4 hot-5 hot-5'
+        'hot-6 hot-6 hot-6 hot-7 hot-7 hot-7'
 }
 
 @media(max-width: 996px){
-    .hot-news-first{
-        grid-template-columns: 1fr;
+    .hot-main{
+        grid-template-columns: repeat(2,1fr);
         grid-template-areas: 
-            'hot-news-content-1'
-            'hot-news-content-2';
+            'hot-1 hot-1'
+            'hot-2 hot-3'
+            'hot-4 hot-5'
+            'hot-6 hot-6'
     }
 }
 
-/* 2 анонси нижче */
-.hot-news-second{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas: 
-        'hot-news-content-3 hot-news-content-4';
-    grid-gap: 30px;
-}
-
-@media(max-width: 996px){
-    .hot-news-second{
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            'hot-news-content-3';
-    }
-}
-
-/* 1 елемент (зліва) */
-.hot-news-content__1{
-    grid-area: hot-news-content-1;
+#hot-1{
+    grid-area: hot-1;
 
     margin-right: -50px;
     background-size: cover!important;
@@ -69,12 +56,12 @@
 }
 
 @media(max-width:996px){
-    .hot-news-content__1{
+    #hot-1{
         margin:0;
     }
 }
 
-.hot-news-content__1::before{
+#hot-1::before{
     content: '';
     display: block;
     position: absolute;
@@ -88,16 +75,16 @@
     transition: .5s;
 }
 
-.hot-news-content__1:hover::before{
+#hot-1:hover::before{
     transform: rotate(-35deg) translateX(-100%);
 }
 
-.hot-news-content__1:hover{
+#hot-1:hover{
     text-decoration: none;
     color: var(--white);
 }
 
-.hot-news-content__1 h2{
+#hot-1 h2{
     font-size: 33px;
     line-height: 1;
     width: 60%;
@@ -108,51 +95,46 @@
 }
 
 @media(max-width:996px){
-    .hot-news-content__1 h2{
+    #hot-1 h2{
         width: 95%;
     }
 }
 
-.hot-news-content__1 time{
+#hot-1 time{
     display: block;
     transition: .5s;
     position: relative;
     z-index: 3;
 }
 
-.hot-news-content__1:hover h2,
-.hot-news-content__1:hover time{
+#hot-1:hover h2,
+#hot-1:hover time{
     transform: translateX(20px)
 }
 
-
-/* 2 елемент (справа) */
-.hot-news-content__2{
-    grid-area: hot-news-content-2;
-
+#hot-2{
+    grid-area: hot-2;
     margin-left: 50px;
     text-decoration: none;
     color:var(--black);
-
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
 
 @media(max-width:996px){
-    .hot-news-content__2{
+    #hot-2{
         margin: 0;
-        min-height: 340px;
+        /* min-height: 340px; */
     }    
 }
 
-.hot-news-content__2:hover{
+#hot-2:hover{
     text-decoration: none;
     color:var(--cyan);
 }
 
-/* 16-03-2021 */
-.hot-news-content__2 span{
+#hot-2 span{
     display: inline-block;
     min-height: 230px;
     width: 100%;
@@ -161,8 +143,14 @@
     background-position: center!important;
 }
 
-.hot-news-content__2 h2,
-.hot-news-content__2 time{
+@media(max-width:996px){
+    #hot-2 span {
+        min-height: 160px;
+    }
+}
+
+#hot-2 h2,
+#hot-2 time{
     position: relative;
     z-index: 3;
     display: block;
@@ -170,27 +158,39 @@
     transition: .5s;
 }
 
-.hot-news-content__2 h2{
+@media(max-width: 996px){
+    #hot-2 time{
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--gray);
+    }
+}
+
+#hot-2 h2{
     line-height: 1.1;
     margin-top: 20px;
 }
 
 @media(max-width:996px){
-    .hot-news-content__2 h2{
-        width: 95%;
-        margin: 0 0 10px;
-        font-size: 33px;
+    #hot-2 h2{
+        font-size: 14px;
+        margin: 0;
+        line-height: normal;
+        padding: 10px 0 10px 0;
+        text-decoration: none;
+        color: var(--black);
     }
 }
 
 @media(max-width:996px){
-    .hot-news-content__2:hover h2,
-    .hot-news-content__2:hover time{
+    #hot-2:hover h2,
+    #hot-2:hover time{
         transform: translateX(20px);
     }
 }
 
-.hot-news-content__2::before{
+#hot-2::before{
     content: '';
     display: block;
     position: absolute;
@@ -204,25 +204,36 @@
     transition: .5s;
 }
 
-.hot-news-content__2:hover::before{
+#hot-2:hover::before{
     transform: rotate(-35deg) translateX(-100%);
 }
 
-/* 3 елемент (зліва внизу) */
-.hot-news-content__3{
-    grid-area: hot-news-content-3;
+#hot-3{
+    grid-area: hot-3
 }
 
-/* 4 елемент (справа внизу) */
-.hot-news-content__4{
-    grid-area: hot-news-content-4;
+#hot-4{
+    grid-area: hot-4
+}
+
+#hot-5{
+    grid-area: hot-5
+}
+
+#hot-6{
+    grid-area: hot-6;
+}
+
+#hot-7{
+    grid-area: hot-7;
 }
 
 @media(max-width:996px){
-    .hot-news-content__4{
+    #hot-7{
         display: none;
     }
 }
+
 
 /* золотий фон, картинка, заголовок, мітка */
 .gold-link-block,
@@ -336,6 +347,13 @@
     border-width:3px;
 }
 
+
+
+
+
+
+
+
 .block-3-wrapper {
     margin: 30px 0;
     display: grid;
@@ -378,8 +396,16 @@
     font-size: 18px;
 }
 
+/* на головній (не пам'ятаю, чи ці блоки ще десь юзаються) */
+.hot-main .block-3 a h3
+{
+    font-size: 24px
+}
+
 @media(max-width:996px){
-    .block-3 a h3{
+    .block-3 a h3,
+    .hot-main .block-3 a h3
+    {
         font-size: 14px;
     }
 }
