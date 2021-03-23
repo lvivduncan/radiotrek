@@ -3,7 +3,7 @@
 #page{
     display: grid;
     grid-template-columns: 40px 1fr 300px;
-    grid-gap: 20px;
+    grid-gap: 28px;
 }
 
 @media(max-width:776px){
