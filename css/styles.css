@@ -97,3 +97,6 @@
 
 /* адмін-бар */
 @import url('./adminbar.css');
+
+/* цитати */
+@import url('./blockquote.css');
