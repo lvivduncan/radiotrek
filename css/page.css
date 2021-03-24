@@ -67,6 +67,11 @@
     font-size: 18px;
 }
 
+@media(min-width: 1240px){
+    #page-main p{
+        font-size: 22px;
+    }
+}
 
 /* мітки */
 .tags strong{
