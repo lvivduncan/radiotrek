@@ -3,7 +3,7 @@ blockquote:not([class])
 {
     border-top: 1px solid var(--gold);
     border-bottom: 1px solid var(--gold);
-    padding: 30px 0 30px 100px;
+    padding: 30px 10px 30px 100px;
     color: var(--gray-dark);
     position: relative;
 }

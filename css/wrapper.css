@@ -1,7 +1,8 @@
 
 /* основна шпальта */
 .wrapper{
-    width: 1280px;
+    /* width: 1280px; */
+    width: 1070px;
     margin: auto;
 }
 
