@@ -1,7 +1,8 @@
 
 .like{
-    /* max-width: 40px; */
+    max-width: 30px;
     text-align: center;
+    margin-left: 11px
 }
 
 .like span,
