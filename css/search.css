@@ -72,6 +72,21 @@
     text-decoration: underline;
 }
 
+/* примусові розміри картинки */
+#search-result li img{
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* на мобілці -- на всю ширину */
+@media(max-width: 540px){
+    #search-result li img{
+        width: 100%;
+        height: auto;
+    }
+}
+
 #search-result li time{
     display: block;
     font-size: 14px;
