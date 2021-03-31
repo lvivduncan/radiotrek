@@ -19,3 +19,147 @@
         grid-gap: 10px;
     }
 }
+
+/* 12 елементів + 2 порожні */
+ .category--hot :nth-child(1){
+    order: 1
+}
+.category--hot :nth-child(2){
+    order: 2
+}
+.category--hot :nth-child(3){
+    order: 3
+}
+.category--hot :nth-child(4){
+    order: 4
+}
+.category--hot :nth-child(5){
+    order: 5
+}
+.category--hot :nth-child(6){
+    order: 6
+}
+.category--hot :nth-child(7){
+    order: 7
+}
+.category--hot :nth-child(8){
+    order: 8
+}
+.category--hot :nth-child(9){
+    order: 9
+}
+.category--hot :nth-child(10){
+    order: 10
+}
+.category--hot :nth-child(11){
+    order: 11
+}
+.category--hot :nth-child(12){
+    order: 12
+}
+/* empty blocks */
+.category--hot::after{
+    content: '';
+    display: block;
+    order: 13
+}
+.category--hot::before{
+    content: '';
+    display: block;
+    order: 14
+}
+
+@media(max-width:996px){
+    .category--hot :nth-child(1){
+        order: 1
+    }
+    .category--hot :nth-child(2){
+        order: 2
+    }
+    .category--hot :nth-child(3){
+        order: 3
+    }
+    .category--hot :nth-child(4){
+        order: 4
+    }
+
+    .category--hot :nth-child(5){
+        order: 9
+    }
+    .category--hot :nth-child(6){
+        order: 10
+    }
+
+    .category--hot :nth-child(7){
+        order: 5
+    }
+    .category--hot :nth-child(8){
+        order: 6
+    }
+    .category--hot :nth-child(9){
+        order: 7
+    }
+    .category--hot :nth-child(10){
+        order: 8
+    }
+     .category--hot :nth-child(11){
+        order: 13
+    }
+    .category--hot :nth-child(12){
+        order: 14
+    } 
+    /* empty blocks */
+    .category--hot::after{
+        order: 11
+    }
+    .category--hot::before{
+        order: 12
+    }
+}
+
+
+@media(max-width:776px){
+    .category--hot :nth-child(1){
+        order: 1
+    }
+    .category--hot :nth-child(2){
+        order: 2
+    }
+    .category--hot :nth-child(3){
+        order: 5
+    }
+    .category--hot :nth-child(4){
+        order: 6
+    }
+    .category--hot :nth-child(5){
+        order: 9
+    }
+    .category--hot :nth-child(6){
+        order: 10
+    }
+    .category--hot :nth-child(7){
+        order: 3
+    }
+    .category--hot :nth-child(8){
+        order: 4
+    }
+    .category--hot :nth-child(9){
+        order: 7
+    }
+    .category--hot :nth-child(10){
+        order: 8
+    }
+     .category--hot :nth-child(11){
+        order: 11
+    }
+    .category--hot :nth-child(12){
+        order: 12
+    } 
+    /* empty blocks */
+    .category--hot::after{
+        order: 13
+    }
+    .category--hot::before{
+        order: 14
+    }
+}
