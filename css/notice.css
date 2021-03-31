@@ -1,12 +1,27 @@
 
 /* оголошення */
 .notices{
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:776px){
+    .notices{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:540px){
+    .notices{
+        grid-template-columns: 1fr;
+    }
 }
 
 .notice{
     padding: 10px 0 20px;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     border-bottom: 1px solid var(--blue);
 }
 
@@ -17,4 +32,8 @@
 
 .notice p{
     font-size: 14px;
+}
+
+.notices :nth-child(4){
+    align-self: center;
 }
