@@ -97,3 +97,19 @@
 #search-result li p{
     font-size: 14px;
 }
+
+/* заглушка */
+.search-placeholder{
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    background: url('../images/search-placeholder.png');
+    background-size: cover;
+}
+
+@media(max-width:540px){
+    .search-placeholder{
+        display: block;
+        margin: auto;
+    }
+}
