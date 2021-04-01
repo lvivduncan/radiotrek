@@ -165,3 +165,15 @@
 #page-main li{
     margin: 20px 0;
 }
+
+#page-main ul li{
+    list-style: none;
+    position: relative;
+}
+
+#page-main ul li::before{
+    content: '\2022';
+    position: absolute;
+    left: -13px;
+    font-weight: bold;
+}
