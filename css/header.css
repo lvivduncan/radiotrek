@@ -201,7 +201,7 @@
 #nav--bar{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 #nav--bar span{
@@ -212,7 +212,7 @@
 }
 
 #nav--bar svg{
-    width: 100%;
+    width: 22px;
     fill: var(--black);
     transition: .5s;
 }
