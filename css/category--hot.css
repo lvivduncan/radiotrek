@@ -3,20 +3,20 @@
 .category--hot{
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    grid-gap: 30px;
+    grid-gap: 20px 30px;
 }
 
 @media(max-width:996px){
     .category--hot{
         grid-template-columns: repeat(4,1fr);
-        grid-gap: 20px;
+        grid-gap: 10px 20px;
     }
 }
 
 @media(max-width:776px){
     .category--hot{
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 10px;
+        grid-gap: 0 10px;
     }
 }
 
