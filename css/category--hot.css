@@ -163,3 +163,7 @@
         order: 14
     }
 }
+
+.category--hot .title {
+    height: 48px;
+}
