@@ -167,3 +167,7 @@
 .category--hot .title {
     height: 48px;
 }
+
+.category--hot .post{
+    margin: 0;
+}
