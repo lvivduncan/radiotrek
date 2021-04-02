@@ -168,8 +168,11 @@
 }
 
 #hot-2 h2{
-    line-height: 1.1;
-    margin-top: 20px;
+    /* line-height: 1.1; */
+    /* margin-top: 20px; */
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 800;
 }
 
 @media(max-width:996px){
@@ -399,7 +402,10 @@
 /* на головній (не пам'ятаю, чи ці блоки ще десь юзаються) */
 .hot-main .block-3 a h3
 {
-    font-size: 24px
+    /* font-size: 24px */
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 800;
 }
 
 @media(max-width:996px){
