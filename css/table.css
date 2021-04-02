@@ -1,0 +1,25 @@
+
+.levus-table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin: 30px 0;
+}
+
+table{
+    width: 100%;
+    max-width: 100%;
+}
+
+table,
+td,
+th{
+    border-collapse: collapse;
+    border: 1px solid var(--gray);
+}
+
+td,
+th{
+    padding: 10px;
+}

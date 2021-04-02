@@ -14,7 +14,9 @@
 }
 
 /* основна шпальта */
-/* #page-main{} */
+#page-main{
+    overflow: hidden;
+}
 
 /* картинки примусово на всю ширину */
 #page-main img{

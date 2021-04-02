@@ -173,6 +173,23 @@
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto hic quas molestiae non cupiditate, ab, illum ducimus tempore aliquid est iure labore quae ipsam doloremque maiores et necessitatibus. Temporibus, libero.</li>
                 </ol>
 
+                <table>
+                    <tr>
+                        <th>1 header</th>
+                        <th>2 header</th>
+                        <th>3 header</th>
+                        <th>4 header</th>
+                        <th>5 header</th>
+                    </tr>
+                    <tr>
+                        <td>1  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur labore nostrum, similique iste voluptatibus suscipit. Fugiat veritatis, asperiores illo corporis itaque fuga animi alias minima, necessitatibus cumque minus laborum sit?</td>
+                        <td>2  Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repudiandae saepe fugit consequatur mollitia quos debitis pariatur odio rem ut placeat quo illo praesentium veritatis, assumenda voluptas officia suscipit nisi?</td>
+                        <td>3  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                        <td>4  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                        <td>5  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                    </tr>
+                </table>
+
                 <blockquote>
                     <p>Військові та Нацгвардійці допомагають комунальникам розчищати зупинки та під’їзди до об’єктів соціальної сфери.</p>
                 </blockquote>
@@ -497,6 +514,21 @@
     </footer>
     
     <script src="js/script.js"></script>
+    <script>
+
+        const table = document.querySelectorAll('table');
+
+        if (table.length > 0) {
+            table.forEach(item => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'levus-table-wrapper';
+                const table = item.cloneNode(true);
+                item.replaceWith(wrapper);
+                wrapper.append(table);
+            });
+        }
+
+    </script>
 
 </body>
 </html>

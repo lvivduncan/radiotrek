@@ -62,17 +62,11 @@
 @import url('./projects.css');
 @import url('./blank.css');
 
-/* не актуально */
-/* @import url('./votes--old.css'); */
-
 /* решта новин */
 @import url('./outher--news.css');
 
 /* відео-анонси */
 @import url('./videos.css');
-
-/* голосування */ /* не актуально */
-/* @import url('./vote.css'); */
 
 /* окремий допис */
 @import url('./post.css');
@@ -105,3 +99,6 @@
 
 /* цитати */
 @import url('./blockquote.css');
+
+/* responcive table */
+@import url('./table.css');
