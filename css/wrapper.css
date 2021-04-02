@@ -1,8 +1,18 @@
 
+/* для сторінки "публікація" */
+#article .wrapper{
+    width: 1070px;
+}
+
+@media(max-width: 1120px){
+    #article .wrapper{
+        width: 95%;
+    }    
+}
+
 /* основна шпальта */
 .wrapper{
-    /* width: 1280px; */
-    width: 1070px;
+    width: 1280px;
     margin: auto;
 }
 
