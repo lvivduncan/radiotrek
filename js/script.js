@@ -202,3 +202,13 @@
 		}
 	});
 }
+
+// sticky
+{
+	// висота блоку з шарингом
+	const like = document.querySelector('.like').clientHeight;
+	// смайлики
+	const smile = document.querySelector('#smile');
+	// відступ для смайликів
+	smile.style.top = `${like + 80}px`;
+}

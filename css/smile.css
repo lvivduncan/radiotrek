@@ -2,13 +2,9 @@
 /* 5 smiles */
 #smile{
     text-align: center;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    transition: .5s;
+    padding: 20px 0 0;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 @media(max-width:776px){
@@ -18,40 +14,60 @@
         right: 0;
         z-index: 5;
         margin: 0;
-
+        top: auto!important;
         transition: .5s;
-        transform: translateX(280px);
+        transform: translateX(300px);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        max-width: 290px;
+        height: 60px;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 0;
+        background: var(--white);
+        box-shadow: 0 0 10px rgba(0,0,0,.5);        
     }
 }
 
 @media(max-width:450px){
     #smile{
         bottom: 75px;
+        transition: .5s;
+    }
+}
+
+#smile.modal{
+    transform: translateX(-90px);
+    top: auto!important;
+}
+
+@media(max-width:450px){
+    #smile.modal{
+        transform: translateX(-20px);
     }
 }
 
 #smile a{
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border: 1px solid var(--gray-light);
+    padding: 5px 0;
     border-radius: 5px;
-    margin: 5px;
     color: var(--gray);
     transition: .5s;
+    display: block;
+    margin-left: 11px;
+    position: relative;
 }
 
 @media(max-width:776px){
     #smile a{
         color: var(--gray);
-        transition: .5s;
-
         position: relative;
         padding: 10px;
         margin: 0;
-        border: none;
-        display: block;
+        transition: .5s;
     }
 }
 
@@ -64,17 +80,25 @@
 }
 
 #smile span{
-    padding: 0 10px;
-    min-width: 60px;
+    position: absolute;
+    top: -3px;
+    right: -12px;
+    background: var(--gold-dark);
+    color: var(--white);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(max-width:776px) {
     #smile span{
-        padding: 0;
-        min-width: auto;
         position: absolute;
-        top: -5px;
-        right: -5px;
+        top: 0;
+        right: 0;
     }
 }
 
@@ -97,29 +121,6 @@
     #smile-mobile{
         display: block;
         -webkit-tap-highlight-color: transparent;
-    }
-
-}
-
-#smile.modal{
-    max-width: 290px;
-    height: 60px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0;
-    background: var(--white);
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    transform: translateX(-90px);
-}
-
-@media(max-width:450px){
-    #smile.modal{
-        transform: translateX(-20px);
     }
 }
 
