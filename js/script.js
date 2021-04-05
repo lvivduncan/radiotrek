@@ -188,9 +188,11 @@
 
 	// modal window (смайлики)
 	document.getElementById('smile-mobile').addEventListener('click', () => {
-		smile.classList.toggle('modal');
-		body.classList.toggle('mobile-body');
-		wrapperModal.classList.toggle('show');
+		setTimeout(() => {
+			smile.classList.toggle('modal');
+			body.classList.toggle('mobile-body');
+			wrapperModal.classList.toggle('show');			
+		}, 200);
 	});	
 
 	document.addEventListener('click', e => {
