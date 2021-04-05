@@ -96,7 +96,9 @@
 @media(max-width:776px){
     #smile-mobile{
         display: block;
+        -webkit-tap-highlight-color: transparent;
     }
+
 }
 
 #smile.modal{

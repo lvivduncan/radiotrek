@@ -99,10 +99,18 @@
     content: '';
     display: block;
     position: absolute;
-    top: 7px;
+    top: 4px;
     left: 5px;
     width: 15px;
     height: 15px;
+}
+
+@media(max-width:776px) {
+    #online.play::before,
+    #online.stop::before,
+    #online.load::before{
+        top: 7px;
+    }    
 }
 
 #online.play::before{
