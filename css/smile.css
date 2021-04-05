@@ -11,12 +11,12 @@
     #smile{
         position: fixed;
         bottom: 15px;
-        right: 0;
+        right: -300px;
         z-index: 5;
         margin: 0;
         top: auto!important;
         transition: .5s;
-        transform: translateX(300px);
+        transform: translateX(0);
 
         display: flex;
         align-items: center;
@@ -40,13 +40,13 @@
 }
 
 #smile.modal{
-    transform: translateX(-90px);
+    transform: translateX(-390px);
     top: auto!important;
 }
 
 @media(max-width:450px){
     #smile.modal{
-        transform: translateX(-20px);
+        transform: translateX(-320px);
     }
 }
 
