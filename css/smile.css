@@ -83,8 +83,9 @@
     position: absolute;
     top: -3px;
     right: -12px;
-    background: var(--gold-dark);
-    color: var(--white);
+    background: var(--white);
+    color: var(--cyan-dark);
+    border: 1px solid var(--cyan-dark);
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -124,9 +125,9 @@
     }
 }
 
-.mobile-body{
+/* .mobile-body{
     overflow: hidden;
-}
+} */
 
 /* додаткова обгортка для модалки */
 .wrapper-modal{

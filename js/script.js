@@ -175,22 +175,18 @@
 }
 
 {
-	// весь боді
-	const body = document.body;
-
 	// блок зі смайлами
 	const smile = document.getElementById('smile');
 
 	// затемнення фону
 	const wrapperModal = document.createElement('div');
 	wrapperModal.classList.add('wrapper-modal');
-	body.append(wrapperModal);
+	document.body.append(wrapperModal);
 
 	// modal window (смайлики)
 	document.getElementById('smile-mobile').addEventListener('click', () => {
 		setTimeout(() => {
 			smile.classList.toggle('modal');
-			body.classList.toggle('mobile-body');
 			wrapperModal.classList.toggle('show');			
 		}, 200);
 	});	
@@ -205,10 +201,15 @@
 
 // sticky
 {
+	//
+	const screenHeight = window.screen.height - 70;
+	console.log(screenHeight)
+
 	// висота блоку з шарингом
 	const like = document.querySelector('.like').clientHeight;
 	// смайлики
 	const smile = document.querySelector('#smile');
 	// відступ для смайликів
+	// smile.style.paddingTop = `${100}vh`;
 	smile.style.top = `${like + 80}px`;
 }
