@@ -1,8 +1,16 @@
 
+#sticky{
+    /* height: 100vh; */
+}
+
 .like{
     max-width: 30px;
     text-align: center;
-    margin-left: 11px
+    margin-left: 11px;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px
 }
 
 @media(max-width:776px){

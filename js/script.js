@@ -202,3 +202,17 @@
 		}
 	});
 }
+
+// sticky
+{
+	// висота шпальти
+	const pageHeight = document.getElementById('page');
+	// кнопки
+	const like = document.getElementsByClassName('like')[0];
+	// обгортка
+	const sticky = document.getElementById('sticky');
+	// обгортці присвоюємо висоту шпальти
+	sticky.style.height = `${pageHeight}px`;
+
+	console.log(sticky)
+}

@@ -116,7 +116,8 @@
 
 
 
-/* Читайте також */
+/* del */
+/* 
 .relative{
     margin: 30px 0;
 }
@@ -151,7 +152,6 @@
     position: absolute;
     left: 0;
     top: 50%;
-    /* display: block; */
     transition: .5s;
 }
 
@@ -161,7 +161,8 @@
 
 .relative a:hover::before{
     transform: scale(2)
-}
+} */
+/* del */
 
 /* відступи */
 #page-main ul,
