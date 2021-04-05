@@ -16,7 +16,9 @@ img{
 
 :root{
     
-    --d: #183f66;
+    --d: #183f66; 
+    --cyan-logo: #003964;
+    --gold-logo: #faa61a;
 
     --gold-light: #ffe066;
     --gold: #ffcc00;
