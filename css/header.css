@@ -62,7 +62,6 @@
     }
 }
 
-
 /* кнопка радіо */
 #online {
     padding: 3px 20px 3px 26px;
@@ -100,7 +99,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: 5px;
+    top: 7px;
     left: 5px;
     width: 15px;
     height: 15px;
