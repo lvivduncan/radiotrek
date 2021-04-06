@@ -21,7 +21,7 @@
 
 
 #comments li{
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 /* 12 level */
@@ -32,6 +32,8 @@
 /* коментар */
 .comment{
     margin: 0 0 30px;
+
+    border-bottom: 1px solid var(--gray-ultralight)
 }
 
 /* венхня смуга */
