@@ -8,11 +8,11 @@
 }
 
 /* temp */
-@media(min-width:777px){
+/* @media(min-width:777px){
     #smile{
         display: none;
     }
-}
+} */
 
 @media(max-width:776px){
     #smile{

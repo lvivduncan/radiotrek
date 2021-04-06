@@ -1,0 +1,43 @@
+
+/* коментар */
+#comments{
+    margin: 20px 0;
+}
+
+#comments ul,
+#comments li{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+#comments li{
+    margin-left: 20px;
+}
+
+/* коментар */
+.comment{
+    margin: 20px 0;
+}
+
+/* венхня смуга */
+.comment-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* заголовок зліва*/
+.comment-header .comment-title{
+
+}
+
+/* голосування справа*/
+.comment-header .comment-vote{
+
+}
+
+/* тіло коментаря */
+.comment-body{
+
+}

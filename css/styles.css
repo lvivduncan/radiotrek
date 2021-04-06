@@ -102,3 +102,6 @@
 
 /* responcive table */
 @import url('./table.css');
+
+/* коментарі */
+@import url('./comments.css');

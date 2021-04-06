@@ -203,13 +203,21 @@
 {
 	//
 	const screenHeight = window.screen.height - 70;
-	console.log(screenHeight)
-
+	
 	// висота блоку з шарингом
 	const like = document.querySelector('.like').clientHeight;
 	// смайлики
 	const smile = document.querySelector('#smile');
 	// відступ для смайликів
-	// smile.style.paddingTop = `${100}vh`;
-	smile.style.top = `${like + 80}px`;
+	smile.style.top = `${like*2}px`;
+	
+	// висота основної шпальти
+	const page = document.getElementById('page').clientHeight;
+	
+	console.log('висота вікна: ', screenHeight)
+	console.log('висота: ', page)
+	console.log('лайки: ', like)
+	console.log('висота - лайки: ', page - like)
+
+	smile.style.paddingTop = `${page - (like*2+80)}px`;
 }
