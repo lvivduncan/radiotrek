@@ -250,7 +250,7 @@
                     Коментарі: <span>0</span>
                 </div>
 
-                <a href="" class="button-yellow">
+                <a href="#comments-form" class="button-yellow">
                     Коментувати
                 </a>
             </main>
@@ -306,52 +306,425 @@
         </div>
         <!-- #page -->
 
-        <div id="comments">
+        <section id="comments">
+            <h1 class="title">Усі коментарі</h1>
+
+            <!-- 1 рівень -->
             <ul>
                 <li>
+
                     <div class="comment">
                         <div class="comment-header">
                             <div class="comment-title">
-                                username
+                                <img src="temp/37.png" alt="">
+                                <strong>Андрій Епіфанцев</strong>
+                                <time>06.02.2021 12:20</time>
+                                <div class="comment-ip">127.0.0.1</div>
                             </div>
                             <div class="comment-vote">
-                                +1 20 -1
+                                <a href="" class="comment-up">+1</a>
+                                <span class="comment-result green">20</span>
+                                <a href="" class="comment-down">-1</a> 
                             </div>
                         </div>
-                        <div class="comment-body">
-                            <p>comment 1</p> 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias odit delectus accusantium corrupti tempora, iure distinctio aperiam natus a recusandae animi optio similique voluptatum laudantium, autem quos quas atque beatae.</p>
+                        <div class="comment-message">
+                            <p>Хотів почитати статтю. Заглянув в коментарі, прочитав Пєніє, і впав в депресію. Все тлін...</p>
                         </div>
-                    </div>                    
+                    </div> 
+
                 </li>
                 <li>
+
                     <div class="comment">
                         <div class="comment-header">
                             <div class="comment-title">
-                                username
+                                <img src="temp/38.jpg" alt="">
+                                <strong>Юрій Якимчук</strong>
+                                <time>06.02.2021 12:40</time>
+                                <div class="comment-ip">127.0.0.1</div>
                             </div>
                             <div class="comment-vote">
-                                +1 20 -1
+                                <a href="" class="comment-up">+1</a>
+                                <span class="comment-result red">1</span>
+                                <a href="" class="comment-down">-1</a> 
                             </div>
                         </div>
-                        <div class="comment-body">
-                            <p>comment 2</p> 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias odit delectus accusantium corrupti tempora, iure distinctio aperiam natus a recusandae animi optio similique voluptatum laudantium, autem quos quas atque beatae.</p>
+                        <div class="comment-message">
+                            <p>Пока слава богу всі пальці в Олексія цілі.</p> 
+                            <p>Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</p>
                         </div>
                     </div>
+
+                    <!-- 2 рівень -->
                     <ul>
                         <li>
-                            <p>subcomment 1</p>
+
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="comment-title">
+                                        <img src="temp/39.jpg" alt="">
+                                        <strong>Anatolii Medvedchuk</strong>
+                                        <time>06.02.2021 12:40</time>
+                                        <div class="comment-ip">127.0.0.1</div>
+                                    </div>
+                                    <div class="comment-vote">
+                                        <a href="" class="comment-up">+1</a>
+                                        <span class="comment-result red">1</span>
+                                        <a href="" class="comment-down">-1</a> 
+                                    </div>
+                                </div>
+                                <div class="comment-message">
+                                    <!-- цитата мусово має мати клас! -->
+                                    <p><blockquote class="comment-quote">Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</blockquote> </p>
+                                    <p>Але іноді він в ударі і йому за це пришивають ще декілька :)</p>
+                                </div>
+                            </div>
+                            
+                            <!-- 3 рівень -->
                             <ul>
                                 <li>
-                                    <p>subsubcomment 1</p>
+
+                                    <div class="comment">
+                                        <div class="comment-header">
+                                            <div class="comment-title">
+                                                <img src="temp/40.jpg" alt="">
+                                                <strong>Alexander Timoshilov</strong>
+                                                <time>06.02.2021 12:40</time>
+                                                <div class="comment-ip">127.0.0.1</div>
+                                            </div>
+                                            <div class="comment-vote">
+                                                <a href="" class="comment-up">+1</a>
+                                                <span class="comment-result">0</span>
+                                                <a href="" class="comment-down">-1</a> 
+                                            </div>
+                                        </div>
+                                        <div class="comment-message">
+                                            <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4 рівень -->
+                                    <ul>
+                                        <li>
+
+                                            <div class="comment">
+                                                <div class="comment-header">
+                                                    <div class="comment-title">
+                                                        <img src="temp/40.jpg" alt="">
+                                                        <strong>Alexander Timoshilov</strong>
+                                                        <time>06.02.2021 12:40</time>
+                                                        <div class="comment-ip">127.0.0.1</div>
+                                                    </div>
+                                                    <div class="comment-vote">
+                                                        <a href="" class="comment-up">+1</a>
+                                                        <span class="comment-result">0</span>
+                                                        <a href="" class="comment-down">-1</a> 
+                                                    </div>
+                                                </div>
+                                                <div class="comment-message">
+                                                    <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- 5 рівень -->
+                                            <ul>
+                                                <li>
+
+                                                    <div class="comment">
+                                                        <div class="comment-header">
+                                                            <div class="comment-title">
+                                                                <img src="temp/40.jpg" alt="">
+                                                                <strong>Alexander Timoshilov</strong>
+                                                                <time>06.02.2021 12:40</time>
+                                                                <div class="comment-ip">127.0.0.1</div>
+                                                            </div>
+                                                            <div class="comment-vote">
+                                                                <a href="" class="comment-up">+1</a>
+                                                                <span class="comment-result">0</span>
+                                                                <a href="" class="comment-down">-1</a> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment-message">
+                                                            <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 6 рівень -->
+                                                    <ul>
+                                                        <li>
+
+                                                            <div class="comment">
+                                                                <div class="comment-header">
+                                                                    <div class="comment-title">
+                                                                        <img src="temp/40.jpg" alt="">
+                                                                        <strong>Alexander Timoshilov</strong>
+                                                                        <time>06.02.2021 12:40</time>
+                                                                        <div class="comment-ip">127.0.0.1</div>
+                                                                    </div>
+                                                                    <div class="comment-vote">
+                                                                        <a href="" class="comment-up">+1</a>
+                                                                        <span class="comment-result">0</span>
+                                                                        <a href="" class="comment-down">-1</a> 
+                                                                    </div>
+                                                                </div>
+                                                                <div class="comment-message">
+                                                                    <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                </div>
+                                                            </div> 
+
+                                                            <!-- 7 рівень -->
+                                                            <ul>
+                                                                <li>
+
+                                                                    <div class="comment">
+                                                                        <div class="comment-header">
+                                                                            <div class="comment-title">
+                                                                                <img src="temp/40.jpg" alt="">
+                                                                                <strong>Alexander Timoshilov</strong>
+                                                                                <time>06.02.2021 12:40</time>
+                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                            </div>
+                                                                            <div class="comment-vote">
+                                                                                <a href="" class="comment-up">+1</a>
+                                                                                <span class="comment-result">0</span>
+                                                                                <a href="" class="comment-down">-1</a> 
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="comment-message">
+                                                                            <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="comment">
+                                                                        <div class="comment-header">
+                                                                            <div class="comment-title">
+                                                                                <img src="temp/39.jpg" alt="">
+                                                                                <strong>Anatolii Medvedchuk</strong>
+                                                                                <time>06.02.2021 12:40</time>
+                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                            </div>
+                                                                            <div class="comment-vote">
+                                                                                <a href="" class="comment-up">+1</a>
+                                                                                <span class="comment-result red">1</span>
+                                                                                <a href="" class="comment-down">-1</a> 
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="comment-message">
+                                                                            <!-- цитата мусово має мати клас! -->
+                                                                            <p><blockquote class="comment-quote">Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</blockquote> </p>
+                                                                            <p>Але іноді він в ударі і йому за це пришивають ще декілька :)</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="comment">
+                                                                        <div class="comment-header">
+                                                                            <div class="comment-title">
+                                                                                <img src="temp/39.jpg" alt="">
+                                                                                <strong>Anatolii Medvedchuk</strong>
+                                                                                <time>06.02.2021 12:40</time>
+                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                            </div>
+                                                                            <div class="comment-vote">
+                                                                                <a href="" class="comment-up">+1</a>
+                                                                                <span class="comment-result red">1</span>
+                                                                                <a href="" class="comment-down">-1</a> 
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="comment-message">
+                                                                            <!-- цитата мусово має мати клас! -->
+                                                                            <p><blockquote class="comment-quote">Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</blockquote> </p>
+                                                                            <p>Але іноді він в ударі і йому за це пришивають ще декілька :)</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- 8 рівень -->
+                                                                    <ul>
+                                                                        <li>
+
+                                                                            <div class="comment">
+                                                                                <div class="comment-header">
+                                                                                    <div class="comment-title">
+                                                                                        <img src="temp/40.jpg" alt="">
+                                                                                        <strong>Alexander Timoshilov</strong>
+                                                                                        <time>06.02.2021 12:40</time>
+                                                                                        <div class="comment-ip">127.0.0.1</div>
+                                                                                    </div>
+                                                                                    <div class="comment-vote">
+                                                                                        <a href="" class="comment-up">+1</a>
+                                                                                        <span class="comment-result">0</span>
+                                                                                        <a href="" class="comment-down">-1</a> 
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="comment-message">
+                                                                                    <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <!-- 9 рівень -->
+                                                                            <ul>
+                                                                                <li>
+
+                                                                                    <div class="comment">
+                                                                                        <div class="comment-header">
+                                                                                            <div class="comment-title">
+                                                                                                <img src="temp/40.jpg" alt="">
+                                                                                                <strong>Alexander Timoshilov</strong>
+                                                                                                <time>06.02.2021 12:40</time>
+                                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                                            </div>
+                                                                                            <div class="comment-vote">
+                                                                                                <a href="" class="comment-up">+1</a>
+                                                                                                <span class="comment-result">0</span>
+                                                                                                <a href="" class="comment-down">-1</a> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="comment-message">
+                                                                                            <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <!-- 10 рівень -->
+                                                                                    <ul>
+                                                                                        <li>
+
+                                                                                            <div class="comment">
+                                                                                                <div class="comment-header">
+                                                                                                    <div class="comment-title">
+                                                                                                        <img src="temp/40.jpg" alt="">
+                                                                                                        <strong>Alexander Timoshilov</strong>
+                                                                                                        <time>06.02.2021 12:40</time>
+                                                                                                        <div class="comment-ip">127.0.0.1</div>
+                                                                                                    </div>
+                                                                                                    <div class="comment-vote">
+                                                                                                        <a href="" class="comment-up">+1</a>
+                                                                                                        <span class="comment-result">0</span>
+                                                                                                        <a href="" class="comment-down">-1</a> 
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="comment-message">
+                                                                                                    <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <!-- 11 рівень -->
+                                                                                            <ul>
+                                                                                                <li>
+
+                                                                                                    <div class="comment">
+                                                                                                        <div class="comment-header">
+                                                                                                            <div class="comment-title">
+                                                                                                                <img src="temp/40.jpg" alt="">
+                                                                                                                <strong>Alexander Timoshilov</strong>
+                                                                                                                <time>06.02.2021 12:40</time>
+                                                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                                                            </div>
+                                                                                                            <div class="comment-vote">
+                                                                                                                <a href="" class="comment-up">+1</a>
+                                                                                                                <span class="comment-result">0</span>
+                                                                                                                <a href="" class="comment-down">-1</a> 
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="comment-message">
+                                                                                                            <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="comment">
+                                                                                                        <div class="comment-header">
+                                                                                                            <div class="comment-title">
+                                                                                                                <img src="temp/39.jpg" alt="">
+                                                                                                                <strong>Anatolii Medvedchuk</strong>
+                                                                                                                <time>06.02.2021 12:40</time>
+                                                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                                                            </div>
+                                                                                                            <div class="comment-vote">
+                                                                                                                <a href="" class="comment-up">+1</a>
+                                                                                                                <span class="comment-result red">1</span>
+                                                                                                                <a href="" class="comment-down">-1</a> 
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="comment-message">
+                                                                                                            <!-- цитата мусово має мати клас! -->
+                                                                                                            <p><blockquote class="comment-quote">Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</blockquote> </p>
+                                                                                                            <p>Але іноді він в ударі і йому за це пришивають ще декілька :)</p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="comment">
+                                                                                                        <div class="comment-header">
+                                                                                                            <div class="comment-title">
+                                                                                                                <img src="temp/39.jpg" alt="">
+                                                                                                                <strong>Anatolii Medvedchuk</strong>
+                                                                                                                <time>06.02.2021 12:40</time>
+                                                                                                                <div class="comment-ip">127.0.0.1</div>
+                                                                                                            </div>
+                                                                                                            <div class="comment-vote">
+                                                                                                                <a href="" class="comment-up">+1</a>
+                                                                                                                <span class="comment-result red">1</span>
+                                                                                                                <a href="" class="comment-down">-1</a> 
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="comment-message">
+                                                                                                            <!-- цитата мусово має мати клас! -->
+                                                                                                            <p><blockquote class="comment-quote">Олексія просто адміни доу держать в заручниках в підвалі, де при створенні теми загоряється червона кнопка. Якщо він за 20 хв після створення теми не напише якусь нісенітницю, повз яку важко пройти, то йому відрубують один палець.</blockquote> </p>
+                                                                                                            <p>Але іноді він в ударі і йому за це пришивають ще декілька :)</p>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <!-- 12 рівень -->
+                                                                                                    <ul>
+                                                                                                        <li>
+
+                                                                                                            <div class="comment">
+                                                                                                                <div class="comment-header">
+                                                                                                                    <div class="comment-title">
+                                                                                                                        <img src="temp/40.jpg" alt="">
+                                                                                                                        <strong>Alexander Timoshilov</strong>
+                                                                                                                        <time>06.02.2021 12:40</time>
+                                                                                                                        <div class="comment-ip">127.0.0.1</div>
+                                                                                                                    </div>
+                                                                                                                    <div class="comment-vote">
+                                                                                                                        <a href="" class="comment-up">+1</a>
+                                                                                                                        <span class="comment-result">0</span>
+                                                                                                                        <a href="" class="comment-down">-1</a> 
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="comment-message">
+                                                                                                                    <p>А як юніт тестувати, якщо використовувати всюди new, замість DI?</p>
+                                                                                                                </div>
+                                                                                                            </div>                                                                                                            
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
             </ul>
-        </div>
+
+            <div id="comments-form">
+                <div class="title">
+                    Залишити коментар
+                </div>
+                <form>
+                    <textarea></textarea>
+                    <button class="button-yellow">Надіслати</button>
+                </form>
+            </div>
+
+        </section>
 
         <div class="ad">
             ad

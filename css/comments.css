@@ -1,7 +1,11 @@
 
 /* коментар */
 #comments{
-    margin: 20px 0;
+    margin: 50px 0;
+}
+
+#comments h1{
+    margin: 0 0 20px;
 }
 
 #comments ul,
@@ -11,33 +15,136 @@
     margin: 0;
 }
 
+#comments > ul{
+    margin-left: -20px;
+}
+
+
 #comments li{
     margin-left: 20px;
 }
 
+/* 12 level */
+#comments li li li li li li li li li li li li{
+    margin-left: 0;
+}
+
 /* коментар */
 .comment{
-    margin: 20px 0;
+    margin: 0 0 30px;
 }
 
 /* венхня смуга */
 .comment-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background: var(--gray-ultralight);
+    margin: 0 0 20px;
+    min-height: 22px;
 }
 
 /* заголовок зліва*/
 .comment-header .comment-title{
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    text-transform: uppercase;
 }
+
+.comment-header .comment-title *{
+    margin-right: 10px;
+}
+
+/**/
+.comment-title img{
+    width: 22px;
+}
+
+.comment-title strong{}
+
+.comment-title time{}
+
+.comment-title .comment-ip{}
 
 /* голосування справа*/
 .comment-header .comment-vote{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    overflow: hidden;
+    padding: 0 5px;
+}
 
+/* + */
+.comment-up{
+    width: 9px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 24' fill='%2307a744'%3E%3Cpath d='M6.802.129l-6.709 7.637c-.211.241-.037.615.289.615h3.629c.21 0 .38.167.38.372v14.875c0 .205.169.372.379.372h4.64c.21 0 .379-.167.379-.372v-14.876c0-.205.17-.372.38-.372h3.63c.325 0 .5-.373.289-.615l-6.709-7.637c-.153-.171-.427-.171-.578.001z'%3E%3C/path%3E%3C/svg%3E");
+    text-indent: -9999px;
+    display: inline-block;
+}
+
+/* - */
+.comment-down{
+    width: 9px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 24' fill='%23cc0001'%3E%3Cpath d='M6.802.129l-6.709 7.637c-.211.241-.037.615.289.615h3.629c.21 0 .38.167.38.372v14.875c0 .205.169.372.379.372h4.64c.21 0 .379-.167.379-.372v-14.876c0-.205.17-.372.38-.372h3.63c.325 0 .5-.373.289-.615l-6.709-7.637c-.153-.171-.427-.171-.578.001z'%3E%3C/path%3E%3C/svg%3E");
+    text-indent: -9999px;
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+/* sum */
+.comment-result{
+    padding: 0 5px;
+}
+
+/* від'ємний */
+.comment-result.red{
+    color: var(--red);
+}
+
+.comment-result.red::before{
+    content: '-';
+}
+
+/* позитивний */
+.comment-result.green{
+    color: var(--green);
+}
+
+.comment-result.green::before{
+    content: '+';
 }
 
 /* тіло коментаря */
-.comment-body{
+.comment-message{}
 
+.comment-message p{
+    margin: 0 0 10px;
+}
+
+/* цитата */
+.comment-message blockquote.comment-quote{
+    padding-left: 10px;
+    border-left: 2px solid var(--blue-light);
+}
+
+/* форма */
+#comments-form{
+    padding: 50px 0 0;
+}
+
+#comments-form form{
+    display: block;
+    width: 100%;
+}
+
+#comments-form textarea{
+    width: 100%;
+    resize: vertical;
+    padding: 5px;
+    min-height: 80px;
 }

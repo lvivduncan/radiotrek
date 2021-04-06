@@ -31,8 +31,9 @@ img{
     --cyan-light: #0080dd;
 
     --black: #000;
-    --gray-light: #ddd;
     --gray: #777;
+    --gray-light: #ddd;
+    --gray-ultralight: #f3f3f3;
     --gray-dark: #222;
     --yellow: #ffe066;
 
@@ -41,7 +42,7 @@ img{
 
     --white: #fff;
     --red: #cc0001;
-    --green: rgb(7, 167, 68);
+    --green: #07a744;
 
     --opacity-3: rgba(255, 255, 255, .3);
     --transparent-3: rgba(0,0,0, .3);
