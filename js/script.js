@@ -199,7 +199,7 @@
 	});
 }
 
-/*
+
 // sticky
 {
 	//
@@ -222,4 +222,3 @@
 
 	smile.style.paddingTop = `${page - (like*2+80)}px`;
 }
-*/
