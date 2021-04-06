@@ -114,56 +114,6 @@
     background: var(--cyan-dark)
 }
 
-
-
-/* del */
-/* 
-.relative{
-    margin: 30px 0;
-}
-
-.relative h6{
-    text-transform: uppercase;
-    margin: 0 0 30px;
-    font-size: 18px;
-}
-
-.relative ul,
-.relative li{
-    display: block;
-}
-
-.relative a{
-    font-size: 14px;
-    padding-left: 30px;
-    display: block;
-    line-height: 1.2;
-    position: relative;
-    margin: 0 0 10px;
-    text-decoration: none;
-    transition: .5s;
-}
-
-.relative a::before{
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transition: .5s;
-}
-
-.relative a:hover{
-    text-decoration: underline;
-}
-
-.relative a:hover::before{
-    transform: scale(2)
-} */
-/* del */
-
 /* відступи */
 #page-main ul,
 #page-main ol{
@@ -176,15 +126,7 @@
 }
 
 #page-main ul li{
-    list-style: none;
     position: relative;
-}
-
-#page-main ul li::before{
-    content: '\2022';
-    position: absolute;
-    left: -13px;
-    font-weight: bold;
 }
 
 /* автор статті */

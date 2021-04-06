@@ -19,9 +19,20 @@
     margin-left: -20px;
 }
 
+@media(max-width:540px){
+    #comments > ul{
+        margin-left: -10px;
+    }
+}
 
 #comments li{
     margin-left: 25px;
+}
+
+@media(max-width:540px){
+    #comments li{
+        margin-left: 10px;
+    }
 }
 
 /* 12 level */
@@ -32,8 +43,7 @@
 /* коментар */
 .comment{
     margin: 0 0 30px;
-
-    border-bottom: 1px solid var(--gray-ultralight)
+    border-bottom: 1px solid var(--gray-ultralight);
 }
 
 /* венхня смуга */
@@ -50,6 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     font-size: 12px;
     text-transform: uppercase;
 }
@@ -63,11 +74,21 @@
     width: 22px;
 }
 
-.comment-title strong{}
+@media(max-width:540px){
+    .comment-title strong{
+        /* flex: 0 1 100%; */
+    }
 
-.comment-title time{}
+    .comment-title time{
+        flex: 0 1 100%;
+        margin-left: 32px;
+    }
 
-.comment-title .comment-ip{}
+    .comment-title .comment-ip{
+        flex: 0 1 100%;
+        margin-left: 32px;
+    }
+}
 
 /* голосування справа*/
 .comment-header .comment-vote{
