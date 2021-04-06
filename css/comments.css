@@ -173,11 +173,11 @@
 }
 
 .to-comment::before{
-    content: 'прокоментувати';
+    content: 'відповісти';
 }
 
 .to-comment.active::before{
-    content: 'не коментувати';
+    content: 'не відповідати';
 }
 
 .to-comment.active{
@@ -202,6 +202,12 @@
         'comment-avatar comment-button'
 }
 
+@media(max-width:540px){
+    #comments-form form{
+        grid-template-columns: 60px auto;
+    }
+}
+
 #comments-form textarea{
     width: 100%;
     resize: none;
@@ -214,6 +220,14 @@
     grid-area: comment-button;
 }
 
+@media(max-width:540px) {
+    #comments-form .comment-send button{
+        line-height: 30px;
+        height: 30px;
+        padding: 0 20px;
+    }    
+}
+
 #comments-form .comment-avatar{
     grid-area: comment-avatar;
 }
@@ -224,13 +238,22 @@
     object-fit: cover;
 }
 
-/* мала форма */
+@media(max-width:540px) {
+    #comments-form img{
+        width: 60px;
+        height: 60px;
+    }
+}
 
+/* мала форма */
+.comments-form{
+    margin: 0 0 20px;
+}
 .comments-form form{
     width: 100%;
     position: relative;
     display: grid;
-    grid-template-columns: 120px auto;
+    grid-template-columns: 60px auto;
     grid-gap: 10px;
     grid-template-areas: 
         'comment-avatar comment-textarea'
@@ -249,12 +272,27 @@
     grid-area: comment-button;
 }
 
+.comments-form .comment-send button{
+    line-height: 30px;
+    height: 30px;
+    padding: 0 20px;
+}
+
+@media(max-width:400px){
+    .comments-form .comment-send button{
+        line-height: 25px;
+        height: 25px;
+        font-weight: 600;
+        padding: 0 5px;
+    }
+}
+
 .comments-form .comment-avatar{
     grid-area: comment-avatar;
 }
 
 .comments-form img{
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 }
