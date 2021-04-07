@@ -35,9 +35,9 @@
     margin-bottom: 10px;
     color: var(--black);
 
-    height: 221px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    /* height: 221px; */
+    /* text-overflow: ellipsis; */
+    /* overflow: hidden; */
 }
 
 @media(max-width:776px){
