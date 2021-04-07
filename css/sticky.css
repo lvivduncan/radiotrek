@@ -13,7 +13,7 @@
     text-align: center;
     margin-left: 11px;
 
-    position: -webkit-sticky;
+    /* position: -webkit-sticky; */
     position: sticky;
     top: 70px;
     margin-bottom: 230px;
@@ -74,7 +74,7 @@
 #smile{
     text-align: center;
     padding: 20px 0 0;
-    position: -webkit-sticky;
+    /* position: -webkit-sticky; */
     position: sticky;
 }
 
@@ -209,4 +209,13 @@
 
 .wrapper-modal.show{
     display: block;
+}
+
+/*////////////
+правий сайдбар
+////////////*/
+
+.sticked{
+    position: sticky;
+    top: 70px;
 }
