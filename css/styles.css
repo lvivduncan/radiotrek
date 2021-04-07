@@ -35,9 +35,6 @@
 /* вкладки */
 @import url('./post-tabs.css');
 
-/* кнопки шарингу */
-@import url('./like.css');
-
 /* усі анонси */
 @import url('./articles.css');
 
@@ -91,9 +88,6 @@
 /* лоадер */
 @import url('./loader.css');
 
-/* смайлики */
-@import url('./smile.css');
-
 /* адмін-бар */
 @import url('./adminbar.css');
 
@@ -105,3 +99,6 @@
 
 /* коментарі */
 @import url('./comments.css');
+
+/* лайки та смайли у лівому сайдбарі */
+@import url('./sticky.css');

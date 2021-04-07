@@ -1,17 +1,81 @@
 
-/* 5 smiles */
+/* приклеєний лівий сайдбар */
+#sticky{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+/*///////
+шарбатони
+///////*/
+.like{
+    text-align: center;
+    margin-left: 11px;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px;
+    margin-bottom: 230px;
+}
+
+@media(max-width:776px){
+    .like{
+        display: none;
+    }
+}
+
+.like span,
+.like p{
+    cursor: pointer;
+}
+
+.like svg{
+    width:30px;
+    fill: var(--gold);
+}
+
+.like svg:hover{
+    fill: var(--cyan);
+}
+
+/* фіксована кнопка на мобільному */
+#like-mobile{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background: var(--gold-logo);
+    border: 2px solid var(--cyan-logo);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media(max-width:776px){
+    #like-mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#like-mobile svg{
+    width: 22px;
+    height: 22px;
+}
+
+/*//////
+смайлики
+//////*/
 #smile{
     text-align: center;
     padding: 20px 0 0;
     position: -webkit-sticky;
     position: sticky;
-}
-
-/* temp */
-@media(min-width:777px){
-    #smile{
-        display: none;
-    }
 }
 
 @media(max-width:776px){
@@ -131,10 +195,6 @@
         -webkit-tap-highlight-color: transparent;
     }
 }
-
-/* .mobile-body{
-    overflow: hidden;
-} */
 
 /* додаткова обгортка для модалки */
 .wrapper-modal{
