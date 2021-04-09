@@ -12,11 +12,9 @@
 .like{
     text-align: center;
     margin-left: 11px;
-
-    /* position: -webkit-sticky; */
     position: sticky;
     top: 70px;
-    margin-bottom: 230px;
+    margin-bottom: 200px;
 }
 
 @media(max-width:776px){
@@ -74,7 +72,6 @@
 #smile{
     text-align: center;
     padding: 20px 0 0;
-    /* position: -webkit-sticky; */
     position: sticky;
 }
 
@@ -95,8 +92,8 @@
 
         max-width: 290px;
         height: 60px;
-        border-radius: 5px;
-        padding: 10px;
+        border-radius: 15px;
+        padding: 10px 20px 10px 10px;
         margin: 0;
         background: var(--white);
         box-shadow: 0 0 10px rgba(0,0,0,.5);        
@@ -124,26 +121,22 @@
 #smile a{
     text-decoration: none;
     padding: 5px 0;
-    border-radius: 5px;
-    color: var(--gray);
     transition: .5s;
     display: block;
     margin-left: 11px;
     position: relative;
+    margin: 0 0 12px;
+    height: 26px;
+    width: 26px;
 }
 
 @media(max-width:776px){
     #smile a{
         color: var(--gray);
         position: relative;
-        padding: 10px;
+        padding: 10px 25px;
         margin: 0;
-        transition: .5s;
     }
-}
-
-#smile a img{
-    width: 32px!important;
 }
 
 #smile a.selected {
@@ -152,8 +145,8 @@
 
 #smile span{
     position: absolute;
-    top: -3px;
-    right: -12px;
+    top: 15px;
+    right: -30px;
     background: var(--white);
     color: var(--cyan-dark);
     border: 1px solid var(--cyan-dark);
@@ -169,7 +162,7 @@
 @media(max-width:776px) {
     #smile span{
         position: absolute;
-        top: 0;
+        top: -10px;
         right: 0;
     }
 }
@@ -214,7 +207,6 @@
 /*////////////
 правий сайдбар
 ////////////*/
-
 .sticked{
     position: sticky;
     top: 70px;

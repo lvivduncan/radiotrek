@@ -102,3 +102,6 @@
 
 /* лайки та смайли у лівому сайдбарі */
 @import url('./sticky.css');
+
+/* facebook smiles */
+@import url('./smiles.css');
