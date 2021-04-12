@@ -152,3 +152,15 @@
     color: var(--black);
     display: block;
 }
+
+/* блок для підваняження */
+#load{
+    padding: 0 330px 0 75px;
+    margin: 20px 0;
+}
+
+@media(max-width:776px){
+    #load{
+        padding: 0;
+    }
+}
