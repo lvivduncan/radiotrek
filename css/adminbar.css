@@ -1,5 +1,4 @@
 
-/* for Danylo */
 #adminbar{
     position: fixed;
     bottom: 0;
@@ -29,4 +28,10 @@
 
 #adminbar strong{
     color: var(--blue)
+}
+
+/* фікс для кнопок */
+#like-mobile.is_adminbar, 
+#smile-mobile.is_adminbar {
+    bottom: 60px;
 }
