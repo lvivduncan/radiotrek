@@ -1,7 +1,3 @@
-
-/* tmp */
-@import url('./ad.css');
-
 /*fonts*/
 @import url('./fonts.css');
 
@@ -47,7 +43,7 @@
 @import url('./hot.css');
 
 /* delete: */
-@import url('./hot--news.css');
+/* @import url('./hot--news.css'); */
 
 @import url('./category--news.css');
 @import url('./category--hot.css');
