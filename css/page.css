@@ -3,14 +3,25 @@
 #page{
     display: grid;
     grid-template-columns: 45px 1fr 300px;
-    grid-template-rows: auto min-content;
     grid-gap: 30px;
     margin-top: 30px;
+
+    grid-template-rows: auto;
+    grid-template-areas:
+        'sticky body aside'
+        'ads-before ads aside';
 }
 
 @media(max-width:776px){
     #page{
         grid-template-columns: 1fr;
+
+        grid-template-areas:
+            'body'
+            'ads'
+            'unused'
+            'aside'
+            'sticky';
     }
 }
 
@@ -27,6 +38,10 @@
 }
 
 /* основна шпальта */
+#page-main{
+    grid-area: body;
+}
+
 #page-main,
 #load{
     overflow: hidden;
@@ -182,4 +197,14 @@
     margin-top: 6px;
     font-size: 80%;
     font-style: italic;
+}
+
+
+
+#page #aside {
+	grid-area: aside;
+}
+
+#page #ads {
+    grid-area: ads;
 }
