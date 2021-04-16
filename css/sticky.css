@@ -11,7 +11,7 @@
 /*///////
 шарбатони
 ///////*/
-.like{
+#like{
     text-align: center;
     margin-left: 11px;
     position: sticky;
@@ -20,23 +20,44 @@
 }
 
 @media(max-width:776px){
-    .like{
+    #like{
         display: none;
     }
 }
 
-.like span,
-.like p{
+/* #like span, */
+#like p{
     cursor: pointer;
+    position: relative;
 }
 
-.like svg{
+#like svg{
     width:30px;
     fill: var(--gold);
+    transition: .5s;
 }
 
-.like svg:hover{
+#like svg:hover{
     fill: var(--cyan);
+}
+
+/* number */
+/* #like span > span, */
+#like p span{
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: 1;
+    background: var(--white);
+    color: var(--cyan-dark);
+    border: 1px solid var(--cyan-dark);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* фіксована кнопка на мобільному */

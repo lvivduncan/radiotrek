@@ -53,6 +53,10 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+
+    justify-content: flex-end;
+    display: flex;
+    flex-flow: column;
 }
 
 @media(max-width:996px){
