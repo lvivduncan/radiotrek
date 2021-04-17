@@ -21,14 +21,57 @@
 
 @media(max-width:776px){
     #like{
-        display: none;
+        position: fixed;
+        bottom: 15px;
+        left: -300px;
+        z-index: 5;
+        margin: 0;
+        top: auto!important;
+        transition: .5s;
+        transform: translateX(0);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        max-width: 290px;
+        height: 60px;
+        border-radius: 15px;
+        padding: 10px 20px 10px 10px;
+        margin: 0;
+        background: var(--white);
+        box-shadow: 0 0 10px rgba(0,0,0,.5);        
+    }
+
+}
+
+@media(max-width:450px){
+    #like{
+        bottom: 75px;
+        transition: .5s;
     }
 }
 
-/* #like span, */
+#like.modal{
+    transform: translateX(390px);
+    top: auto!important;
+}
+
+@media(max-width:450px){
+    #like.modal{
+        transform: translateX(320px);
+    }
+}
+
 #like p{
     cursor: pointer;
     position: relative;
+}
+
+@media(max-width:776px){
+    #like p{
+        margin: 0 10px;
+    }
 }
 
 #like svg{
@@ -42,7 +85,6 @@
 }
 
 /* number */
-/* #like span > span, */
 #like p span{
     position: absolute;
     top: 0;
@@ -88,6 +130,10 @@
     width: 22px;
     height: 22px;
 }
+
+
+
+
 
 /*//////
 смайлики

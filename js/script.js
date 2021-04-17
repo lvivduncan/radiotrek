@@ -174,14 +174,20 @@
 	}, 4000);
 }
 
+// sticky ads
+{
+	const ad = document.querySelector("[data-key='news_sidebar2']");
+	ad.className = 'sticked';
+}
+
+// затемнення фону (для шарбатонів та лайків)
+const wrapperModal = document.createElement('div');
+wrapperModal.classList.add('wrapper-modal');
+document.body.append(wrapperModal);
+
 {
 	// блок зі смайлами
 	const smile = document.getElementById('smile');
-
-	// затемнення фону
-	const wrapperModal = document.createElement('div');
-	wrapperModal.classList.add('wrapper-modal');
-	document.body.append(wrapperModal);
 
 	// modal window (смайлики)
 	document.getElementById('smile-mobile').addEventListener('click', () => {
@@ -191,16 +197,30 @@
 		}, 200);
 	});	
 
-	document.addEventListener('click', e => {
+/* 	document.addEventListener('click', e => {
 		if(e.target.classList.contains('wrapper-modal')){
 			wrapperModal.classList.remove('show');
 			smile.classList.remove('modal');
 		}
-	});
-}
+	}); */
 
-// sticky
-{
-	const ad = document.querySelector("[data-key='news_sidebar2']");
-	ad.className = 'sticked';
+	// share
+	const like = document.getElementById('like');
+
+	// modal window (смайлики)
+	document.getElementById('like-mobile').addEventListener('click', () => {
+		setTimeout(() => {
+			like.classList.toggle('modal');
+			wrapperModal.classList.toggle('show');
+		}, 200);
+	});	
+
+	document.addEventListener('click', e => {
+		if(e.target.classList.contains('wrapper-modal')){
+			wrapperModal.classList.remove('show');
+			
+			like.classList.remove('modal');
+			smile.classList.remove('modal');
+		}
+	});
 }
