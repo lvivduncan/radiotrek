@@ -197,13 +197,6 @@ document.body.append(wrapperModal);
 		}, 200);
 	});	
 
-/* 	document.addEventListener('click', e => {
-		if(e.target.classList.contains('wrapper-modal')){
-			wrapperModal.classList.remove('show');
-			smile.classList.remove('modal');
-		}
-	}); */
-
 	// share
 	const like = document.getElementById('like');
 
@@ -218,7 +211,7 @@ document.body.append(wrapperModal);
 	document.addEventListener('click', e => {
 		if(e.target.classList.contains('wrapper-modal')){
 			wrapperModal.classList.remove('show');
-			
+
 			like.classList.remove('modal');
 			smile.classList.remove('modal');
 		}
