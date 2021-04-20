@@ -189,6 +189,8 @@ document.body.append(wrapperModal);
 	// блок зі смайлами
 	const smile = document.getElementById('smile');
 
+	// замінили на прямий лінк (шарбатон фейсбука)
+/* 
 	// modal window (смайлики)
 	document.getElementById('smile-mobile').addEventListener('click', () => {
 		setTimeout(() => {
@@ -196,6 +198,7 @@ document.body.append(wrapperModal);
 			wrapperModal.classList.toggle('show');			
 		}, 200);
 	});	
+ */	
 
 	// share
 	const like = document.getElementById('like');
