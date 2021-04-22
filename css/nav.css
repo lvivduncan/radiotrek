@@ -31,7 +31,11 @@
     color: var(--cyan);
 }
 
-#nav a.green{
+/* #nav a.green{
+    color: var(--green);
+} */
+
+#nav .green > a{
     color: var(--green);
 }
 

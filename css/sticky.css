@@ -108,12 +108,26 @@
 }
 
 /* фіксована кнопка на мобільному */
-#like-mobile{
+/* #like-mobile{
     display: none;
     position: fixed;
     bottom: 20px;
     left: 20px;
     z-index: 2;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background: var(--gold-logo);
+    border: 2px solid var(--cyan-logo);
+    border-radius: 50%;
+    cursor: pointer;
+} */
+#like-mobile{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 5;
     width: 50px;
     height: 50px;
     padding: 3px;

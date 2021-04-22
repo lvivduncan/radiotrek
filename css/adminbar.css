@@ -35,3 +35,18 @@
 #smile-mobile.is_adminbar {
     bottom: 60px;
 }
+
+
+@media (max-width: 776px) {
+    #like.modal.is_adminbar,
+    #smile.modal.is_adminbar {
+        bottom: 55px;
+    }
+}
+
+@media (max-width: 450px) {
+    #like.modal.is_adminbar,
+    #smile.modal.is_adminbar {
+        bottom: 120px;
+    }
+}
