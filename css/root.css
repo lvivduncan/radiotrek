@@ -154,4 +154,5 @@ hr{
 sub,
 sup{
     font-size: 1.3em;
+    vertical-align: baseline;
 }
