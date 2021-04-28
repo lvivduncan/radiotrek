@@ -12,18 +12,45 @@
 
 #timeline li{
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 15% 60%;
+    grid-template-areas: 'timeline-video-block timeline-time timeline-h6';
     align-items: center;
     text-align: left;
-    padding: 15px 20%;
+    padding: 15px 0;
     border-bottom: var(--gray-light) solid 1px;
 }
 
 @media(max-width:540px){
     #timeline li{
-        padding: 15px 10px;
+        /* padding: 15px 10px; */
+        grid-template-columns: 30% 70%;
+        grid-template-areas: 
+            'timeline-video-block timeline-video-block'
+            'timeline-time timeline-h6';
     }
 }
+
+/* відос */
+#timeline li .video-block{
+    grid-area: timeline-video-block;
+}
+
+@media(max-width:540px) {
+    #timeline li .video-block{
+        margin: 0 0 20px;
+    }   
+}
+
+/* час */
+#timeline li time{
+    grid-area: timeline-time;
+}
+
+/* назва */
+#timeline li h6{
+    grid-area: timeline-h6;
+}
+
 
 #timeline li.active{
     background: var(--gold);
@@ -33,6 +60,7 @@
     color: var(--blue);
     font-weight: bold;
     font-size: 22px;
+    text-align: center;
 }
 
 #timeline h6{
