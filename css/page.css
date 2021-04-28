@@ -59,6 +59,11 @@
     margin-top: 30px;
 }
 
+#page-main img:not([data-emoticon]),
+#load img:not([data-emoticon]){
+    width: 100%!important;
+}
+
 #page-main h1,
 #load h1{
     font-weight: 800;
@@ -168,7 +173,7 @@
 
 #page-main li,
 #load li{
-    margin: 20px 0;
+    margin: 10px 0;
     font-size: 20px;
 }
 
