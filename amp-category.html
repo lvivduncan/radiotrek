@@ -13,7 +13,90 @@
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
+    <style>
+        .wrapper{width:95%;margin:auto}
+        #header{
+            height: 70px;
+            padding: 12px 0 0;
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: url('images/header.png') repeat
+        }
+        #header .wrapper {
+            display: grid;
+            grid-template-columns: auto 1fr 70px
+        }
+        #logo {
+            width: 110px;
+            display: flex;
+            align-items: center;
+        }
+        #nav {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            z-index: 10;
+            height: 100vh;
+            width: 320px;
+            padding: 20px;
+            background: #222;
+            transform: translateX(0);
+            transition: .5s;
+        }
+        #nav .social {
+            display: block;
+            margin: 0 0 30px;
+        }
+        .social a {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .social a svg {
+            width: 20px;
+            fill: #fff;
+        }
 
+        #radio {
+            position: relative;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #nav--bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        #nav--bar span {
+            width: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 0 10px;
+        }
+        #nav--bar svg {
+            width: 22px;
+            fill: var(--black);
+            transition: .5s;
+        }
+        #close {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 11;
+            cursor: pointer;
+        }
+
+        #close svg {
+            fill: #777;
+            width: 26px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -22,10 +105,8 @@
 
         <div class="wrapper">
 
-            <a href="" id="logo">
-                <!-- <img src="images/logo.png" alt=""> -->
-                <amp-img src="images/logo.png" width="194" height="45" layout="responsive"></amp-img>
-
+            <a href="" id="logo" style="background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAAAtCAMAAADLLURUAAAAh1BMVEUAAAAAOWQAOWQAOWT6phoAOWT6phoAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWT6phr6phr6phr6phr6phr6phr6phr6phr6phr6phoAOWT6phq8iy1taUTqnx8/VFKshDEQQF99cD8vTVYfR1vbmCOcfTZeYkjLkihOW02NdjogsceZAAAAHHRSTlMAgEC/QDC/3xDvryDPYJ9wUI9n758jz4gQ31CvEqauPAAABJVJREFUaN7Vmml3ojAUhrM0si9au0znyiLIqO3//31TJAsQLudo8YzzfigS6M19IG9uUku0BKPU59yBkULOfUpT5pIHlsuo32Z+KE91vc++9Wd30bn9fKzrvCwvMD5NBXlAMQ7QfNYybVzZvj4dADy66OvgMBQj1yuCqrayx7UvIXQfDAEaBABTDutHQ9jvrlTDe107nFPxrxGyaxFKOu7av31orTnnYRfF49+65XGEX9ciABsj/HBosS4Iv/kxfF5JkMHEAAgICZhUr9IoBcS9HGVxedr+aiOtNu8DBPMr5taA9STUaUCIa25LqysRat5DoHIQRIRQhSO6YhN7hpASZob6+28d6/llhMDBKExcHVXdQVU8ksi2lhTOVpZVdZyzQg+BMB3THzhSKAAb4a2NohlsBCNHIAimu/iSjG2GT4BTgVpB9BFcHTMEqaS7jiG8DKJt5xAgxBG83iunthmO7WrjjFjBI30EomP28iVEAIqw6eL8kq9hFgEYhiBkizSTleaf9ioymHJ/GiEApZjoIbxObITfHYFCeZlCoIEjP8hADm0VaQT1IUIrQwOt8imEQ2Ih6BxNKrGyio2wuoRZkacu3tMkgs6VDiZc3Sxv9FSBrKfM0Opgrz0KEBaC6fPS6rSX740gj6q5tCdO6FTtrWWeR6YRYo0A8wi7JRCYLkeYGfaglFtWQBC4QXDvj0C16zAzZBLAHkyHBEFofzp+l+f9EUIVDTGDRNCDybaCnaN76ajrIb07wlpWDS1a2qbtK7esoPtisSxnrIdAl0UwkypTzaGeUXEzwEBfIyvYNUgkXYf3QjDNRp5r7RmQt9DkWTG0go0QknVvouALIMTzCGryxs2QmfzP2VcxtIKN4IjuPF0KIZYEECEIakrFzZCp/HfHsraqQitudlp+5MpVF5PJ/BTBKJhDSIiRgMKqC23+u2NTZVNVweSo1DkiWBiBk2k7T2zzvFEVPrb5F3UF5ZCtSRAENqgSYiGE0CXTk6qntjtGfm6vVk8VQD1qgwBBiAbmY4sgONQlCAJX61Sj5DACOJ/aopaN9xEOQRAo9JX8FIFTmrZPC0OQBx83Q1ECgB5ERqcYQbA2aT+eVJVmFxgeboY9sltoIgzBGSD4d0eIu2OKmuGkVkaWFTAEGIjfHSHpjmvUDJVcn9pWQBCEGsFOZ8S7IwjpeMwMxdf0tvkUYwhpl5/uYg7heQkE9doFYgZMTYQh0BFCMLfxXAJB3ZjMVgbcCjaC3yWuu2DyKFCEV/JxDULIWgmDsJbtM5UBsQKCEKqTVM4UkSpPNsK2i/b22h3JHAL+B0nVgds3g2Vg2woogjoxmzhv9k9hRq83IgiwC7QnLYyrijAEoVNgarJLUIT3537QzY0IBOwC7Z8G9TlrNVxzQIAhMJ2C0NlQDIFsBi/hVgQOVoGO1Egq9nkJUlWZ7ws1jkKCIVDzQEw2AeXOJAL50O9h+34zwtr+Zsv1Dt/JnusDOHHCAvVtuu/AIc9aM0NEFtPH23a1etu8kGUVQVM2XhwFo/Ygip2qLCEkj6+UxylySVAeP/Q/MPzn+gu1BhdBh94IUAAAAABJRU5ErkJggg==')">
+                <!-- <amp-img src="images/logo.png" width="194" height="45" layout="responsive"></amp-img> -->
             </a>
 
             <nav id="nav">
@@ -122,12 +203,12 @@
                     <span>On-line</span>
                 </a>
 
-                <div id="live">
+                <!-- <div id="live">
                     <a href="">
                         <span>All We Got - Robin Schulz & Kiddo</span>
                         <span>All We Got - Robin Schulz & Kiddo</span>
                     </a>
-                </div>
+                </div> -->
             </div>
 
             <nav id="nav--bar">
@@ -174,7 +255,7 @@
                         <p>Що стало з артистом?</p>
                     </div>
                 </div>
-                
+
             </aside>
 
             <div class="hot-news-articles">
@@ -253,11 +334,6 @@
             <!-- .hot-news-articles -->
 
             <aside class="category-news-hide">
-                <a href="" class="kts">
-                    <img src="temp/00.gif" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
-
-                </a>
 
                 <div class="post-tabs">
                     <div class="post-tabs-buttons">
@@ -363,8 +439,8 @@
                 <div class="title">Пoлітика</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -378,8 +454,8 @@
                 <div class="title">Економіка</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -393,8 +469,8 @@
                 <div class="title">Культура culture</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -408,8 +484,8 @@
                 <div class="title">Суспільство</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -423,8 +499,8 @@
                 <div class="title">Кримінал</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -438,8 +514,8 @@
                 <div class="title">Шоу-biz</div>
                 <article class="post">
                     <a href="" class="post-image">
-                        <img src="temp/09.jpg" alt="">
-                        <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                        <!-- <img src="temp/09.jpg" alt=""> -->
+                        <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                     </a>
                     <a href="">
@@ -453,8 +529,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/10.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/10.jpg" alt=""> -->
+                    <amp-img src="temp/09.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -465,8 +541,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/08.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/08.jpg" alt=""> -->
+                    <amp-img src="temp/08.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -477,8 +553,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/07.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/07.jpg" alt=""> -->
+                    <amp-img src="temp/07.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -489,8 +565,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/07.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/07.jpg" alt=""> -->
+                    <amp-img src="temp/07.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -501,8 +577,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/07.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/07.jpg" alt=""> -->
+                    <amp-img src="temp/07.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -513,8 +589,8 @@
 
             <article class="post">
                 <a href="" class="post-image">
-                    <img src="temp/08.jpg" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/08.jpg" alt=""> -->
+                    <amp-img src="temp/08.jpg" width="320" height="213" layout="responsive"></amp-img>
 
                 </a>
                 <a href="">
@@ -598,8 +674,8 @@
                     <li><a href="/radio/programa/">Слухай онлайн</a></li>
                 </ul>
                 <p>
-                    <img src="temp/bigmir.png" alt="">
-                    <amp-img src="/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
+                    <!-- <img src="temp/bigmir.png" alt=""> -->
+                    <amp-img src="temp/bigmir.png" width="160" height="19" layout="responsive"></amp-img>
 
                 </p>
             </div>

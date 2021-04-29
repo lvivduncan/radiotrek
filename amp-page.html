@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html ⚡ lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title> (amp) page </title>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- tabs -->
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <!-- offset menu -->
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+        :root {
+            --blue-extralight: #c1dae6;
+            --blue: #0099ff;
+            --cyan: #005baa;
+            --cyan-dark: #004888;
+            --cyan-logo: #003964;
+
+            --gold-light: #ffe066;
+            --gold: #ffcc00;
+            --gold-logo: #faa61a;
+
+            --black: #000;
+            --white: #fff;
+            --gray-light: #ddd;
+            --gray: #777;
+            --gray-dark: #222;
+        }
+
+        #article{
+            padding: 70px 0 0;
+            font-family: sans-serif;
+            line-height: 1.4;
+            letter-spacing: -0.1px;
+        }
+
+        .wrapper{width:95%;margin:auto}
+
+        #header{
+            display: flex;
+            align-items: center;
+            height: 70px;
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACZJREFUeNpi/P///2YGCDBlwAOYGIgEjEATXxCjkGgTR6ZCgAADADZJB9350CfbAAAAAElFTkSuQmCC');
+        }
+        #header .wrapper {
+            display: grid;
+            grid-template-columns: auto 1fr 70px;
+            align-items: center;
+        }
+        #logo {
+            width: 110px;
+            height: 26px;
+
+            background-size: cover!important;
+        }
+        
+        #radio {
+            position: relative;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #online {
+            padding: 3px 10px 3px 26px;
+            border-radius: 5px;
+            background: var(--gold);
+            text-align: center;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--black);
+            line-height: 24px;
+            position: relative;
+            transition: .3s;
+        }
+        #online.play::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(50% - 8px);
+            left: 5px;
+            width: 15px;
+            height: 15px;
+
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z'/%3E%3C/svg%3E");
+        }
+        #live {
+            display: none;
+        }
+
+        #nav--bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        #nav--bar span {
+            width: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 0 10px;
+        }
+        #nav--bar svg {
+            width: 26px;
+            height: 24px;
+            fill: var(--black);
+            transition: .5s;
+        }
+        #close {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 11;
+            cursor: pointer;
+        }
+
+        #close svg {
+            fill: var(--gray);
+            width: 26px;
+        }
+
+
+        #like {
+            position: fixed;
+            bottom: 15px;
+            left: -300px;
+            z-index: 5;
+            margin: 0;
+            top: auto!important;
+            transition: .5s;
+            transform: translateX(0);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 290px;
+            height: 60px;
+            border-radius: 15px;
+            padding: 10px 20px 10px 10px;
+            margin: 0;
+            background: var(--white);
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+        }
+
+        #like-mobile {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 5;
+            width: 50px;
+            height: 50px;
+            background: var(--gold-logo);
+            border: 2px solid var(--cyan-logo);
+            border-radius: 50%;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #smile-mobile {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 5;
+            width: 50px;
+            height: 50px;
+            background: var(--gold-logo);
+            border: 2px solid var(--cyan-logo);
+            border-radius: 50%;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #like-mobile svg,
+        #smile-mobile svg{
+            width: 26px;
+            height: 26px;
+        }
+
+        #page{
+            margin-top: 30px;
+        }
+
+        #page-main h1{
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        #page-main p{
+            margin: 30px 0;
+            font-size: 18px;
+        }
+
+        #page-main time{
+            display: block;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        #page-main time span{
+            padding: 0 0 0 10px;
+        }
+
+        #page-main time span::before{
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z'/%3E%3C/svg%3E");
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0 5px 0 0;
+            position: relative;
+            top: 2px;
+        }
+
+        blockquote:not([class]) {
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding: 30px 10px 30px 100px;
+            margin: 0;
+            color: var(--gray-dark);
+            position: relative;
+        }
+
+        blockquote:not([class]) > p {
+            margin: 0!important;
+            font-weight: 700;
+        }
+
+        blockquote:not([class]):after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230099ff'%3E%3Cpath d='M11 9.275c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275zm13 0c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275z'/%3E%3C/svg%3E");
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            margin: 30px 0;
+        }
+        .table-wrapper table{
+            width: 100%;
+            max-width: 100%;
+
+            border-collapse: collapse;
+            border: 1px solid var(--gray);
+        }
+
+        .table-wrapper table, 
+        .table-wrapper td, 
+        .table-wrapper th {
+            border-collapse: collapse;
+            border: 1px solid var(--gray);
+            padding: 10px;
+        }
+
+        amp-img + amp-img{
+            margin-top: 30px;
+        }
+
+        .post-autor {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            margin: 10px 0 0;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .post-autor::before {
+            content: '';
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath d='M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z'/%3E%3C/svg%3E");
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 8px);
+        }
+
+        .post-autor strong {
+            color: var(--black);
+            display: block;
+        }
+
+        .tags {
+            border-top: 2px solid var(--cyan);
+            color: var(--cyan);
+            font-size: 12px;
+            margin: 20px 0;
+            padding: 10px 0;
+        }
+
+        .tags strong {
+            display: block;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+            font-weight: 700!important;
+        }
+
+        .tags a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            background: var(--cyan);
+            border-radius: 3px;
+            padding: 2px 4px;
+            margin: 0 2px 2px 0;
+            transition: .5s;
+        }
+
+        .center{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-yellow.share-facebook {
+            position: relative;
+
+            display: inline-block;
+            line-height: 50px;
+            height: 50px;
+            white-space: nowrap;
+            color: var(--cyan);
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 0 40px;
+            background: var(--gold);
+            border: 0;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .button-yellow.share-facebook::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23005baa'%3E%3Cpath d='M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z'%3E%3C/path%3E%3C/svg%3E");
+            position: relative;
+            top: 8px;
+            left: -8px;
+            transition: .5s;
+        }
+
+        hr {
+            height: 0;
+            border-top: 3px solid var(--gold);
+            margin: 20px 0;
+        }
+
+        .title {
+            color: var(--blue);
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .title a {
+            color: var(--blue);
+            text-decoration: none;
+            display: block;
+            line-height: 1.1;
+        }
+
+        /* title + 2 articles */
+        .category--hot section{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: 
+                'title title'
+                'first-post post';
+            grid-gap: 0 10px;
+        }
+
+        .category--hot .title {
+            grid-area: title;
+        }
+
+        .category--hot .post {
+            margin: 0;
+            grid-area: post;
+        }
+
+        .category--hot section :nth-child(2){
+            grid-area: first-post;
+        }
+
+        .category--hot .post time {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        .category--hot .post a{
+            text-decoration: none;
+        }
+
+        .category--hot .post a h3 {
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 20px 0;
+            color: var(--black);
+        }
+
+    amp-selector[role=tablist].tabs-with-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    amp-selector[role=tablist].tabs-with-flex [role=tab] {
+        flex-grow: 1;
+        text-align: center;
+
+        border-radius: 5px;
+        line-height: 50px;
+        height: 50px;
+        background: var(--gold-light);
+        color: var(--blue);
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 13px;
+        text-align: center;
+        cursor: pointer;
+    }
+    amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
+        outline: none;
+
+        background: var(--gold);
+        height: 60px;
+        line-height: 60px;
+        margin-top: -5px;
+        color: var(--black);
+    }
+    amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
+        display: none;
+        width: 100%;
+        order: 1;
+    }
+    amp-selector[role=tablist].tabs-with-flex [role=tab][selected] + [role=tabpanel] {
+        display: block;
+        padding: 0;
+    }
+    amp-selector[role=tablist].tabs-with-selector {
+        display: flex;
+    }
+    amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
+        outline: none;
+        color: var(--cyan-logo);
+    }
+    amp-selector[role=tablist].tabs-with-selector {
+        display: flex;
+    }
+    amp-selector[role=tablist].tabs-with-selector [role=tab] {
+        width: 100%;
+        text-align: center;
+    }
+    amp-selector.tabpanels [role=tabpanel] {
+        display: none;
+    }
+    amp-selector.tabpanels [role=tabpanel][selected] {
+        outline: none;
+        display: block;
+    }
+
+    /* ul */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] {
+        display: block;
+    }
+    /* li */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] li{
+        display: block;
+        margin: 0 0 10px;
+        padding: 0 0 10px;
+        border-bottom: 1px solid var(--blue-extralight);
+    }
+    /* a */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] li a{
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        text-decoration: none;
+    }
+    /* time */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] li a time{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        color: var(--gold);
+        text-align: center;
+        font-size: 26px;
+        font-weight: 800;
+        line-height: 1;
+    }
+    /* time > span */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] li a time span {
+        font-size: 14px;
+    }
+    /* p */
+    amp-selector[role=tablist] [role=tab][selected] + [role=tabpanel] li p {
+        font-size: 16px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--cyan-dark);
+    }
+
+        #nav {
+            height: 100vh;
+            padding: 20px;
+            background: var(--gray-dark);
+            transition: .5s;
+
+            width: 100vw;
+        }
+        #nav .social {
+            display: block;
+            margin: 0 0 30px;
+        }
+        .social a {
+            display: inline-block;
+            margin: 0 10px 0 0;
+        }
+        .social a svg {
+            width: 20px;
+            fill: var(--white);
+        }
+
+        #close {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 11;
+            cursor: pointer;
+        }
+        #close svg {
+            fill: var(--gray);
+            width: 26px;
+        }
+
+        #nav>ul {
+            display: block;
+            height: 90%;
+            overflow-y: scroll;
+            margin: 0;
+            padding: 0;
+        }
+        #nav ul li, 
+        #nav ul li a, 
+        #nav ul li a:hover, 
+        #nav ul li:hover {
+            font-size: 22px;
+            font-weight: 400;
+            padding: 0 10px 0 0;
+            text-transform: uppercase;
+            color: var(--gray-light)!important;
+            display: block;
+            text-decoration: none;
+        }
+
+        #nav ul .nav-wrap ul{
+            padding: 0;
+        }
+
+        #nav ul .nav-wrap a {
+            font-size: 14px;
+            color: var(--gold)!important;
+            font-weight: 400!important;
+            text-decoration: none;
+            transition: .5s;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        #footer {
+            position: relative;
+            background: var(--cyan);
+            padding: 50px 0 50px;
+            font-size: 13px;
+            line-height: 1.2;
+            color: var(--white);
+        }
+        #footer .title {
+            color: var(--white);
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 20px;
+        }
+        #footer p {
+            margin: 0 0 20px;
+        }
+        .footer-2-column {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 10px;
+        
+        }
+        #footer ul{
+            padding: 0;
+        }
+        #footer li{
+            display: block;
+            padding: 0;
+        }
+        #footer li a {
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: var(--white);
+            padding: 3px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body id="article">
+
+    <header id="header">
+
+        <div class="wrapper">
+
+            <a href="" id="logo" style="background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAAAtCAMAAADLLURUAAAAh1BMVEUAAAAAOWQAOWQAOWT6phoAOWT6phoAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWQAOWT6phr6phr6phr6phr6phr6phr6phr6phr6phr6phoAOWT6phq8iy1taUTqnx8/VFKshDEQQF99cD8vTVYfR1vbmCOcfTZeYkjLkihOW02NdjogsceZAAAAHHRSTlMAgEC/QDC/3xDvryDPYJ9wUI9n758jz4gQ31CvEqauPAAABJVJREFUaN7Vmml3ojAUhrM0si9au0znyiLIqO3//31TJAsQLudo8YzzfigS6M19IG9uUku0BKPU59yBkULOfUpT5pIHlsuo32Z+KE91vc++9Wd30bn9fKzrvCwvMD5NBXlAMQ7QfNYybVzZvj4dADy66OvgMBQj1yuCqrayx7UvIXQfDAEaBABTDutHQ9jvrlTDe107nFPxrxGyaxFKOu7av31orTnnYRfF49+65XGEX9ciABsj/HBosS4Iv/kxfF5JkMHEAAgICZhUr9IoBcS9HGVxedr+aiOtNu8DBPMr5taA9STUaUCIa25LqysRat5DoHIQRIRQhSO6YhN7hpASZob6+28d6/llhMDBKExcHVXdQVU8ksi2lhTOVpZVdZyzQg+BMB3THzhSKAAb4a2NohlsBCNHIAimu/iSjG2GT4BTgVpB9BFcHTMEqaS7jiG8DKJt5xAgxBG83iunthmO7WrjjFjBI30EomP28iVEAIqw6eL8kq9hFgEYhiBkizSTleaf9ioymHJ/GiEApZjoIbxObITfHYFCeZlCoIEjP8hADm0VaQT1IUIrQwOt8imEQ2Ih6BxNKrGyio2wuoRZkacu3tMkgs6VDiZc3Sxv9FSBrKfM0Opgrz0KEBaC6fPS6rSX740gj6q5tCdO6FTtrWWeR6YRYo0A8wi7JRCYLkeYGfaglFtWQBC4QXDvj0C16zAzZBLAHkyHBEFofzp+l+f9EUIVDTGDRNCDybaCnaN76ajrIb07wlpWDS1a2qbtK7esoPtisSxnrIdAl0UwkypTzaGeUXEzwEBfIyvYNUgkXYf3QjDNRp5r7RmQt9DkWTG0go0QknVvouALIMTzCGryxs2QmfzP2VcxtIKN4IjuPF0KIZYEECEIakrFzZCp/HfHsraqQitudlp+5MpVF5PJ/BTBKJhDSIiRgMKqC23+u2NTZVNVweSo1DkiWBiBk2k7T2zzvFEVPrb5F3UF5ZCtSRAENqgSYiGE0CXTk6qntjtGfm6vVk8VQD1qgwBBiAbmY4sgONQlCAJX61Sj5DACOJ/aopaN9xEOQRAo9JX8FIFTmrZPC0OQBx83Q1ECgB5ERqcYQbA2aT+eVJVmFxgeboY9sltoIgzBGSD4d0eIu2OKmuGkVkaWFTAEGIjfHSHpjmvUDJVcn9pWQBCEGsFOZ8S7IwjpeMwMxdf0tvkUYwhpl5/uYg7heQkE9doFYgZMTYQh0BFCMLfxXAJB3ZjMVgbcCjaC3yWuu2DyKFCEV/JxDULIWgmDsJbtM5UBsQKCEKqTVM4UkSpPNsK2i/b22h3JHAL+B0nVgds3g2Vg2woogjoxmzhv9k9hRq83IgiwC7QnLYyrijAEoVNgarJLUIT3537QzY0IBOwC7Z8G9TlrNVxzQIAhMJ2C0NlQDIFsBi/hVgQOVoGO1Egq9nkJUlWZ7ws1jkKCIVDzQEw2AeXOJAL50O9h+34zwtr+Zsv1Dt/JnusDOHHCAvVtuu/AIc9aM0NEFtPH23a1etu8kGUVQVM2XhwFo/Ygip2qLCEkj6+UxylySVAeP/Q/MPzn+gu1BhdBh94IUAAAAABJRU5ErkJggg==')"></a>
+
+            <div id="radio">
+                <a href="" id="online" class="play">
+                    <span>On-line</span>
+                </a>          
+            </div>
+
+            <nav id="nav--bar">
+                <a id="search" href="#">
+                    <svg viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+                </a>
+
+                <span id="mobile-menu" on="tap:sidebar-left.toggle">
+                    <svg viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+                </span> 
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- mobile menu -->
+    <amp-sidebar id="sidebar-left" class="sample-sidebar" layout="nodisplay" side="left">
+        
+        <nav id="nav">
+
+            <div class="social">
+                <a href=""><svg viewBox="0 0 448 512">
+                        <path
+                            d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z" />
+                    </svg></a>
+                <a href=""><svg viewBox="0 0 448 512">
+                        <path
+                            d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+                    </svg></a>
+                <a href=""><svg viewBox="0 0 448 512">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    </svg></a>
+                <a href=""><svg viewBox="0 0 512 512">
+                        <path
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg></a>
+                <a href=""><svg viewBox="0 0 448 512">
+                        <path
+                            d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z" />
+                    </svg></a>
+            </div>
+
+            <span id="close" on="tap:sidebar-left.close">
+                <svg viewBox="0 0 512 512">
+                    <path
+                        d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 394c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340zM356.5 194.6L295.1 256l61.4 61.4c4.6 4.6 4.6 12.1 0 16.8l-22.3 22.3c-4.6 4.6-12.1 4.6-16.8 0L256 295.1l-61.4 61.4c-4.6 4.6-12.1 4.6-16.8 0l-22.3-22.3c-4.6-4.6-4.6-12.1 0-16.8l61.4-61.4-61.4-61.4c-4.6-4.6-4.6-12.1 0-16.8l22.3-22.3c4.6-4.6 12.1-4.6 16.8 0l61.4 61.4 61.4-61.4c4.6-4.6 12.1-4.6 16.8 0l22.3 22.3c4.7 4.6 4.7 12.1 0 16.8z" />
+                </svg>
+            </span>
+
+            <ul>
+                <li><a href="">Новини</a>
+                    <div class="nav-wrap">
+                        <ul>
+                            <li><a href="">Політика</a></li>
+                            <li><a href="">Кримінал (НП)</a></li>
+                            <li><a href="">Україна</a></li>
+
+                            <li><a href="">Економіка</a></li>
+                            <li><a href="">Спорт</a></li>
+                            <li><a href="">Світ</a></li>
+
+                            <li><a href="">Суспільство</a></li>
+                            <li><a href="">Рівне</a></li>
+                            <li><a href="">Регіони</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="">Теми</a>
+                    <div class="nav-wrap column-one">
+                        <ul>
+                            <li><a href="">Статті</a></li>
+                            <li><a href="">Блоги</a></li>
+                            <li><a href="">Авторські колонки</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="" class="green">Lite</a>
+                    <div class="nav-wrap column-two-lite">
+                        <ul>
+                            <li><a href="">Шоу-biz</a></li>
+                            <li><a href="">Мода і стиль</a></li>
+                            <li><a href="">Здоров'я</a></li>
+                            <li><a href="">Дім і сад</a></li>
+                            <li><a href="">Кулінарія</a></li>
+                            <li><a href="">Цікаве</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="">Відео</a></li>
+                <li><a href="">Радіо трек</a>
+                    <div class="nav-wrap column-two">
+                        <ul>
+                            <li><a href="">Музика</a></li>
+                            <li><a href="">Програми та проекти</a></li>
+                            <li><a href="">Ведучі</a></li>
+                            <li><a href="">Редакція сайту</a></li>
+                            <li><a href="">Контакти</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+    </amp-sidebar>
+
+
+    <div class="wrapper">
+<!--         <div class="ad">
+            ad
+        </div> -->
+
+        <div id="page">
+            <aside id="sticky">
+                <aside id="like">
+                    <p class="share-facebook">
+                        <svg viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                        <span>1</span>
+                    </p>
+                    <p class="share-twitter">
+                        <svg viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                        <span>2</span>
+                    </p>
+                    <p class="share-linkedin">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                        <span>0</span>
+                    </p>
+                    <p class="share-telegram">
+                        <svg viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg>
+                        <span>10</span>
+                    </p>
+                    <p class="share-viber">
+                        <span>10</span>
+                        <svg viewBox="0 0 631.99 666.43"><path d="M560.65,65C544.09,49.72,477.17,1.14,328.11.48c0,0-175.78-10.6-261.47,68C18.94,116.19,2.16,186,.39,272.55S-3.67,521.3,152.68,565.28l.15,0-.1,67.11s-1,27.17,16.89,32.71c21.64,6.72,34.34-13.93,55-36.19,11.34-12.22,27-30.17,38.8-43.89,106.93,9,189.17-11.57,198.51-14.61,21.59-7,143.76-22.66,163.63-184.84C646.07,218.4,615.64,112.66,560.65,65Zm18.12,308.58C562,509,462.91,517.51,444.64,523.37c-7.77,2.5-80,20.47-170.83,14.54,0,0-67.68,81.65-88.82,102.88-3.3,3.32-7.18,4.66-9.77,4-3.64-.89-4.64-5.2-4.6-11.5.06-9,.58-111.52.58-111.52s-.08,0,0,0C38.94,485.05,46.65,347,48.15,274.71S63.23,143.2,103.57,103.37c72.48-65.65,221.79-55.84,221.79-55.84,126.09.55,186.51,38.52,200.52,51.24C572.4,138.6,596.1,233.91,578.77,373.54Z"/><path d="M389.47,268.77q-2.46-49.59-50.38-52.09"/><path d="M432.72,283.27q1-46.2-27.37-77.2c-19-20.74-45.3-32.16-79.05-34.63"/><path d="M477,300.59q-.61-80.17-47.91-126.28t-117.65-46.6"/><path d="M340.76,381.68s11.85,1,18.23-6.86l12.44-15.65c6-7.76,20.48-12.71,34.66-4.81A366.67,366.67,0,0,1,437,374.1c9.41,6.92,28.68,23,28.74,23,9.18,7.75,11.3,19.13,5.05,31.13,0,.07-.05.19-.05.25a129.81,129.81,0,0,1-25.89,31.88c-.12.06-.12.12-.23.18q-13.38,11.18-26.29,12.71a17.39,17.39,0,0,1-3.84.24,35,35,0,0,1-11.18-1.72l-.28-.41c-13.26-3.74-35.4-13.1-72.27-33.44a430.39,430.39,0,0,1-60.72-40.11,318.31,318.31,0,0,1-27.31-24.22l-.92-.92-.92-.92h0l-.92-.92c-.31-.3-.61-.61-.92-.92a318.31,318.31,0,0,1-24.22-27.31,430.83,430.83,0,0,1-40.11-60.71c-20.34-36.88-29.7-59-33.44-72.28l-.41-.28a35,35,0,0,1-1.71-11.18,16.87,16.87,0,0,1,.23-3.84Q141,181.42,152.12,168c.06-.11.12-.11.18-.23a129.53,129.53,0,0,1,31.88-25.88c.06,0,.18-.06.25-.06,12-6.25,23.38-4.13,31.12,5,.06.06,16.11,19.33,23,28.74a366.67,366.67,0,0,1,19.74,30.94c7.9,14.17,2.95,28.68-4.81,34.66l-15.65,12.44c-7.9,6.38-6.86,18.23-6.86,18.23S254.15,359.57,340.76,381.68Z"/></svg>
+                    </p>
+                </aside>
+                
+                <aside id="smile" style="display: none;">
+                    <a href="">
+                        <div class="emoji  emoji--love">
+                            <div class="emoji__heart"></div>
+                        </div>
+                        <span>22</span>
+                    </a>
+                    <a href="">
+                        <div class="emoji  emoji--haha">
+                            <div class="emoji__face">
+                                <div class="emoji__eyes"></div>
+                                <div class="emoji__mouth">
+                                    <div class="emoji__tongue"></div>
+                                </div>
+                            </div>
+                            <span></span>
+                        </div>
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <div class="emoji  emoji--wow">
+                            <div class="emoji__face">
+                                <div class="emoji__eyebrows"></div>
+                                <div class="emoji__eyes"></div>
+                                <div class="emoji__mouth"></div>
+                            </div>
+                        </div>
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <div class="emoji  emoji--sad">
+                            <div class="emoji__face">
+                                <div class="emoji__eyebrows"></div>
+                                <div class="emoji__eyes"></div>
+                                <div class="emoji__mouth"></div>
+                            </div>
+                        </div>
+                        <span></span>
+                    </a>
+                    <a href="">
+                        <div class="emoji  emoji--angry">
+                            <div class="emoji__face">
+                                <div class="emoji__eyebrows"></div>
+                                <div class="emoji__eyes"></div>
+                                <div class="emoji__mouth"></div>
+                            </div>
+                        </div>
+                        <span>1</span>
+                    </a>
+                </aside>
+
+                <div id="like-mobile">
+                    <svg fill="var(--cyan-logo)" viewBox="0 0 16 16"><path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/></svg>
+                </div>
+
+                <div id="smile-mobile" class="share-facebook">
+                    <svg fill="var(--cyan-logo)" viewBox="0 0 20 20"><path d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"></path></svg>
+                </div>
+            </aside>
+
+            <main id="page-main">
+                <h1>Штормове попередження оголосили у Рівному. На вулицях працюють комунальники та військові </h1>
+                <time> п'ятниця, 12 лютого 2021 <span>09:53</span></time>
+                <p><strong>Тяжка спецтехніка у будь-який момент готова виїхати на ліквідацію наслідків ДТП</strong></p>
+                <p><amp-img src="temp/18.jpg" width="600" height="399" layout="responsive"></amp-img></p>
+                <p>У мерії звітують про роботи на дорогах. Станом на 6 ранку п'ятниці, 12 лютого, на чергуванні знаходиться 27 одиниць техніки:</p>
+
+                <blockquote>
+                    <p>ЗiЛ – 5</p>
+                    <p>МАЗ – 9</p>
+                    <p>тракторiв – 5</p>
+                    <p>MAN – 1</p>
+                    <p>навантажувач пiску – 1</p>
+                    <p>грейдер - 6.</p>
+                </blockquote>
+                
+                <p>Раніше у мерії заявляли, що до прибирання вулиць «на волонтерських засадах залучали приватну техніку».</p>
+                <ul>
+                    <li>1 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quam, laborum laudantium molestiae reprehenderit blanditiis voluptas explicabo ducimus dicta consequatur architecto soluta doloremque esse magnam, in a maxime maiores neque.</li>
+                    <li>2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam laborum impedit in ea quae iusto pariatur animi blanditiis minima, magni voluptatibus aliquam incidunt inventore quas fugit modi asperiores quaerat architecto!</li>
+                    <li>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatum voluptate temporibus placeat id molestiae ullam iste est omnis totam expedita autem architecto odio nesciunt, deleniti explicabo accusantium impedit vero.</li>
+                    <li>4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto hic quas molestiae non cupiditate, ab, illum ducimus tempore aliquid est iure labore quae ipsam doloremque maiores et necessitatibus. Temporibus, libero.</li>
+                </ul>
+
+                <ol>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id quam, laborum laudantium molestiae reprehenderit blanditiis voluptas explicabo ducimus dicta consequatur architecto soluta doloremque esse magnam, in a maxime maiores neque.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam laborum impedit in ea quae iusto pariatur animi blanditiis minima, magni voluptatibus aliquam incidunt inventore quas fugit modi asperiores quaerat architecto!</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatum voluptate temporibus placeat id molestiae ullam iste est omnis totam expedita autem architecto odio nesciunt, deleniti explicabo accusantium impedit vero.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto hic quas molestiae non cupiditate, ab, illum ducimus tempore aliquid est iure labore quae ipsam doloremque maiores et necessitatibus. Temporibus, libero.</li>
+                </ol>
+
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>1 header</th>
+                            <th>2 header</th>
+                            <th>3 header</th>
+                            <th>4 header</th>
+                            <th>5 header</th>
+                        </tr>
+                        <tr>
+                            <td>1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur labore nostrum, similique iste voluptatibus suscipit. Fugiat veritatis, asperiores illo corporis itaque fuga animi alias minima, necessitatibus cumque minus laborum sit?</td>
+                            <td>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repudiandae saepe fugit consequatur mollitia quos debitis pariatur odio rem ut placeat quo illo praesentium veritatis, assumenda voluptas officia suscipit nisi?</td>
+                            <td>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                            <td>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                            <td>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat minus vero vel voluptatem consequuntur. Dolorum ullam voluptate, aliquam eius minima unde? Unde aliquam odio dolores fugit eaque itaque corporis eveniet?</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <blockquote>
+                    <p>Військові та Нацгвардійці допомагають комунальникам розчищати зупинки та під’їзди до об’єктів соціальної сфери.</p>
+                </blockquote>
+
+                <p>
+                    <amp-img src="temp/19.jpg" width="960" height="639" layout="responsive"></amp-img>
+                    <amp-img src="temp/19.jpg" width="960" height="639" layout="responsive"></amp-img> 
+                </p>
+
+                <p>Зауважимо, вулицями Рівного можуть курсувати тролейбуси.</p>
+
+                <blockquote>
+                    <p>Тож на маршрут вийшли 65 із 67 наявних тролейбусів, зазначили у Рівнераді.</p>
+                </blockquote>
+
+                <p><amp-img src="temp/20.jpg" width="960" height="639" layout="responsive"></amp-img></p>
+
+                <div class="post-autor">
+                    <strong>Влад Пєрязєв</strong>
+                    Радіо Трек
+                </div>
+
+                <div class="center">
+                    <a href="" class="button-yellow share-facebook">
+                        <span>12</span> Поширити у Facebook
+                    </a>
+                </div>
+
+                <div class="tags">
+                    <strong>Теги:</strong>
+                    <a href="">негода</a> <a href="">прибирання вулиць</a> <a href="">штормове попердження</a>    
+                </div>
+
+            </main>
+
+            <aside id="aside">
+                <div style="margin: 0 0 20px">
+                    <a href="">
+                        <amp-img src="temp/00.gif" width="300" height="250" layout="responsive"></amp-img>
+                    </a>
+                </div>
+
+                <amp-selector class="tabs-with-flex" role="tablist" keyboard-select-mode="focus">
+
+                    <div id="tab1" role="tab" aria-controls="tabpanel1" option selected>Читають</div>
+                    
+                    <ul id="tabpanel1" role="tabpanel" aria-labelledby="tab1">
+                        <li>
+                            <a href="">
+                                <time>12 <span>лют</span> </time>
+                                <p>Які перспективи у м. Рівне: новий випуск «Академія online з Оленою Хотенко» </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <time>11 <span>лют</span> </time>
+                                <p>Неправильне нарахування стажу: у чому проблема і як не лишитися без пенсії</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div id="tab2" role="tab" aria-controls="tabpanel2" option>Вибране</div>
+                    <ul id="tabpanel2" role="tabpanel" aria-labelledby="tab2">
+                        <li>
+                            <a href="">
+                                <time>10 <span>лют</span> </time>
+                                <p>Бій на голих кулаках хлопця з Костополя набрав майже пів мільйона переглядів (ВІДЕО)</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <time>08 <span>лют</span> </time>
+                                <p>Прихильникам Олександра Третяка варто перестати виправдовувати мера Рівного (ФОТО)</p>
+                            </a>
+                        </li>
+                    </ul>
+                  </amp-selector>
+                
+                <!-- рекламний блок -->
+                <div class="ad" data-key="news_sidebar2" data-inited="1">
+                    <amp-img src="temp/41.jpg" width="300" height="250" layout="responsive"></amp-img>
+                    <amp-img src="temp/42.jpg" width="300" height="250" layout="responsive"></amp-img>
+                </div>
+                <!-- рекламний блок -->
+
+            </aside>
+
+            <div id="ads">
+                <p>adverty</p>
+            </div>
+            
+        </div>
+        <!-- #page -->
+
+        <div class="ad">
+            ad
+        </div>
+
+
+    <div class="category--hot">
+
+        <section>
+            <h2 class="title"><a href="">Політика</a></h2>
+
+            <article class="post">
+                <a href="" class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-29 12:36">29 квітня</time>
+                <a href="">
+                    <h3>
+                        В Україні призначили нового міністра енергетики
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-29 10:16">29 квітня</time>
+                <a href="">
+                    <h3>
+                        З Біблією на столах у Рівному розпочалася сесія міської ради (ФОТО)
+                    </h3>
+                </a>
+            </article>
+
+        </section>
+
+        <section>
+            <h2 class="title"><a href="">Економіка</a></h2>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-28 21:30">28 квітня</time>
+                <a href="">
+                    <h3>
+                        Клієнтам ПриватБанку, Монобанку і не тільки: попередили про списання грошей і арешти
+                        рахунків
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-28 17:05">28 квітня</time>
+                <a href="">
+                    <h3>
+                        Ціни на бензин на АЗС знижуються: скільки тепер коштуватиме пальне
+                    </h3>
+                </a>
+            </article>
+
+        </section>
+
+        <section>
+            <h2 class="title"><a href="">Cуспільство</a></h2>
+
+
+            <article class="post">
+                <a href="" class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-29 12:20">29 квітня</time>
+                <a href="">
+                    <h3>
+                        У Рівному хочуть ЗБУДУВАТИ окрему лікарню під ковід
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href="" class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-28 18:00">28 квітня</time>
+                <a href="">
+                    <h3>
+                        Шмигаль пояснив нові правила для отримання субсидій
+                    </h3>
+                </a>
+            </article>
+
+        </section>
+
+        <section>
+            <h2 class="title"><a href="">Надзвичайні Події</a></h2>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-28 10:04">28 квітня</time>
+                <a
+                    href="">
+                    <h3>
+                        «Власник собаки-вбивці відповість за смерть питомця»: Геращенко прокоментував собачу гризню
+                        у Києві (ФОТО/ВІДЕО)
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-27 13:13">27 квітня</time>
+                <a href="">
+                    <h3>
+                        У дитсадку випала з вікна 4-річна дитина
+                    </h3>
+                </a>
+            </article>
+        </section>
+
+        <section>
+            <h2 class="title"><a href="">Спорт</a></h2>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-25 20:00">25 квітня</time>
+                <a href="">
+                    <h3>
+                        «Динамо Київ» - 16-разовий чемпіон України. Перелічили усі трофеї клубу
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-25 19:07">25 квітня</time>
+                <a href="">
+                    <h3>
+                        Поступово нав`язували супернику свою гру. БК «Рівне» впевнено «крокує» до перемоги
+                    </h3>
+                </a>
+            </article>
+        </section>
+
+        <section>
+            <h2 class="title"><a href="">Шоу-biz</a></h2>
+
+            <article class="post">
+                <a href="" class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-28 23:46">28 квітня</time>
+                <a href="">
+                    <h3>
+                        Ірина Білик розлучається
+                    </h3>
+                </a>
+            </article>
+
+            <article class="post">
+                <a href=""
+                    class="post-image">
+                    <amp-img src="temp/09.jpg" width="220" height="160" layout="responsive"></amp-img>
+                </a>
+                <time datetime="2021-04-26 22:10">26 квітня</time>
+                <a href="">
+                    <h3>
+                        Винник приголомшив зізнаннями: пластичні операції, допомога заможної фанатки й втрата батьків
+                        (ВІДЕО)
+                    </h3>
+                </a>
+            </article>
+        </section>
+
+    </div>
+    <!-- .category--hot -->
+
+    </div>
+
+    <footer id="footer">
+        <div class="wrapper">
+            <div>
+                <div class="title">Радіо трек</div>
+                <p>&copy; 2005-2021</p>
+                <p>За повного чи часткового використання текстів та зображень чи за будь-якого іншого поширення інформації «Радіо ТРЕК» гіперпосилання на сайт radiotrek.rv.ua є обов'язковим.</p>
+                <p>Сайт створено в рамках проекту за підтримки Фонду розвитку ЗМІ Посольства США в Україні</p>
+            </div>
+            <div>
+                <div class="title">Агенція новин</div>
+                <div class="footer-2-column">
+                    <ul>
+                        <li><a href="">Новини</a></li>
+                        <li><a href="">Cтатті</a></li>
+                        <li><a href="">Відео</a></li>
+                        <li><a href="">Анонси</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">Суспільство</a></li>
+                        <li><a href="">Політика</a></li>
+                        <li><a href="">Спори</a></li>
+                        <li><a href="">Шоу-Біз</a></li>
+                        <li><a href="">Економіка</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="title">Радіо</div>
+                <ul>
+                    <li><a href="">Проєкти</a></li>
+                    <li><a href="">Ведучі</a></li>
+                    <li><a href="">Зворотній звязок</a></li>
+                    <li><a href="">Слухай онлайн</a></li>
+                </ul>
+
+                <p><amp-img src="temp/bigmir.png" width="160" height="19"></amp-img></p>
+            </div>
+            <div>
+                <div class="social">
+                    <a href=""><svg viewBox="0 0 448 512"><path d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg></a>
+                    <a href=""><svg viewBox="0 0 448 512"><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/></svg></a>
+                    <a href=""><svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                    <a href=""><svg viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+                    <a href=""><svg viewBox="0 0 448 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg></a>
+                </div>
+                <ul>
+                    <li><a href="">Оголошення</a></li>
+                    <li><a href="">Опитування</a></li>
+                    <li><a href="">Про нас</a></li>
+                    <li><a href="">Реклама</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
