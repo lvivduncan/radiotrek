@@ -1,0 +1,220 @@
+@media(max-width:400px) {
+    *,
+    ::after,
+    ::before{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 70px 0 0;
+        font-family: sans-serif;
+        letter-spacing: -0.1px;
+    }
+
+    /**/
+    :root{
+        --gold: #ffcc00;
+        --black: #000;
+        --white: #fff;
+        --cyan-dark: #004888;
+        --cyan: #005baa;
+    }
+
+    .wrapper{
+        width: 95%;
+        margin: auto;
+    }
+    /**/
+    #header{
+        height: 70px;
+        padding: 12px 0 0;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: url('../images/header.png') repeat;
+    }
+
+    #header .wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr 70px;
+    }
+
+    #logo {
+        width: 110px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+    }
+
+    #logo img {
+        width: 100%;
+        vertical-align: bottom;
+        max-width: 100%;
+    }
+
+    #radio {
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #online {
+        padding: 3px 10px 3px 26px;
+        border-radius: 5px;
+        background: var(--gold);
+        text-align: center;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--black);
+        line-height: 24px;
+        position: relative;
+        transition: .3s;
+    }
+
+    #online.play::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        width: 15px;
+        height: 15px;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z'/%3E%3C/svg%3E");
+    }
+
+    #nav,
+    #live,
+    .hot-main,
+    .top-news-aside{
+        display: none;
+    }
+
+    #nav--bar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #nav--bar svg {
+        width: 22px;
+        fill: var(--black);
+        transition: .5s;
+    }
+
+    #nav--bar span {
+        width: 20px;
+        cursor: pointer;
+        display: block;
+        margin: 0 10px;
+    }
+
+    /**/
+    .top--news {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 330px;
+    }
+
+    .top-news-news {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+
+    .top-news-news>a {
+        /* height: 100%; */
+        width: 100%;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+    }
+
+    .top-news-news a {
+        /* text-decoration: none; */
+        color: var(--white);
+        position: relative;
+        z-index: 2;
+    }
+
+    .top-news-news a:first-child {
+        height: 300px;
+        background-position: center!important;
+    }
+
+    .top-news-news span {
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        color: var(--white);
+        background: var(--cyan-dark);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .top-news-news span::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -100%;
+        left: -50%;
+        bottom: -50%;
+        right: 20%;
+        z-index: 1;
+        background: var(--cyan);
+        transform: rotate(45deg) translateX(0);
+        transition: .5s;
+    }
+
+    .top-news-news time {
+        font-size: 12px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
+
+    .top-news-news h2 {
+        margin: 20px 0;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 1.1;
+    }    
+
+    /**/
+    .hot {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        margin: 30px 0 20px;
+    }
+
+    .articles article {
+        margin: 15px 0;
+    }
+
+    .articles a {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        text-decoration: none;
+        color: var(--gray-dark);
+        transition: .5s;
+    }
+
+    .articles a time {
+        transition: .5s;
+    }
+
+    .articles a h3 {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+}
