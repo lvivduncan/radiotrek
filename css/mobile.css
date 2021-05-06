@@ -90,13 +90,6 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z'/%3E%3C/svg%3E");
     }
 
-    #nav,
-    #live,
-    .hot-main,
-    .top-news-aside{
-        display: none;
-    }
-
     #nav--bar {
         display: flex;
         align-items: center;
@@ -116,7 +109,8 @@
         margin: 0 10px;
     }
 
-    /**/
+
+    /* index */
     .top--news {
         display: grid;
         grid-template-columns: 1fr;
@@ -130,14 +124,12 @@
     }
 
     .top-news-news>a {
-        /* height: 100%; */
         width: 100%;
         background-repeat: no-repeat!important;
         background-size: cover!important;
     }
 
     .top-news-news a {
-        /* text-decoration: none; */
         color: var(--white);
         position: relative;
         z-index: 2;
@@ -188,7 +180,6 @@
         line-height: 1.1;
     }    
 
-    /**/
     .hot {
         display: grid;
         grid-template-columns: 1fr;
@@ -215,6 +206,70 @@
     .articles a h3 {
         font-weight: 400;
         font-size: 16px;
+    }
+
+    #nav,
+    #live,
+    .hot-main,
+    .top-news-aside{
+        display: none;
+    }
+
+    /* inner page */
+    #page {
+        display: grid;
+        grid-gap: 30px;
+        margin-top: 30px;
+        grid-template-rows: auto;
+
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'body'
+            'ads'
+            'unused'
+            'aside'
+            'sticky';
+    }
+
+    #page-main {
+        grid-area: body;
+        overflow: hidden;
+    }
+
+    #page-main h1 {
+        line-height: 1;
+        margin-bottom: 10px;
+        color: var(--black);
+        font-size: 32px;
+        font-weight: 700;
+        height: auto;
+    }
+
+    #page-main time {
+        display: block;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+
+    #page-main time span {
+        padding: 0 0 0 10px;
+    }
+
+    #page-main time span::before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z'/%3E%3C/svg%3E");
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 5px 0 0;
+        position: relative;
+        top: 2px;
+    }
+
+    #page-main p {
+        margin: 30px 0;
+        font-size: 18px;
     }
 
 }
