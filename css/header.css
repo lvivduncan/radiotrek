@@ -32,6 +32,10 @@
     width: 194px;
     height: 45px;
     display: block;
+    background-image: url("/tpl/images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @media(max-width:420px){
@@ -41,11 +45,6 @@
         align-items: center;
     }
 }
-
-#logo img{
-    width: 100%!important;
-}
-
 
 
 /* кнопка + трек */
