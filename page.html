@@ -4,9 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="msapplication-tap-highlight" content="no" /> -->
     <title> page </title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        [style*="--aspect-ratio"] > :first-child {
+            width: 100%;
+        }
+
+        [style*="--aspect-ratio"] > img {  
+            height: auto;
+        } 
+
+        @supports (--custom:property) {
+            [style*="--aspect-ratio"] {
+                position: relative;
+                background: var(--gray)
+            }
+
+            [style*="--aspect-ratio"]::before {
+                content: "";
+                display: block;
+                padding-bottom: calc(100% / (var(--aspect-ratio)));
+            } 
+
+            [style*="--aspect-ratio"] > :first-child {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body id="article">
@@ -142,7 +170,9 @@
 
     <div class="wrapper">
         <div class="ad">
-            ad
+            <div style="--aspect-ratio:20/4;">
+                <!-- <img src="temp/c607ce4c9591bedd0d96bdf63dee0e24.jpg.webp" width="100" height="100" alt=""> -->
+            </div>
         </div>
 
         <div id="page">
