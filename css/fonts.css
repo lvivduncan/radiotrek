@@ -7,6 +7,7 @@
          url('../fonts/radiotrek-light-webfont.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -18,6 +19,7 @@
          url('../fonts/radiotrek-reg-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 
 }
 
@@ -30,6 +32,7 @@
          url('../fonts/radiotrek-xbold-webfont.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
 
 }
 
@@ -43,4 +46,5 @@
          url('../fonts/radiotrek-bold-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
