@@ -36,15 +36,18 @@
 .top-news-news > a{
     height: 100%;
     width:100%;
-    background-repeat: no-repeat!important;
-    background-size: cover!important;
 }
 
 @media(max-width: 540px){
     .top-news-news a:first-child{
         height: 300px;
-        background-position: center!important;
     }
+}
+
+.top-news-news > a img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .top-news-news span{
@@ -54,7 +57,6 @@
     justify-content: center;
     flex-flow: column;
     color:var(--white);
-    /* background:var(--cyan); */
     background:var(--cyan-dark);
     position: relative;
     overflow: hidden;

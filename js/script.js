@@ -177,7 +177,7 @@
 // sticky ads
 {
 	const ad = document.querySelector("[data-key='news_sidebar2']");
-	ad.className = 'sticked';
+	ad && (ad.className = 'sticked');
 }
 
 // затемнення фону (для шарбатонів та лайків)
@@ -204,7 +204,7 @@ document.body.append(wrapperModal);
 	const like = document.getElementById('like');
 
 	// modal window (смайлики)
-	document.getElementById('like-mobile').addEventListener('click', () => {
+	document.getElementById('like-mobile') && document.getElementById('like-mobile').addEventListener('click', () => {
 		setTimeout(() => {
 			like.classList.toggle('modal');
 			wrapperModal.classList.toggle('show');
