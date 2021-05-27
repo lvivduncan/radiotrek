@@ -71,7 +71,7 @@
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0
 }
 
 #hot-1::before{
@@ -85,16 +85,16 @@
     z-index: 2;
     background: var(--transparent-3);
     transform: rotate(-35deg) translateX(0);
-    transition: .5s;
+    transition: .5s
 }
 
 #hot-1:hover::before{
-    transform: rotate(-35deg) translateX(-100%);
+    transform: rotate(-35deg) translateX(-100%)
 }
 
 #hot-1:hover{
     text-decoration: none;
-    color: var(--white);
+    color: var(--white)
 }
 
 #hot-1 h2{
