@@ -6,7 +6,7 @@
 
 @media(max-width: 1120px){
     #article .wrapper{
-        width: 95%;
+        width: 95vw !important;
     }    
 }
 
@@ -18,6 +18,6 @@
 
 @media(max-width:1300px){
     .wrapper{
-        width:95%;
+        width: 95vw !important;
     }
 }

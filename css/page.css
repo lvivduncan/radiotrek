@@ -23,6 +23,11 @@
             'aside'
             'sticky';
     }
+
+    #page #ads {
+        width: 95vw !important;
+        overflow: hidden;
+    }
 }
 
 /* блок для підваняження */
