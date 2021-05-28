@@ -10,7 +10,7 @@
     background: url('../images/header.png') repeat;
 }
 
-@media(max-width: 540px) {
+@media(max-width:776px) {
     #header{
         padding: 5px 0 0;
     }
@@ -197,6 +197,29 @@
 
 #live :hover span::before{
     border-color: transparent transparent transparent var(--cyan);
+}
+
+#mobile-live{
+    display: none;
+}
+
+@media(max-width:776px) {
+    #mobile-live{
+        display: block;
+    }
+}
+
+#mobile-live a {
+    display: block;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+#mobile-live span {
+    display: block;
+    font-size: 12px;
+    text-align: center;
 }
 
 .to-up{
