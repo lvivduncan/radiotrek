@@ -165,7 +165,8 @@
 
 #nav li .nav-wrap a,
 #nav li:hover .nav-wrap a{
-    color: var(--gray);
+    /* color: var(--gray); */
+    color: var(--black);
     font-weight: 700;
     white-space: nowrap;
 }

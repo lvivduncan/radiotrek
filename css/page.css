@@ -163,6 +163,13 @@
     background: var(--cyan-dark)
 }
 
+@media(max-width:996px) {
+    .tags a{
+        margin: 0 8px 8px 0;
+    }
+    
+}
+
 /* відступи */
 #page-main ul,
 #page-main ol,

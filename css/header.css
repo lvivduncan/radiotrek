@@ -10,6 +10,12 @@
     background: url('../images/header.png') repeat;
 }
 
+@media(max-width: 540px) {
+    #header{
+        padding: 5px 0 0;
+    }
+}
+
 /* 19-02-2021 */
 #header .wrapper{
     display: grid;

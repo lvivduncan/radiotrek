@@ -220,3 +220,11 @@ document.body.append(wrapperModal);
 		}
 	});
 }
+
+// song name for mobile
+if(window.innerWidth < 540){
+	const header = document.querySelector('#header');
+	const live = document.querySelector('#live');
+	live.style.display = 'block';
+	header.append(live);		
+} 
