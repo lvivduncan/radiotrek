@@ -8,6 +8,13 @@
     grid-area: sticky;
 }
 
+@media(max-width:1100px) {
+    #sticky{
+        position: relative;
+        z-index: 1;
+    }
+}
+
 /*///////
 шарбатони
 ///////*/
