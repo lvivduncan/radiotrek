@@ -240,7 +240,8 @@
     }
 }
 
-#nav--bar span{
+#nav--bar span,
+#nav--bar a{
     width: 22px;
     height: 22px;
     cursor: pointer;
@@ -249,7 +250,8 @@
 }
 
 @media(max-width:1100px) {
-    #nav--bar span{
+    #nav--bar span,
+    #nav--bar a{
         margin: auto;
     }
 }
