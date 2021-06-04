@@ -1,18 +1,44 @@
 
 // offset menu 
 {
-	const menu = document.querySelector('#mobile-menu');
-	const nav = document.querySelector('#nav');
-	const ul = document.querySelector('#nav ul');
-	const close = document.querySelector('#close');
+	if(document.querySelector('#mobile-menu') != null){
 
-	menu && menu.addEventListener('click', () => {
-		nav.className = 'active';
-	});
+		const wrapper = document.createElement('div');
+		wrapper.setAttribute('id', 'mobile-menu-wrapper');
 
-	close && close.addEventListener('click', () => {
-		nav.className = '';
-	});
+		const menu = document.querySelector('#mobile-menu');
+		const nav = document.querySelector('#nav');
+
+		const body = document.querySelector('body');
+
+		menu.addEventListener('click', () => {
+			// якщо кнопка уже натиснута
+			if(menu.classList.contains('active')){
+
+				nav.className = menu.className = body.className = '';
+				wrapper.remove();
+			} else {
+
+				nav.className = menu.className = 'active';
+				body.append(wrapper);
+				body.className = 'lock';				
+			}
+
+		});
+
+		wrapper.addEventListener('click', () => {
+
+			nav.className = menu.className = body.className = '';
+			wrapper.remove();
+		});
+		
+		nav.addEventListener('click', () => {
+			
+			nav.className = menu.className = body.className = '';
+			wrapper.remove();
+		});	
+	}
+	
 }
 
 // live 
