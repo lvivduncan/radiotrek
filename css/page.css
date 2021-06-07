@@ -164,10 +164,11 @@
 }
 
 @media(max-width:996px) {
-    .tags a{
+    .tags a {
         margin: 0 8px 8px 0;
+        font-size: 14px;
+        padding: 4px 8px;
     }
-    
 }
 
 /* відступи */
