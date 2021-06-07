@@ -28,6 +28,9 @@
 /* окрема сторінка */
 @import url('./page.css');
 
+/* плейсхолдер  */
+@import url('./placeholder.css');
+
 /* вкладки */
 @import url('./post-tabs.css');
 

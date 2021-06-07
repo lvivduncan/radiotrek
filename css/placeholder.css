@@ -1,0 +1,18 @@
+.placeholder{
+    height: 320px;
+    margin: 20px 0;
+    background: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media(max-width:776px) {
+    .placeholder{
+        height: 160px;
+    }
+}
