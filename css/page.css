@@ -120,16 +120,6 @@
     }
 }
 
-/* обрізка картинки для відео з ютуба */
-#page-main .video-block-image.video-open-popup, #page-main .video-link.video-open-popup {
-    overflow: hidden;
-}
-
-#page-main .video-block-image.video-open-popup img, #page-main .video-link.video-open-popup img {
-    margin: -65px 0;
-}
-
-
 /* мітки */
 .tags strong{
     display: block;
