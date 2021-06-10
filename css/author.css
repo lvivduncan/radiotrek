@@ -1,0 +1,128 @@
+/* сторінка автора, фото, біо, форма + лінки */
+#author{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-gap: 60px;
+}
+
+@media(max-width:776px) {
+    #author{
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+    }
+}
+
+@media(max-width:450px) {
+    #author{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ///////
+фото + піп
+/////// */
+#author-caption{}
+
+#author-caption figure{
+    margin: 0 0 30px;
+}
+
+#author-caption img{
+    border-radius: 50%;
+}
+
+#author-caption h2 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 30px;
+}
+
+#author-caption h2 span {
+    display: block;
+    text-transform: uppercase;
+}
+
+#author-caption ul,
+#author-caption ol{
+    display: block;
+}
+
+#author-caption li{
+    display: block;
+}
+
+#author-caption li a{
+/*     display: block;
+    padding: 6px 10px;
+    color: var(--cyan);
+    font-size: 14px;
+    border-bottom: var(--blue-extralight) solid 1px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .5s; */
+    color: var(--cyan);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#author-caption li a:hover{
+/*     background: var(--cyan);
+    color: var(--white); */
+    text-decoration: underline;
+}
+
+#author-caption p{
+    margin: 0 0 30px;
+    font-size: 14px;
+}
+
+#author-caption h6{
+    font-size: 14px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin: 30px 0 0;
+}
+
+
+/* //////////////
+біографія + форма
+////////////// */
+#author-cv{
+    margin: 30px 0;
+}
+
+#author-cv p{
+    margin: 0 0 30px;
+}
+
+#author-cv ul,
+#author-cv ol{
+    margin: 30px 0 30px 20px;
+}
+
+#author-cv li{
+    margin: 5px 0;
+}
+
+#author-cv h1,
+#author-cv h2,
+#author-cv h3,
+#author-cv h4{
+    margin: 0 0 30px;
+}
+
+#author-cv .contact-form{
+    margin: 50px 0 0
+}
+
+
+/* 
+#author-photo{
+    margin: 30px 0
+}
+
+#author-photo img{
+    border-radius: 50%;
+} */
