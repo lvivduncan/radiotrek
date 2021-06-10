@@ -43,6 +43,15 @@
     }
 }
 
+.office h2 a{
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.office h2 a:hover{
+    text-decoration: none
+}
+
 .office h2 span{
     display: block;
     text-transform: uppercase;
