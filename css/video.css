@@ -54,6 +54,7 @@
 
 .videos h3 a{
     color: var(--black);
+    word-wrap: anywhere;
 }
 
 .videos h3 a:hover{
