@@ -38,7 +38,7 @@
     display: block;
 }
 
-.post a h3{
+.post a h2{
     text-decoration: none;
     font-weight: 700;
     line-height: 1.1;
@@ -47,12 +47,12 @@
 }
 
 @media(max-width:996px){
-    .post a h3{
+    .post a h2{
         font-size: 14px;
     }
 }
 
-.post a:hover h3{
+.post a:hover h2{
     text-decoration: underline;
 }
 

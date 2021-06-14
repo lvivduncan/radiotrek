@@ -25,6 +25,7 @@
     border-bottom: 1px solid var(--blue);
 }
 
+.notice h2,
 .notice h5{
     font-size: 17px;
     margin: 0 0 10px;
