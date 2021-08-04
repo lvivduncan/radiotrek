@@ -705,6 +705,7 @@ body
 
     display: flex;
     flex-flow: column;
+    overflow-x: hidden;
 }
 
 @media(max-width:776px)
