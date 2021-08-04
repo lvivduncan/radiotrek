@@ -8,8 +8,7 @@
 
 :root
 {
-    /* --gold: #ffcc00; */
-    --gold: #faa61a;
+    --gold: #ffcc00;
     --cyan: #005baa;
     --gray: #777;
     --yellow: #ffe066;
@@ -776,7 +775,8 @@ body
 
 #error404 h1
 {
-    color: var(--gold);
+    /* color: var(--gold); */
+    color: var(--cyan);
     font-size: 120px;
     font-weight: bolder;
     padding-top: 120px;
