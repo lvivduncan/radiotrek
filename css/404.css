@@ -754,8 +754,6 @@ body
 #error404
 {
     text-align: center;
-    /* margin: 200px 0 0; */
-    /* height: calc(100% - 200px); */
     height: 100%;
 
     display: flex;
@@ -771,8 +769,6 @@ body
         display: flex;
         flex-flow: column;
         justify-content: center;
-        /* margin: 100px 0 0; */
-        /* height: calc(100% - 100px); */
     }
 }
 
@@ -818,16 +814,16 @@ body
 {
     height: 432px;
     width: 100%;
-    /* margin-top: auto; */
+    margin-top: auto;
 }
 
 @media(max-width:776px)
 {
     #error404 picture
     {
-        /* margin: 50px -20px; */
         order: 2;
         height: auto;
+        margin-top: 0;
     }
 
     #error404 div
