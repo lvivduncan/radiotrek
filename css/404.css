@@ -1,5 +1,5 @@
 
-*
+*,::after,::before
 {
     padding: 0;
     margin: 0;
@@ -15,10 +15,14 @@
     --green: #07a744;
 }
 
+html
+{
+    height: 100%;
+}
 
 body
 {
-    height: 100vh;
+    height: 100%;
     font-family: sans-serif;
 }
 
@@ -750,12 +754,14 @@ body
 #error404
 {
     text-align: center;
-    margin: 200px 0 0;
-    height: calc(100vh - 200px);
+    /* margin: 200px 0 0; */
+    /* height: calc(100% - 200px); */
+    height: 100%;
 
     display: flex;
     flex-flow: column;
     overflow-x: hidden;
+    gap: 20px;
 }
 
 @media(max-width:776px)
@@ -765,8 +771,8 @@ body
         display: flex;
         flex-flow: column;
         justify-content: center;
-        margin: 100px 0 0;
-        height: calc(100vh - 100px);
+        /* margin: 100px 0 0; */
+        /* height: calc(100% - 100px); */
     }
 }
 
@@ -784,6 +790,8 @@ body
         font-size: 60px;
         order: 1;
         margin: 0 20px;
+        padding-top: 80px;
+        line-height: 0.7;
     }
 }
 
@@ -810,14 +818,14 @@ body
 {
     height: 432px;
     width: 100%;
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 @media(max-width:776px)
 {
     #error404 picture
     {
-        margin: 50px -20px;
+        /* margin: 50px -20px; */
         order: 2;
         height: auto;
     }
