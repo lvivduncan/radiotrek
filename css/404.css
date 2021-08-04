@@ -777,6 +777,7 @@ body
     color: var(--gold);
     font-size: 120px;
     font-weight: bolder;
+    padding-top: 120px;
 }
 
 @media(max-width:776px)
