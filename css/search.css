@@ -113,3 +113,50 @@
         margin: auto;
     }
 }
+
+/* невдалий результат пошуку */
+#search-result-false
+{
+    margin: 30px 0;
+}
+
+#search-result-false h1
+{
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+/* підказка */
+#search-result-false h2
+{
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+#search-result-false ul
+{
+    margin: 30px 0 30px 30px;
+}
+
+#search-result-false #search-query
+{
+    padding-left: 10px;
+    border: 2px solid var(--gold);
+}
+
+@media(max-width:400px)
+{
+    #search-result-false #search-query
+    {
+        font-size: 20px;
+        /* color: var(--gray); */
+        padding: 10px;
+    }
+
+    #search-result-false #search-query input
+    {
+        font-size: 20px;
+        color: var(--gray);
+    }    
+}

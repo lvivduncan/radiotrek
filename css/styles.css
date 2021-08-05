@@ -25,6 +25,9 @@
 /* пошук */
 @import url('./search.css');
 
+/* Вас може зацікавити */
+@import url('./interes.css');
+
 /* окрема сторінка */
 @import url('./page.css');
 
