@@ -70,3 +70,27 @@
     grid-template-columns: repeat(2,1fr);
     grid-gap: 10px;
 }
+
+/* 10-11-21 */
+#copyright
+{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    justify-content:center
+}
+
+#copyright a 
+{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: var(--white);
+}
+
+#copyright span 
+{
+    margin-top: 3px
+}
