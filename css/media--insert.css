@@ -1,0 +1,120 @@
+
+/* скролл зліва і анонс справа */
+.media--insert{
+    height: 360px;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    background: var(--black);
+}
+
+/* навігаційний скролл */
+.scroll{
+    padding:30px 0;
+}
+
+.scroll-title{
+    color: var(--white);
+    padding: 10px 0 20px 70px;
+    width: 180px;
+    /* display: block; */
+    height: 47px;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    position: relative;
+}
+
+.scroll-title::before{
+    content: '';
+    background: url('../images/logo-icon.png') left no-repeat;
+    display: inline-block;
+    width: 55px;
+    height: 47px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.scroll-nav{
+    height: 220px; 
+    width: 320px; 
+    margin: 20px 0 0; 
+    display: block; 
+    color: var(--white);
+}
+
+.scroll-nav a{
+    color: var(--white);
+    text-decoration: none;
+    padding-left:70px;
+}
+
+.scroll-nav a:hover{
+    text-decoration: underline;
+}
+
+.scroll-nav a.active{
+    color:var(--gold);
+    position: relative;
+}
+
+.scroll-nav a.active::before{
+    content: " ";
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+    left: 0;
+    top: 50%;
+    margin-top:-2px;
+    position: absolute;
+}
+
+
+/* посилання на медія */
+.media{
+    background-size:cover!important;
+    position: relative;
+    overflow: hidden;
+}
+
+.media span{
+    position: absolute;
+    width: 100%;
+    padding: 30px 60px 30px 45%;
+    font-weight: bold;
+    background: var(--gold);
+    bottom: 30px;
+    margin-left: -40%;
+    transition: .3s;
+    font-size: 1.3em;
+}
+
+.media:hover span {
+    background: var(--gray-dark);
+    color: var(--gold);
+    margin-left: 0;
+}
+
+.media span::before{
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--cyan);
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transition: .3s;
+    transform: rotate(45deg);
+    top: 30px;
+    right: 30px;
+}
+
+.media:hover span:before {
+    border-right-color: var(--gold);
+    border-top-color: var(--gold);
+    border-width: 5px;
+}
+
+/* повернено 23-11-21 */
