@@ -108,3 +108,7 @@
 
 /* facebook smiles */
 @import url('./smiles.css');
+
+/* повернено 23-11-21 */
+@import url('./media--insert.css');
+@import url('./simple-scrollbar.css');
