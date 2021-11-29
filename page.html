@@ -285,6 +285,23 @@
                 <time> п'ятниця, 12 лютого 2021 <span>09:53</span></time>
                 <p><strong>Тяжка спецтехніка у будь-який момент готова виїхати на ліквідацію наслідків ДТП</strong></p>
                 <p><img src="temp/18.jpg" alt=""></p>
+
+
+
+                <div id="sound">
+                    <div id="waveform"></div>
+                    <button id="waveform-button" data-action="play">
+                        <span id="waveform-play">
+                            <svg viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/></svg>
+                        </span>
+                        <span id="waveform-pause" style="display:none">
+                            <!-- <svg viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"/></svg> -->
+                            <svg viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"/></svg>
+                        </span>
+                    </button>
+                </div>
+                <!-- #sound -->
+
                 <p>У мерії звітують про роботи на дорогах. Станом на 6 ранку п'ятниці, 12 лютого, на чергуванні
                     знаходиться 27 одиниць техніки:</p>
 
@@ -1500,6 +1517,46 @@
         }
 
     </script>
+
+<script src="js/wavesurfer.js"></script>
+<script>
+
+let wavesurfer;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // паличками
+    var wavesurfer = WaveSurfer.create({
+        container: document.querySelector('#waveform'),
+        waveColor: '#D9DCFF',
+        progressColor: '#4353FF',
+        cursorColor: '#4353FF',
+        barWidth: 3,
+        barRadius: 3,
+        cursorWidth: 1,
+        height: 200,
+        barGap: 3,
+        height: 50
+    });
+
+    wavesurfer.on('play', function() {
+        document.querySelector('#waveform-play').style.display = 'none';
+        document.querySelector('#waveform-pause').style.display = '';
+    });
+
+    wavesurfer.on('pause', function() {
+        document.querySelector('#waveform-play').style.display = '';
+        document.querySelector('#waveform-pause').style.display = 'none';
+    });
+
+    // wavesurfer.load('temp/music-1.mp3');
+    wavesurfer.load('https://ring.techbigs.download/files/kgf-karuvinil-enai-.mp3');
+
+    document.querySelector('[data-action="play"]')
+            .addEventListener('click', wavesurfer.playPause.bind(wavesurfer));
+
+});
+</script>
 
 </body>
 <!-- #article -->

@@ -248,6 +248,10 @@ document.body.append(wrapperModal);
 }
 
 
+
+
+
+
 // simple-srollbar init -- повернено 23-11-21
 SimpleScrollbar.initAll();
 

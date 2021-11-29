@@ -1,0 +1,55 @@
+#sound 
+{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-gap: 10px;
+}
+
+#waveform
+{
+    position: relative;
+    order: 2;
+}
+
+#waveform-button 
+{
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    background: var(--gold);
+    border-radius: 4px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    order: 1;
+}
+
+#waveform-button:hover
+{
+    background: var(--cyan);
+}
+
+#waveform-button span 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+}
+
+#waveform-button svg 
+{
+    fill: var(--cyan);
+    transition: .5s;
+}
+
+#waveform-button:hover svg
+{
+    fill: var(--gold);
+}
