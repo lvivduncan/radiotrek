@@ -7,6 +7,14 @@
     align-self: flex-start;
 }
 
+/* @media(max-width:540px)
+{
+    .slider
+    {
+        order: 1;
+    }    
+} */
+
 .slider-wrapper
 {
     overflow: hidden;

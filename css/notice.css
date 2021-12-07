@@ -27,10 +27,10 @@
     {
         grid-template-columns: 1fr;
         grid-template-areas:
-            'two-one-title1'
-            'two-one-notices'
             'two-one-title2'
             'two-one-slider'
+            'two-one-title1'
+            'two-one-notices'
     }    
 }
 
@@ -69,13 +69,13 @@
     }
 }
 
-@media(max-width:540px)
+/* @media(max-width:540px)
 {
     .notices
     {
         order: 2;
     }    
-}
+} */
 
 .notice
 {
