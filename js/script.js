@@ -273,3 +273,82 @@ SimpleScrollbar.initAll();
 
     }));
 }
+
+
+
+
+
+// restore -- 7-12-2021
+// цей слайдер називають "револьвер"
+if(document.querySelector('.slider') !== null){
+    const wrapper = document.querySelector('.slider'),
+          slider = wrapper.querySelector('.slider ul'),
+          left = wrapper.querySelector('.slider-to-left'),
+          right = wrapper.querySelector('.slider-to-right')
+
+    let interval
+
+    left.addEventListener('click', () => {
+
+        const first = slider.firstElementChild
+        slider.append(first)
+
+        slider.style.transition = 'none'
+        slider.classList.add('to-left')
+        setTimeout(() => {
+
+            slider.classList.remove('to-left')
+            slider.style.transition = '.5s'
+        }, 50)
+    })
+
+    right.addEventListener('click', () => {
+
+        const last = slider.lastElementChild
+        slider.prepend(last)
+
+        slider.style.transition = 'none'
+        slider.classList.add('to-right')
+
+        setTimeout(() => {
+
+            slider.classList.remove('to-right')
+            slider.style.transition = '.5s'
+        }, 50)
+    })
+
+    // автоскролл
+    function autoscroll(){
+
+        const first = slider.firstElementChild
+        slider.append(first)
+
+        slider.style.transition = 'none'
+        slider.classList.add('to-left')
+
+        setTimeout(() => {
+
+            slider.classList.remove('to-left')
+            slider.style.transition = '.5s'
+        }, 0)
+    }
+
+    interval = setInterval(() => {
+
+        autoscroll()
+    }, 4000)
+    
+
+    slider.addEventListener('mouseover', () => {
+
+        clearInterval(interval)
+    })
+
+    slider.addEventListener('mouseout', () => {
+
+        interval = setInterval(() => {
+
+            autoscroll()
+        }, 4000)
+    })
+}
