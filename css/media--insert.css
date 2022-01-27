@@ -34,6 +34,7 @@
     line-height: 1;
     font-weight: 700;
     position: relative;
+    white-space: nowrap;
 }
 
 .scroll-title::before
@@ -57,11 +58,28 @@
     color: var(--white);
 }
 
+@media(max-width:776px)
+{
+    .scroll-nav
+    {
+        width: auto;
+    }
+}
+
+.scroll-nav ul 
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
 .scroll-nav a
 {
     color: var(--white);
     text-decoration: none;
-    padding-left:70px;
+    padding: 10px 5px 10px 70px;
+    display: block;
 }
 
 .scroll-nav a:hover
