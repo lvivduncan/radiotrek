@@ -1,0 +1,143 @@
+/* по 4+2 блоків */
+.four-and-slider
+{
+    display: grid;
+    grid-gap: 0 30px;
+    margin: 0 0 20px;
+    grid-template-columns: repeat(4,1fr) 2fr;
+    grid-template-areas:
+        'fas-title-1 fas-title-2 fas-title-3 fas-title-4 fas-title-5'
+        'fas-post-1 fas-post-2 fas-post-3 fas-post-4 fas'
+        'fas-post-5 fas-post-6 fas-post-7 fas-post-8 fas'
+}
+
+@media(max-width:996px)
+{
+    .four-and-slider
+    {
+        grid-gap: 0 20px;
+        grid-template-columns: repeat(2,1fr) 2fr;
+        grid-template-areas:
+            'fas-title-1 fas-title-2 fas-title-5'
+            'fas-post-1 fas-post-2 fas'
+            'fas-post-5 fas-post-6 fas'
+            'fas-title-3 fas-title-4 fas'
+            'fas-post-3 fas-post-4 fas'
+            'fas-post-7 fas-post-8 fas'   
+    }
+}
+
+@media(max-width:776px)
+{
+    .four-and-slider
+    {
+        grid-gap: 0 10px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+            'fas-title-1 fas-title-2'
+            'fas-post-1 fas-post-2'
+            'fas-post-5 fas-post-6'
+
+            'fas-title-3 fas-title-4'
+            'fas-post-3 fas-post-4'
+            'fas-post-7 fas-post-8'
+
+            'fas-title-5 fas-title-5'
+            'fas fas'
+            'fas fas'
+    }
+}
+
+/* ///////////////
+// 5 заголовків //
+/////////////// */
+
+.four-and-slider .title:nth-child(1)
+{
+    grid-area: fas-title-1;
+}
+
+.four-and-slider .title:nth-child(2)
+{
+    grid-area: fas-title-2;
+}
+
+.four-and-slider .title:nth-child(3)
+{
+    grid-area: fas-title-3;
+}
+
+.four-and-slider .title:nth-child(4)
+{
+    grid-area: fas-title-4;
+}
+
+.four-and-slider .title:nth-child(5)
+{
+    grid-area: fas-title-5;
+}
+
+/* /////////////
+// 8 артиклів //
+///////////// */
+
+.four-and-slider .post:nth-child(1)
+{
+    grid-area: fas-post-1
+}
+
+.four-and-slider .post:nth-child(2)
+{
+    grid-area: fas-post-2
+}
+
+.four-and-slider .post:nth-child(3)
+{
+    grid-area: fas-post-3
+}
+
+.four-and-slider .post:nth-child(4)
+{
+    grid-area: fas-post-4
+}
+
+.four-and-slider .post:nth-child(5)
+{
+    grid-area: fas-post-5
+}
+
+.four-and-slider .post:nth-child(6)
+{
+    grid-area: fas-post-6
+}
+
+.four-and-slider .post:nth-child(7)
+{
+    grid-area: fas-post-7
+}
+
+.four-and-slider .post:nth-child(8)
+{
+    grid-area: fas-post-8
+}
+
+/* //////////
+// слайдер //
+////////// */
+
+.four-and-slider .slider
+{
+    grid-area: fas
+}
+
+/* ////////////////////////////////////
+// артиклі повинні мати заголовок 1! //
+//////////////////////////////////// */
+.four-and-slider .post a h1
+{
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-size: 17px;
+}

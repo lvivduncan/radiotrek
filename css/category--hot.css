@@ -1,3 +1,7 @@
+/*
+// на головній не використовується. перероблено в .four-and-slider
+*/
+
 
 /* по 6 блоків */
 .category--hot{
@@ -58,12 +62,14 @@
 .category--hot :nth-child(12){
     order: 12
 }
+
 /* empty blocks */
 .category--hot::after{
     content: '';
     display: block;
     order: 13
 }
+
 .category--hot::before{
     content: '';
     display: block;

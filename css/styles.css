@@ -121,3 +121,6 @@
 
 /* slider: 7-12-2021 */
 @import url('./slider.css');
+
+/* 4 колонки та слайдер */
+@import url('./four-and-slider.css');
